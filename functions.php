@@ -17,26 +17,8 @@ if (!defined('LONDONE_ELECTRICAL_URI')) {
     define('LONDONE_ELECTRICAL_URI', get_template_directory_uri());
 }
 
-function londone_electrical_theme_setup() {
-    add_theme_support('wp-block-styles');
-    add_theme_support('editor-styles');
-    add_editor_style('assets/css/style.css');
-}
-add_action('after_setup_theme', 'londone_electrical_theme_setup');
-
-//register menu
-if (!function_exists('londone_electrical_register_menus')) {
-    function londone_electrical_register_menus() {
-        register_nav_menus(array(
-            'primary_menu' => __('Primary Menu', 'londone-electrical'),
-            'footer_menu' => __('Footer Menu', 'londone-electrical')
-        ));
-    }
-}
-add_action('after_setup_theme', 'londone_electrical_register_menus');
-
 //enque css and js file
-if (!function_exists('londone_electrical_enqueue_styles_scripts')) {
+if (!function_exists('londone_electrical_enqueue_styles_scripts')) :
     function londone_electrical_enqueue_styles_scripts() {
         // Google Fonts
         wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,100..1000;1,100..1000&family=Onest:wght@100..900&display=swap', array(), null);
@@ -46,6 +28,8 @@ if (!function_exists('londone_electrical_enqueue_styles_scripts')) {
         wp_enqueue_style('slicknav', LONDONE_ELECTRICAL_URI . '/asset/css/slicknav.min.css', array(), '1.0.0');
         // Swiper Bundle
         wp_enqueue_style('swiper', LONDONE_ELECTRICAL_URI . '/asset/css/swiper-bundle.min.css', array(), '10.0.0');
+        // Font Awesome Icon Css
+        wp_enqueue_style('font-awesome', LONDONE_ELECTRICAL_URI . '/asset/css/all.min.css', array(), '10.0.0');
         // Animate CSS
         wp_enqueue_style('animate', LONDONE_ELECTRICAL_URI . '/asset/css/animate.css', array(), '4.1.1');
         // Magnific Popup
@@ -94,44 +78,86 @@ if (!function_exists('londone_electrical_enqueue_styles_scripts')) {
         // Custom Function JS (Ensure this is loaded last if it depends on other scripts)
         wp_enqueue_script('custom-function', LONDONE_ELECTRICAL_URI . '/asset/js/function.js', array('jquery', 'bootstrap', 'swiper', 'wow'), null, true);
     }
-}
+endif;
 add_action('wp_enqueue_scripts', 'londone_electrical_enqueue_styles_scripts');
 
+// Adds theme support for post formats.
+if ( ! function_exists( 'londone_electrical_post_format_setup' ) ) :
+
+	function londone_electrical_post_format_setup() {
+		add_theme_support( 'post-formats', array( 'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' ) );
+	}
+endif;
+add_action( 'after_setup_theme', 'londone_electrical_post_format_setup' );
+
+// Enqueues editor-style.css in the editors.
+if ( ! function_exists( 'londone_electrical_editor_style' ) ) :
+
+	function londone_electrical_editor_style() {
+		add_editor_style( get_parent_theme_file_uri( 'assets/css/editor-style.css' ) );
+	}
+endif;
+add_action( 'after_setup_theme', 'londone_electrical_editor_style' );
+
+// Registers pattern categories.
+if ( ! function_exists( 'londone_electrical_pattern_categories' ) ) :
+	function londone_electrical_pattern_categories() {
+
+		register_block_pattern_category(
+			'londone_electrical_page',
+			array(
+				'label'       => __( 'Pages', 'londone-electrical' ),
+				'description' => __( 'A collection of full page layouts.', 'londone-electrical' ),
+			)
+		);
+
+		register_block_pattern_category(
+			'londone_electrical_post-format',
+			array(
+				'label'       => __( 'Post formats', 'londone-electrical' ),
+				'description' => __( 'A collection of post format patterns.', 'londone-electrical' ),
+			)
+		);
+	}
+endif;
+add_action( 'init', 'londone_electrical_pattern_categories' );
 
 //theme pattern add
-function londone_electrical_register_all_patterns() {
-    $patterns_dir = get_template_directory() . '/patterns/';
-    
-    if (!is_dir($patterns_dir)) {
-        return;
-    }
-
-    $pattern_files = glob($patterns_dir . '*.html');
-
-    foreach ($pattern_files as $file) {
-        $content = file_get_contents($file);
+if ( ! function_exists( 'londone_electrical_register_all_patterns' ) ) :
+    function londone_electrical_register_all_patterns() {
+        $patterns_dir = get_template_directory() . '/patterns/';
         
-        preg_match('/<!--\s*(\{.*?\})\s*-->/', $content, $matches);
-        
-        $metadata = array();
-        if (!empty($matches[1])) {
-            $metadata = json_decode($matches[1], true);
+        if (!is_dir($patterns_dir)) {
+            return;
         }
 
-        $slug = 'londone_electrical/' . basename($file, '.html');
-        $title = isset($metadata['title']) ? $metadata['title'] : ucwords(str_replace('-', ' ', basename($file, '.html')));
-        $categories = isset($metadata['categories']) ? (array) $metadata['categories'] : array('londone_electrical');
+        $pattern_files = glob($patterns_dir . '*.html');
 
-        register_block_pattern(
-            $slug,
-            array(
-                'title'      => __($title, 'londone_electrical'),
-                'categories' => $categories,
-                'content'    => preg_replace('/<!--\s*\{.*?\}\s*-->/', '', $content),
-            )
-        );
+        foreach ($pattern_files as $file) {
+            $content = file_get_contents($file);
+            
+            preg_match('/<!--\s*(\{.*?\})\s*-->/', $content, $matches);
+            
+            $metadata = array();
+            if (!empty($matches[1])) {
+                $metadata = json_decode($matches[1], true);
+            }
+
+            $slug = 'londone_electrical/' . basename($file, '.html');
+            $title = isset($metadata['title']) ? $metadata['title'] : ucwords(str_replace('-', ' ', basename($file, '.html')));
+            $categories = isset($metadata['categories']) ? (array) $metadata['categories'] : array('londone_electrical');
+
+            register_block_pattern(
+                $slug,
+                array(
+                    'title'      => __($title, 'londone_electrical'),
+                    'categories' => $categories,
+                    'content'    => preg_replace('/<!--\s*\{.*?\}\s*-->/', '', $content),
+                )
+            );
+        }
     }
-}
+endif;
 add_action('init', 'londone_electrical_register_all_patterns');
 
 //parts
@@ -155,7 +181,16 @@ function londone_electrical_register_template_parts() {
 }
 add_action('init', 'londone_electrical_register_template_parts');
 
-
+//register menu
+if (!function_exists('londone_electrical_register_menus')) :
+    function londone_electrical_register_menus() {
+        register_nav_menus(array(
+            'primary_menu' => __('Primary Menu', 'londone-electrical'),
+            'footer_menu' => __('Footer Menu', 'londone-electrical')
+        ));
+    }
+endif;
+add_action('after_setup_theme', 'londone_electrical_register_menus');
 
 //bootstrap menu nav walker
 class Bootstrap_Navwalker extends Walker_Nav_Menu {
