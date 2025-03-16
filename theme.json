@@ -1,0 +1,45 @@
+{
+  "version": 2,
+  "settings": {
+    "color": {
+      "palette": [
+        { "name": "Primary", "slug": "primary", "color": "#ff6600" },
+        { "name": "Secondary", "slug": "secondary", "color": "#333333" }
+      ]
+    },
+    "typography": {
+      "fontSizes": [
+        { "name": "Small", "slug": "small", "size": "14px" },
+        { "name": "Medium", "slug": "medium", "size": "18px" },
+        { "name": "Large", "slug": "large", "size": "24px" }
+      ]
+    },
+    "layout": {
+      "contentSize": "800px",
+      "wideSize": "1200px"
+    }
+  },
+  "styles": {
+    "typography": {
+      "fontSize": "16px",
+      "lineHeight": "1.5"
+    },
+    "elements": {
+      "link": {
+        "color": { "text": "#ff6600" }
+      }
+    }
+  },
+  "templateParts": [
+    {
+      "name": "menubar",
+      "title": "Menu Bar",
+      "area": "header"
+    },
+    {
+      "name": "topbar",
+      "title": "Top Bar",
+      "area": "header"
+    }
+  ]
+}
