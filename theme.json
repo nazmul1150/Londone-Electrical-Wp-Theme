@@ -1,6 +1,8 @@
 {
   "version": 2,
+  "patterns": true,
   "settings": {
+    "appearanceTools": true,
     "color": {
       "palette": [
         { "name": "Primary", "slug": "primary", "color": "#ff6600" },

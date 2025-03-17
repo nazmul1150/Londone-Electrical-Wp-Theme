@@ -123,63 +123,63 @@ endif;
 add_action( 'init', 'londone_electrical_pattern_categories' );
 
 //theme pattern add
-if ( ! function_exists( 'londone_electrical_register_all_patterns' ) ) :
-    function londone_electrical_register_all_patterns() {
-        $patterns_dir = get_template_directory() . '/patterns/';
+// if ( ! function_exists( 'londone_electrical_register_all_patterns' ) ) :
+//     function londone_electrical_register_all_patterns() {
+//         $patterns_dir = get_template_directory() . '/patterns/';
         
-        if (!is_dir($patterns_dir)) {
-            return;
-        }
+//         if (!is_dir($patterns_dir)) {
+//             return;
+//         }
 
-        $pattern_files = glob($patterns_dir . '*.html');
+//         $pattern_files = glob($patterns_dir . '*.html');
 
-        foreach ($pattern_files as $file) {
-            $content = file_get_contents($file);
+//         foreach ($pattern_files as $file) {
+//             $content = file_get_contents($file);
             
-            preg_match('/<!--\s*(\{.*?\})\s*-->/', $content, $matches);
+//             preg_match('/<!--\s*(\{.*?\})\s*-->/', $content, $matches);
             
-            $metadata = array();
-            if (!empty($matches[1])) {
-                $metadata = json_decode($matches[1], true);
-            }
+//             $metadata = array();
+//             if (!empty($matches[1])) {
+//                 $metadata = json_decode($matches[1], true);
+//             }
 
-            $slug = 'londone_electrical/' . basename($file, '.html');
-            $title = isset($metadata['title']) ? $metadata['title'] : ucwords(str_replace('-', ' ', basename($file, '.html')));
-            $categories = isset($metadata['categories']) ? (array) $metadata['categories'] : array('londone_electrical');
+//             $slug = 'londone_electrical/' . basename($file, '.html');
+//             $title = isset($metadata['title']) ? $metadata['title'] : ucwords(str_replace('-', ' ', basename($file, '.html')));
+//             $categories = isset($metadata['categories']) ? (array) $metadata['categories'] : array('londone_electrical');
 
-            register_block_pattern(
-                $slug,
-                array(
-                    'title'      => __($title, 'londone_electrical'),
-                    'categories' => $categories,
-                    'content'    => preg_replace('/<!--\s*\{.*?\}\s*-->/', '', $content),
-                )
-            );
-        }
-    }
-endif;
-add_action('init', 'londone_electrical_register_all_patterns');
+//             register_block_pattern(
+//                 $slug,
+//                 array(
+//                     'title'      => __($title, 'londone_electrical'),
+//                     'categories' => $categories,
+//                     'content'    => preg_replace('/<!--\s*\{.*?\}\s*-->/', '', $content),
+//                 )
+//             );
+//         }
+//     }
+// endif;
+// add_action('init', 'londone_electrical_register_all_patterns');
 
 //parts
-function londone_electrical_register_template_parts() {
-    register_block_pattern(
-        'londone_electrical/topbar',
-        array(
-            'title'       => __( 'Top Bar', 'londone_electrical' ),
-            'categories'  => array('header'),
-            'content'     => file_get_contents(get_template_directory() . '/parts/topbar.php'),
-        )
-    );
-    register_block_pattern(
-        'londone_electrical/menubar',
-        array(
-            'title'       => __( 'Menu Bar', 'londone_electrical' ),
-            'categories'  => array('header'),
-            'content'     => file_get_contents(get_template_directory() . '/parts/menubar.php'),
-        )
-    );
-}
-add_action('init', 'londone_electrical_register_template_parts');
+// function londone_electrical_register_template_parts() {
+//     register_block_pattern(
+//         'londone_electrical/topbar',
+//         array(
+//             'title'       => __( 'Top Bar', 'londone_electrical' ),
+//             'categories'  => array('header'),
+//             'content'     => file_get_contents(get_template_directory() . '/parts/topbar.php'),
+//         )
+//     );
+//     register_block_pattern(
+//         'londone_electrical/menubar',
+//         array(
+//             'title'       => __( 'Menu Bar', 'londone_electrical' ),
+//             'categories'  => array('header'),
+//             'content'     => file_get_contents(get_template_directory() . '/parts/menubar.php'),
+//         )
+//     );
+// }
+// add_action('init', 'londone_electrical_register_template_parts');
 
 //register menu
 if (!function_exists('londone_electrical_register_menus')) :
