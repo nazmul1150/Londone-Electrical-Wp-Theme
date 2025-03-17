@@ -1,7 +1,13 @@
 {
   "version": 2,
-  "patterns": true,
   "settings": {
+    "patterns": true,
+    "templateParts": {
+      "footer": {
+        "title": "Footer",
+        "area": "footer"
+      }
+    },
     "appearanceTools": true,
     "color": {
       "palette": [
@@ -31,17 +37,5 @@
         "color": { "text": "#ff6600" }
       }
     }
-  },
-  "templateParts": [
-    {
-      "name": "menubar",
-      "title": "Menu Bar",
-      "area": "header"
-    },
-    {
-      "name": "topbar",
-      "title": "Top Bar",
-      "area": "header"
-    }
-  ]
+  }
 }

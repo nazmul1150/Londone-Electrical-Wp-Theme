@@ -29,7 +29,8 @@ if (!function_exists('londone_electrical_enqueue_styles_scripts')) :
         // Swiper Bundle
         wp_enqueue_style('swiper', LONDONE_ELECTRICAL_URI . '/asset/css/swiper-bundle.min.css', array(), '10.0.0');
         // Font Awesome Icon Css
-        wp_enqueue_style('font-awesome', LONDONE_ELECTRICAL_URI . '/asset/css/all.min.css', array(), '10.0.0');
+        // wp_enqueue_style('font-awesome', LONDONE_ELECTRICAL_URI . '/asset/css/all.min.css', array(), '10.0.0');
+        wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css', array(), null);
         // Animate CSS
         wp_enqueue_style('animate', LONDONE_ELECTRICAL_URI . '/asset/css/animate.css', array(), '4.1.1');
         // Magnific Popup
@@ -122,65 +123,6 @@ if ( ! function_exists( 'londone_electrical_pattern_categories' ) ) :
 endif;
 add_action( 'init', 'londone_electrical_pattern_categories' );
 
-//theme pattern add
-// if ( ! function_exists( 'londone_electrical_register_all_patterns' ) ) :
-//     function londone_electrical_register_all_patterns() {
-//         $patterns_dir = get_template_directory() . '/patterns/';
-        
-//         if (!is_dir($patterns_dir)) {
-//             return;
-//         }
-
-//         $pattern_files = glob($patterns_dir . '*.html');
-
-//         foreach ($pattern_files as $file) {
-//             $content = file_get_contents($file);
-            
-//             preg_match('/<!--\s*(\{.*?\})\s*-->/', $content, $matches);
-            
-//             $metadata = array();
-//             if (!empty($matches[1])) {
-//                 $metadata = json_decode($matches[1], true);
-//             }
-
-//             $slug = 'londone_electrical/' . basename($file, '.html');
-//             $title = isset($metadata['title']) ? $metadata['title'] : ucwords(str_replace('-', ' ', basename($file, '.html')));
-//             $categories = isset($metadata['categories']) ? (array) $metadata['categories'] : array('londone_electrical');
-
-//             register_block_pattern(
-//                 $slug,
-//                 array(
-//                     'title'      => __($title, 'londone_electrical'),
-//                     'categories' => $categories,
-//                     'content'    => preg_replace('/<!--\s*\{.*?\}\s*-->/', '', $content),
-//                 )
-//             );
-//         }
-//     }
-// endif;
-// add_action('init', 'londone_electrical_register_all_patterns');
-
-//parts
-// function londone_electrical_register_template_parts() {
-//     register_block_pattern(
-//         'londone_electrical/topbar',
-//         array(
-//             'title'       => __( 'Top Bar', 'londone_electrical' ),
-//             'categories'  => array('header'),
-//             'content'     => file_get_contents(get_template_directory() . '/parts/topbar.php'),
-//         )
-//     );
-//     register_block_pattern(
-//         'londone_electrical/menubar',
-//         array(
-//             'title'       => __( 'Menu Bar', 'londone_electrical' ),
-//             'categories'  => array('header'),
-//             'content'     => file_get_contents(get_template_directory() . '/parts/menubar.php'),
-//         )
-//     );
-// }
-// add_action('init', 'londone_electrical_register_template_parts');
-
 //register menu
 if (!function_exists('londone_electrical_register_menus')) :
     function londone_electrical_register_menus() {
@@ -195,22 +137,16 @@ add_action('after_setup_theme', 'londone_electrical_register_menus');
 //bootstrap menu nav walker
 class Bootstrap_Navwalker extends Walker_Nav_Menu {
     function start_lvl(&$output, $depth = 0, $args = null) {
-        $output .= '<ul class="dropdown-menu">';
+        $output .= '<ul class="">';
     }
     
     function start_el(&$output, $item, $depth = 0, $args = null, $id = 0) {
         $class_names = join(' ', $item->classes ?? []);
         $has_children = in_array('menu-item-has-children', $item->classes ?? []);
 
-        $output .= '<li class="nav-item ' . ($has_children ? 'dropdown' : '') . '">';
-        $output .= '<a class="nav-link ' . ($has_children ? 'dropdown-toggle' : '') . '" href="' . esc_url($item->url) . '"' . ($has_children ? ' data-bs-toggle="dropdown"' : '') . '>';
+        $output .= '<li class="nav-item ' . ($has_children ? 'submenu' : '') . '">';
+        $output .= '<a class="nav-link ' . ($has_children ? '' : '') . '" href="' . esc_url($item->url) . '"' . ($has_children ? ' data-bs-toggle="dropdown"' : '') . '>';
         $output .= esc_html($item->title);
         $output .= '</a>';
     }
 }
-
-
-
-
-
-
