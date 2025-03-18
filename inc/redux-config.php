@@ -23,58 +23,11 @@ $args = array(
 
 Redux::set_args( $opt_name, $args );
 
- Redux::set_section( 
-    $opt_name, 
-    array(
-        'title'  => esc_html__( 'Basic Field', 'londone-electrical' ),
-        'id'     => 'basic',
-        'desc'   => esc_html__( 'Basic field with no subsections.', 'londone-electrical' ),
-        'icon'   => 'el el-home',
-        'fields' => array(
-            array(
-                'id'       => 'opt-text',
-                'type'     => 'text',
-                'title'    => esc_html__( 'Example Text', 'londone-electrical' ),
-                'desc'     => esc_html__( 'Example description.', 'londone-electrical' ),
-                'subtitle' => esc_html__( 'Example subtitle.', 'londone-electrical' ),
-                'hint'     => array(
-                    'content' => 'This is a <b>hint</b> tool-tip for the text field.<br/><br/>Add any HTML based text you like here.',
-                )
-            )
-        )
-    ) 
-);
+// Theme Options Folder
+$theme_option_files = glob(get_template_directory() . '/inc/theme-options/*.php');
 
-// $args = array(
-//     'opt_name'  => $opt_name,
-//     'display_name' => 'Theme Options',
-//     'menu_title' => 'Theme Options',
-//     'page_slug' => 'theme-options',
-//     'menu_type' => 'menu',
-//     'allow_sub_menu' => true,
-//     'admin_bar' => true,
-//     'customizer' => true,
-// );
-
-//Redux::setArgs($opt_name, $args);
-
-// General Settings Section
-// Redux::setSection($opt_name, array(
-//     'title'  => 'General Settings',
-//     'id'     => 'general',
-//     'desc'   => 'Basic theme settings',
-//     'fields' => array(
-//         array(
-//             'id'       => 'logo',
-//             'type'     => 'media',
-//             'title'    => 'Site Logo',
-//             'subtitle' => 'Upload your site logo here.',
-//         ),
-//         array(
-//             'id'       => 'footer_text',
-//             'type'     => 'text',
-//             'title'    => 'Footer Text',
-//             'default'  => '© 2025 My Theme. All rights reserved.',
-//         ),
-//     )
-// ));
+if (!empty($theme_option_files)) {
+    foreach ($theme_option_files as $file) {
+        require_once $file;
+    }
+}
