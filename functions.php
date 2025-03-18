@@ -81,6 +81,7 @@ if (!function_exists('londone_electrical_enqueue_styles_scripts')) :
     }
 endif;
 add_action('wp_enqueue_scripts', 'londone_electrical_enqueue_styles_scripts');
+add_action('enqueue_block_editor_assets', 'londone_electrical_enqueue_styles_scripts');
 
 // Adds theme support for post formats.
 if ( ! function_exists( 'londone_electrical_post_format_setup' ) ) :
@@ -149,4 +150,12 @@ class Bootstrap_Navwalker extends Walker_Nav_Menu {
         $output .= esc_html($item->title);
         $output .= '</a>';
     }
+}
+
+//ReduxFramework 
+if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/inc/redux-framework/redux-core/framework.php' ) ) {
+    require_once( dirname( __FILE__ ) . '/inc/redux-framework/redux-core/framework.php' );
+}
+if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/inc/redux-config.php' ) ) {
+    require_once( dirname( __FILE__ ) . '/inc/redux-config.php' );
 }
