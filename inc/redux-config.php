@@ -23,6 +23,27 @@ $args = array(
 
 Redux::set_args( $opt_name, $args );
 
+// Redux::setArgs($opt_name, array(
+//     'display_name' => 'Theme Options',
+//     'menu_title'   => 'Theme Options',
+//     'customizer'   => true,
+//     'output'       => true,
+//     'admin_bar'    => false,
+//     'page_priority' => 100,
+//     'page_slug'    => 'theme-options',
+//     'page_parent'  => 'themes.php',
+//     'admin_styles' => array(
+//         array(
+//             'handle' => 'redux-custom-css',
+//             'src'    => get_template_directory_uri() . '/assets/css/redux-custom.css',
+//             'deps'   => array(),
+//             'ver'    => '1.0',
+//             'media'  => 'all'
+//         )
+//     ),
+// ));
+
+
 // Theme Options Folder
 $theme_option_files = glob(get_template_directory() . '/inc/theme-options/*.php');
 

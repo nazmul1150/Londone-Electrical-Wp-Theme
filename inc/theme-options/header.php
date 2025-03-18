@@ -23,12 +23,21 @@ Redux::set_section(
         'priority' => 1,
         'fields'     => array(
             array(
-                'id'       => 'text-example',
+                'id'       => 'topbar-address',
                 'type'     => 'text',
-                'title'    => esc_html__( 'Text Field', 'londone-electrical' ),
-                'subtitle' => esc_html__( 'Subtitle', 'londone-electrical' ),
-                'desc'     => esc_html__( 'Field Description', 'londone-electrical' ),
-                'default'  => 'Default Text',
+                'title'    => esc_html__( 'Topbar Address', 'londone-electrical' ),
+                'desc'     => esc_html__( 'topbar sort adderss', 'londone-electrical' ),
+                'default'  => '25 Jump St, NY 1001',
+            ),
+            array(
+                'id'       => 'topbar-email',
+                'type'     => 'text',
+                'validate' => array(
+                    'email'
+                ),
+                'title'    => esc_html__( 'Topbar Email', 'londone-electrical' ),
+                'desc'     => esc_html__( 'topbar email', 'londone-electrical' ),
+                'default'  => 'info@domainname.com',
             ),
         ),
     )
