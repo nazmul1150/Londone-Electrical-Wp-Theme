@@ -122,7 +122,7 @@ NOTE: Redux is not intended to be used on its own. It requires a config file pro
 
 == Changelog ==
 
-= 4.5.6 =
+## 4.5.6
 * Fixed: Setting CHMOD defaults in construct to avoid errors in certain use cases.
 * Fixed: Installed empty placeholder for old `search` extension as WP did not remove it from old versions to updates, thus causing errors.
 * Fixed: `raw` field in sample-config.php trigger WP filesystem error when `FS_METHOD` set to `FTP_EXT` and creds are not entered.
