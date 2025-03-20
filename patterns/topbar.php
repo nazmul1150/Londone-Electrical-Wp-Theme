@@ -4,6 +4,13 @@
  * Slug: londone_electrical/topbar
  * Categories: header
  */
+
+ global $londone_electrical;
+ $topbar_address = $londone_electrical['topbar-address']?? '25 Jump St, NY 1001';
+ $topbar_email = $londone_electrical['topbar-email'] ?? 'info@domainname.com';
+ $topbar_instagram = $londone_electrical['topbar-instagram'] ?? '#';
+ $topbar_facebook = $londone_electrical['topbar-facebook'] ?? '#';
+ $topbar_twitter = $londone_electrical['topbar-twitter'] ?? '#';
 ?>
 
 <!-- wp:group -->
