@@ -6,6 +6,12 @@
  * Description: Header with site title and navigation.
  */
 
+ global $londone_electrical;
+ $header_logo = $londone_electrical['header-logo'];
+ $header_phone = $londone_electrical['header-phone'] ?? '123456789';
+ $header_btn_text = $londone_electrical['header-button-text'] ?? 'Book Now';
+ $header_btn_link = $londone_electrical['header-button-link'] ?? '#';
+
 ?>
 
 <!-- wp:html -->
@@ -15,7 +21,14 @@
             <div class="container">
                 <!-- Logo Start -->
                 <a class="navbar-brand" href="./">
-                    <img src="<?php echo get_template_directory_uri();?>/images/logo.svg" alt="Logo">
+                    <?php
+                      if (!empty($header_logo['url'])) {
+                        echo '<img src="' . esc_url($header_logo['url']) . '" alt="Site Logo">';
+                      } else {
+                        echo '<img src="' . esc_url(get_template_directory_uri() . '/images/logo.svg') . '" alt="Default Logo">';
+                      } 
+                    ?>
+                    
                 </a>
                 <!-- Logo End -->
 
@@ -37,7 +50,7 @@
                     
                     <!-- Header Contact Btn Start -->
                     <div class="header-contact-btn">
-                        <a href="tel:123456789" class="header-contact-now"><img src="images/icon-phone.svg" alt="">(123) 456 - 789</a>
+                        <a href="tel:<?php echo esc_html($header_phone); ?>" class="header-contact-now"><img src="<?php echo esc_url(get_template_directory_uri() . '/images/icon-phone.svg'); ?>" alt="phone icon"><?php echo esc_html($header_phone); ?></a>
                         <a href="contact.html" class="btn-default">book now</a>
                     </div>
                     <!-- Header Contact Btn End -->

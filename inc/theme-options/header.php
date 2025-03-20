@@ -12,7 +12,7 @@ Redux::set_section(
         'priority' => 1,
     )
 );
-
+//topbar
 Redux::set_section( 
     $opt_name,
     array(
@@ -75,7 +75,7 @@ Redux::set_section(
         ),
     )
 );
-
+//header
 Redux::set_section( 
     $opt_name,
     array(
