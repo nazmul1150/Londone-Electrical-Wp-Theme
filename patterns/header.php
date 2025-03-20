@@ -51,7 +51,7 @@
                     <!-- Header Contact Btn Start -->
                     <div class="header-contact-btn">
                         <a href="tel:<?php echo esc_html($header_phone); ?>" class="header-contact-now"><img src="<?php echo esc_url(get_template_directory_uri() . '/images/icon-phone.svg'); ?>" alt="phone icon"><?php echo esc_html($header_phone); ?></a>
-                        <a href="contact.html" class="btn-default">book now</a>
+                        <a href="<?php echo esc_url($header_btn_link); ?>" class="btn-default"><?php echo esc_html($header_btn_text); ?></a>
                     </div>
                     <!-- Header Contact Btn End -->
                 </div>
