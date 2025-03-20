@@ -21,8 +21,8 @@
                 <!-- Topbar Contact Information Start -->
                 <div class="topbar-contact-info">
                     <ul>
-                        <li><img src="<?php echo get_template_directory_uri();?>/images/icon-location.svg" alt="">25 Jump St, NY 1001</li>
-                        <li><a href="mailto:info@domainname.com"><img src="<?php echo get_template_directory_uri();?>/images/icon-mail.svg" alt="">info@domainname.com</a></li>
+                        <li><img src="<?php echo get_template_directory_uri();?>/images/icon-location.svg" alt=""><?php echo esc_html($topbar_address);?></li>
+                        <li><a href="mailto:<?php echo esc_html($topbar_email);?>"><img src="<?php echo get_template_directory_uri();?>/images/icon-mail.svg" alt=""><?php echo esc_html($topbar_email);?></a></li>
                     </ul>
                 </div>
                 <!-- Topbar Contact Information End -->
@@ -32,9 +32,9 @@
                 <!-- Topbar Social Links Start -->
                 <div class="topbar-social-links">
                     <ul>
-                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-dribbble"></i></a></li>
+                        <li><a href="<?php echo esc_html($topbar_instagram);?>" target="_blank" rel="nofollow"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="<?php echo esc_html($topbar_facebook);?>" target="_blank" rel="nofollow"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="<?php echo esc_html($topbar_twitter);?>" target="_blank" rel="nofollow"><i class="fa-brands fa-twitter"></i></a></li>
                     </ul>
                 </div>
                 <!-- Topbar Social Links End -->
