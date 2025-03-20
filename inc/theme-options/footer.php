@@ -42,7 +42,7 @@ Redux::set_section(
                 'title'    => esc_html__( 'Footer Logo', 'londone-electrical' ),
                 'desc'     => esc_html__( 'Upload footer logo', 'londone-electrical' ),
                 'default'  => array(
-                    'url'=> get_template_directory_uri() . '/images/logo.svg'
+                    'url'=> get_template_directory_uri() . '/images/footer-logo.svg'
                 ),
             ),
             array(
@@ -147,7 +147,7 @@ Redux::set_section(
         ),
     )
 );
-//column 44
+//column 4
 Redux::set_section( 
     $opt_name,
     array(
@@ -191,7 +191,7 @@ Redux::set_section(
             array(
                 'id'       => 'footer-copyright-text',
                 'type'     => 'text',
-                'title'    => esc_html__( 'All Rights Reserved.', 'londone-electrical' ),
+                'title'    => esc_html__( 'Text', 'londone-electrical' ),
                 'default'  => 'All Rights Reserved.',
             ),
             array(

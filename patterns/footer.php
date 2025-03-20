@@ -7,6 +7,28 @@
  * Description: Footer columns with logo, title, tagline and links.
  */
 
+ global $londone_electrical;
+ //column 1
+ $footer_logo = $londone_electrical['footer-logo'];
+ $footer_column1_text = $londone_electrical['footer-column1-text'] ?? 'Licensed electricians delivering exceptional service and peace of mind. Contact us anytime';
+ //column 2
+ $footer_column2_title = $londone_electrical['footer-column2-title'] ?? 'Quick Link';
+ $footer_column2_links= $londone_electrical['footer-column2-links'] ?? 'Add Link';//repeater
+//column 3
+ $footer_column3_title = $londone_electrical['footer-column3-title'] ?? 'Contact Us';
+ $footer_column3_address= $londone_electrical['footer-column3-address'] ?? '3891 Ranchview Dr. richardson, california 17';
+ $foofooter_column3_emails= $londone_electrical['footer-column3-emails'] ?? 'info@domain.com';//repeater
+ $footer_column3_phons= $londone_electrical['footer-column3-phons'] ?? '+01 456 785 889'; //repeater
+ //column 4
+ $footer_column4_title = $londone_electrical['footer-column4-title'] ?? 'Get in touch';
+ $footer_column4_text = $londone_electrical['footer-column4-text'] ?? 'Sign up for alerts, our latest blogs, thoughts, and insights';
+ $footer_column4_mailchimp_api= $londone_electrical['footer-column4-mailchimp-api'] ?? 'https://mailchimp.com/api';
+//copyright area
+  $footer_copyright-text = $londone_electrical['footer-copyright-text'] ?? 'All Rights Reserved.';
+  $instagram = $londone_electrical['footer-copyright-instagram'] ?? '#';
+  $facebook = $londone_electrical['footer-copyright-facebook'] ?? '#';
+  $twitter = $londone_electrical['footer-copyright-twitter'] ?? '#';
+
 ?>
 <!-- wp:group -->
 <!-- wp:pattern {"slug":"mytheme/footer-col-one"} /-->
@@ -18,13 +40,19 @@
                 <div class="about-footer">
                     <!-- Footer Logo Start -->
                     <div class="footer-logo">
-                        <img src="<?php echo get_template_directory_uri();?>/images/footer-logo.svg" alt="">
+                        <?php
+                        if (!empty($footer_logo['url'])) {
+                            echo '<img src="' . esc_url($footer_logo['url']) . '" alt="Site Logo">';
+                        } else {
+                            echo '<img src="' . esc_url(get_template_directory_uri() . '/images/footer-logo.svg') . '" alt="Default Logo">';
+                        } 
+                        ?> 
                     </div>
                     <!-- Footer Logo End -->
 
                     <!-- Footer Contact Box Start -->
                     <div class="about-footer-content">
-                        <p>Licensed electricians delivering exceptional service and peace of mind. Contact us anytime!</p>
+                        <p><?php echo esc_html($footer_column1_text); ?></p>
                     </div>
                     <!-- Footer Contact Box End -->
                 </div>

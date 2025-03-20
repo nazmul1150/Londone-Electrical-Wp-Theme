@@ -20,15 +20,14 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <!-- Logo Start -->
-                <a class="navbar-brand" href="./">
+                <a class="navbar-brand" href="<?php echo get_home_url(); ?>">
                     <?php
                       if (!empty($header_logo['url'])) {
                         echo '<img src="' . esc_url($header_logo['url']) . '" alt="Site Logo">';
                       } else {
                         echo '<img src="' . esc_url(get_template_directory_uri() . '/images/logo.svg') . '" alt="Default Logo">';
                       } 
-                    ?>
-                    
+                    ?> 
                 </a>
                 <!-- Logo End -->
 
