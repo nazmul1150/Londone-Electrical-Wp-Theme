@@ -12,19 +12,19 @@
  $footer_logo = $londone_electrical['footer-logo'];
  $footer_column1_text = $londone_electrical['footer-column1-text'] ?? 'Licensed electricians delivering exceptional service and peace of mind. Contact us anytime';
  //column 2
- $footer_column2_title = $londone_electrical['footer-column2-title'] ?? 'Quick Link';
- $footer_column2_links= $londone_electrical['footer-column2-links'] ?? 'Add Link';//repeater
+$footer_column2_title = $londone_electrical['footer-column2-title'] ?? 'Quick Link';
+$footer_column2_links= $londone_electrical['footer-column2-links'];//repeater
 //column 3
  $footer_column3_title = $londone_electrical['footer-column3-title'] ?? 'Contact Us';
  $footer_column3_address= $londone_electrical['footer-column3-address'] ?? '3891 Ranchview Dr. richardson, california 17';
- $foofooter_column3_emails= $londone_electrical['footer-column3-emails'] ?? 'info@domain.com';//repeater
+ $footer_column3_emails= $londone_electrical['footer-column3-emails'];//repeater
  $footer_column3_phons= $londone_electrical['footer-column3-phons'] ?? '+01 456 785 889'; //repeater
  //column 4
  $footer_column4_title = $londone_electrical['footer-column4-title'] ?? 'Get in touch';
  $footer_column4_text = $londone_electrical['footer-column4-text'] ?? 'Sign up for alerts, our latest blogs, thoughts, and insights';
  $footer_column4_mailchimp_api= $londone_electrical['footer-column4-mailchimp-api'] ?? 'https://mailchimp.com/api';
 //copyright area
-  $footer_copyright-text = $londone_electrical['footer-copyright-text'] ?? 'All Rights Reserved.';
+  $footer_copyright_text = $londone_electrical['footer-copyright-text'] ?? 'All Rights Reserved.';
   $instagram = $londone_electrical['footer-copyright-instagram'] ?? '#';
   $facebook = $londone_electrical['footer-copyright-facebook'] ?? '#';
   $twitter = $londone_electrical['footer-copyright-twitter'] ?? '#';
@@ -62,13 +62,16 @@
             <div class="col-lg-3 col-md-5">
                 <!-- Footer Links Start -->
                 <div class="footer-links">
-                    <h3>quick link</h3>
+                    <h3><?php echo esc_html($footer_column2_title); ?></h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About us</a></li>
-                        <li><a href="services.html">our services</a></li>
-                        <li><a href="projects.html">Latest projects</a></li>
-                        <li><a href="contact.html">Contact us</a></li>
+                        <?php
+                            if (!empty($footer_column2_links['footer-column2-link-text'])) {
+                                foreach ($footer_column2_links['footer-column2-link-text'] as $key => $text) {
+                                    $url = $footer_column2_links['footer-column2-link-url'][$key] ?? '#';
+                                    echo '<li><a href="' . esc_url($url) . '">' . esc_html($text) . '</a><br></li>';
+                                }
+                            }
+                        ?>
                     </ul>
                 </div>
                 <!-- Footer Links End -->	
@@ -77,14 +80,14 @@
             <div class="col-lg-3 col-md-7">
                 <!-- Footer Links Start -->
                 <div class="footer-links">
-                    <h3>contact us</h3>
+                    <h3><?php echo esc_html($footer_column3_title); ?></h3>
                     <!-- Footer Contact Item Start -->
                     <div class="footer-contact-item">
                         <div class="icon-box">
-                            <img src="images/icon-location-accent.svg" alt="">
+                            <img src="<?php echo get_template_directory_uri();?>/images/icon-location-accent.svg" alt="">
                         </div>
                         <div class="footer-contact-content">
-                            <p>3891 Ranchview Dr. richardson, california 17</p>
+                            <p><?php echo esc_html($footer_column3_address); ?></p>
                         </div>
                     </div>
                     <!-- Footer Contact Item End -->
@@ -92,11 +95,16 @@
                     <!-- Footer Contact Item Start -->
                     <div class="footer-contact-item">
                         <div class="icon-box">
-                            <img src="images/icon-mail-accent.svg" alt="">
+                            <img src="<?php echo get_template_directory_uri();?>/images/icon-mail-accent.svg" alt="">
                         </div>
                         <div class="footer-contact-content">
-                            <p><a href="mailto:info@domain.com">support@domainname.com</a></p>
-                            <p><a href="mailto:info@domain.com">info@domain.com</a></p>
+                        <?php
+                            if (!empty($footer_column3_emails['footer-column3-email'])) {
+                                foreach ($footer_column3_emails['footer-column3-email'] as $key => $text) {
+                                    echo '<p><a href="mailto:'.esc_html($text).'">'.esc_html($text).'</a></p>';
+                                }
+                            }
+                        ?>
                         </div>
                     </div>
                     <!-- Footer Contact Item End -->
@@ -104,10 +112,16 @@
                     <!-- Footer Contact Item Start -->
                     <div class="footer-contact-item">
                         <div class="icon-box">
-                            <img src="images/icon-phone-accent.svg" alt="">
+                            <img src="<?php echo get_template_directory_uri();?>/images/icon-phone-accent.svg" alt="">
                         </div>
                         <div class="footer-contact-content">
-                            <p><a href="tel:+456785889">+01 456 785 889</a></p>
+                            <?php
+                                if (!empty($footer_column3_phons['footer-column3-phone'])) {
+                                    foreach ($footer_column3_phons['footer-column3-phone'] as $key => $text) {
+                                        echo '<p><a href="tel:+'.esc_html($text).'">'.esc_html($text).'</a></p>';
+                                    }
+                                }
+                            ?>
                         </div>
                     </div>
                     <!-- Footer Contact Item End -->
@@ -118,9 +132,9 @@
             <div class="col-lg-3 col-md-12">
                 <!-- Footer Newsletter Form Start -->
                 <div class="footer-links footer-newsletter-form">
-                    <h3>Get in touch</h3>
-                    <p>Sign up for alerts, our latest blogs, thoughts, and insights</p>
-                    <form id="newslettersForm" action="#" method="POST">
+                    <h3><?php echo esc_html($footer_column4_title); ?></h3>
+                    <p><?php echo esc_html($footer_column4_text); ?></p>
+                    <form id="newslettersForm" action="<?php echo esc_url($footer_column4_mailchimp_api); ?>" method="POST">
                         <div class="form-group">
                             <input type="email" name="mail" class="form-control"  id="mail" placeholder="Enter your email" required>
                             <button type="submit" class="btn-default">subscribe</button>
@@ -135,16 +149,16 @@
                 <div class="footer-copyright">
                     <!-- Footer Copyright Text Start -->
                     <div class="footer-copyright-text">
-                        <p>Copyright © 2025 All Rights Reserved.</p>
+                        <p>Copyright © <?php echo date('Y').' '. esc_html($footer_copyright_text); ?></p>
                     </div>
                     <!-- Footer Copyright Text End -->
 
                     <!-- Footer Social Link Start -->
                     <div class="footer-social-links">
                         <ul>
-                            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="<?php echo esc_html($twitter); ?>"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="<?php echo esc_html($facebook); ?>"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="<?php echo esc_html($instagram); ?>"><i class="fa-brands fa-instagram"></i></a></li>
                         </ul>
                     </div>
                     <!-- Footer Social Link End -->

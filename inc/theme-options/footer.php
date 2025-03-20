@@ -76,6 +76,7 @@ Redux::set_section(
                 'type'   => 'repeater',
                 'title'  => esc_html__('Footer Column Links', 'londone-electrical'),
                 'desc'   => esc_html__('Footer Column menu links.', 'londone-electrical'),
+                'group_values' => true,
                 'fields' => array(
                     array(
                         'id'       => 'footer-column2-link-text',
@@ -84,13 +85,14 @@ Redux::set_section(
                         'default'  => 'Home',
                     ),
                     array(
-                        'id'       => 'footer-column2-link-text-link',
+                        'id'       => 'footer-column2-link-url',
                         'type'     => 'text',
-                        'title'    => esc_html__ ('Text Link', 'londone-electrical'),
+                        'title'    => esc_html__('Text Link', 'londone-electrical'),
                         'default'  => '#',
                     ),
                 ),
             ),
+            
         ),
     )
 );
@@ -121,6 +123,7 @@ Redux::set_section(
                 'type'   => 'repeater',
                 'title'  => esc_html__('Email', 'londone-electrical'),
                 'desc'   => esc_html__('Enter your email.', 'londone-electrical'),
+                'group_values' => true,
                 'fields' => array(
                     array(
                         'id'       => 'footer-column3-email',
@@ -135,6 +138,7 @@ Redux::set_section(
                 'type'   => 'repeater',
                 'title'  => esc_html__('Phone Number', 'londone-electrical'),
                 'desc'   => esc_html__('Enter your phone number.', 'londone-electrical'),
+                'group_values' => true,
                 'fields' => array(
                     array(
                         'id'       => 'footer-column3-phone',
