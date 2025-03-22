@@ -154,8 +154,12 @@ class Bootstrap_Navwalker extends Walker_Nav_Menu {
 
 //ReduxFramework 
 if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/inc/redux-framework/redux-core/framework.php' ) ) {
-    require_once( dirname( __FILE__ ) . '/inc/redux-framework/redux-core/framework.php' );
+    require_once( LONDONE_ELECTRICAL_PATH . '/inc/redux-framework/redux-core/framework.php' );
 }
 if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/inc/redux-config.php' ) ) {
-    require_once( dirname( __FILE__ ) . '/inc/redux-config.php' );
+    require_once( LONDONE_ELECTRICAL_PATH . '/inc/redux-config.php' );
 }
+
+
+//guten block
+require_once( LONDONE_ELECTRICAL_PATH . '/inc/blocks.php' );
