@@ -214,6 +214,73 @@
 				</div>
 				
 			</div>
+
+			<?php 
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$posts_per_page = get_option('posts_per_page'); // Reading Settings থেকে সংখ্যা নেওয়া
+
+$args = array(
+    'post_type'      => 'post',
+    'posts_per_page' => $posts_per_page,
+    'paged'          => $paged,
+);
+$query = new WP_Query($args);
+
+if ($query->have_posts()) :
+    while ($query->have_posts()) : $query->the_post(); 
+?>
+    <div class="col-lg-4 col-md-6">
+        <div class="post-item wow fadeInUp">
+            <div class="post-featured-image">
+                <a href="<?php the_permalink(); ?>" data-cursor-text="View">
+                    <figure class="image-anime">
+                        <?php if (has_post_thumbnail()) : ?>
+                            <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title_attribute(); ?>">
+                        <?php else : ?>
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/default.jpg" alt="Default Image">
+                        <?php endif; ?>
+                    </figure>
+                </a>
+            </div>
+            
+            <div class="post-item-body">
+                <div class="post-item-content">
+                    <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                </div>
+                
+                <div class="post-item-btn">
+                    <a href="<?php the_permalink(); ?>" class="readmore-btn">read more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php 
+    endwhile;
+?>
+
+    <!-- Pagination -->
+    <div class="col-lg-12">
+        <div class="page-pagination wow fadeInUp" data-wow-delay="1.2s">
+            <?php 
+            echo paginate_links(array(
+                'total'        => $query->max_num_pages,
+                'current'      => max(1, get_query_var('paged')),
+                'prev_text'    => '<i class="fa-solid fa-arrow-left-long"></i>',
+                'next_text'    => '<i class="fa-solid fa-arrow-right-long"></i>',
+                'type'         => 'list',
+            ));
+            ?>
+        </div>
+    </div>
+
+<?php 
+    wp_reset_postdata();
+else :
+    echo '<p>No posts found.</p>';
+endif;
+?>
+
+
 		</div>
 	</div>
 </div>
