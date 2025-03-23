@@ -1,17 +1,13 @@
 <?php
 /**
- * Title: Post format name
- * Slug: londone_electrical/blog
+ * Title: Post Blog Patterns
+ * Slug: londone_electrical_blog_all
  * Categories: londone_electrical_post-format
  * Description: Prints the name of the post format with the help of the Block Bindings API.
- *
- * @package WordPress
- * @subpackage Twenty_Twenty_Five
- * @since Twenty Twenty-Five 1.0
  */
 
 ?>
-
+<!-- wp:group -->
 <div class="page-header bg-section dark-section">
 	<div class="container">
 		<div class="row">
@@ -42,7 +38,7 @@
 					<div class="post-featured-image">
 						<a href="blog-single.html" data-cursor-text="View">
 							<figure class="image-anime">
-								<img src="images/post-1.jpg" alt="">
+								<img src="<?php echo get_template_directory_uri(); ?>/images/post-1.jpg" alt="">
 							</figure>
 						</a>
 					</div>
@@ -70,7 +66,7 @@
 				   <div class="post-featured-image">
 						<a href="blog-single.html" data-cursor-text="View">
 							<figure class="image-anime">
-								<img src="images/post-2.jpg" alt="">
+								<img src="<?php echo get_template_directory_uri(); ?>/images/post-2.jpg" alt="">
 							</figure>
 						</a>
 					</div>
@@ -98,7 +94,7 @@
 					<div class="post-featured-image">
 						<a href="blog-single.html" data-cursor-text="View">
 							<figure class="image-anime">
-								<img src="images/post-3.jpg" alt="">
+								<img src="<?php echo get_template_directory_uri(); ?>/images/post-3.jpg" alt="">
 							</figure>
 						</a>
 					</div>
@@ -128,7 +124,7 @@
 					<div class="post-featured-image">
 						<a href="blog-single.html" data-cursor-text="View">
 							<figure class="image-anime">
-								<img src="images/post-4.jpg" alt="">
+								<img src="<?php echo get_template_directory_uri(); ?>/images/post-4.jpg" alt="">
 							</figure>
 						</a>
 					</div>
@@ -156,7 +152,7 @@
 				   <div class="post-featured-image">
 						<a href="blog-single.html" data-cursor-text="View">
 							<figure class="image-anime">
-								<img src="images/post-5.jpg" alt="">
+								<img src="<?php echo get_template_directory_uri(); ?>/images/post-5.jpg" alt="">
 							</figure>
 						</a>
 					</div>
@@ -184,7 +180,7 @@
 					<div class="post-featured-image">
 						<a href="blog-single.html" data-cursor-text="View">
 							<figure class="image-anime">
-								<img src="images/post-6.jpg" alt="">
+								<img src="<?php echo get_template_directory_uri(); ?>/images/post-6.jpg" alt="">
 							</figure>
 						</a>
 					</div>
@@ -221,3 +217,4 @@
 		</div>
 	</div>
 </div>
+<!-- /wp:group -->
