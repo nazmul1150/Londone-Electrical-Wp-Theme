@@ -1,7 +1,18 @@
-<!-- wp:template-part {"slug":"header"} /-->
+<?php
+/**
+ * Title: Post format name
+ * Slug: londone_electrical/blog
+ * Categories: londone_electrical_post-format
+ * Description: Prints the name of the post format with the help of the Block Bindings API.
+ *
+ * @package WordPress
+ * @subpackage Twenty_Twenty_Five
+ * @since Twenty Twenty-Five 1.0
+ */
 
+?>
 
- <div class="page-header bg-section dark-section">
+<div class="page-header bg-section dark-section">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
@@ -210,12 +221,3 @@
 		</div>
 	</div>
 </div>
-
-<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
-<main class="wp-block-group" style="margin-top:var(--wp--preset--spacing--60)">
-	<!-- wp:pattern {"slug":"londone_electrical/hidden-blog-heading"} /-->
-	<!-- wp:pattern {"slug":"londone_electrical/template-query-loop"} /-->
-</main>
-<!-- /wp:group -->
-
-<!-- wp:template-part {"slug":"footer"} /-->
