@@ -162,4 +162,4 @@ if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/inc/redux-con
 
 
 //guten block
-require_once( LONDONE_ELECTRICAL_PATH . '/inc/blocks.php' );
+require_once( LONDONE_ELECTRICAL_PATH . '/inc/block-support.php' );

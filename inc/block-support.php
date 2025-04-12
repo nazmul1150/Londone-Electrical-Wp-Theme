@@ -1,5 +1,10 @@
 <?php
-function yourtheme_register_blocks() {
-    register_block_type(get_template_directory() . '/inc/blocks/accordion');
+function mytheme_register_blocks() {
+    $blocks = [ 'hero', 'testimonial' ]; // block folder names
+
+    foreach ( $blocks as $block ) {
+        register_block_type( __DIR__ . "/blocks/$block" );
+    }
 }
-add_action('init', 'yourtheme_register_blocks');
+add_action( 'init', 'mytheme_register_blocks' );
+
