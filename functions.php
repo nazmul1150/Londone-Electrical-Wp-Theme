@@ -165,7 +165,7 @@ if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/inc/redux-con
 //require_once( LONDONE_ELECTRICAL_PATH . '/inc/block-support.php' );
 
 function mytheme_register_blocks() {
-	$blocks = ['block-accordion'];
+	$blocks = ['accordion'];
 	foreach ($blocks as $block) {
 		register_block_type( get_template_directory() . "/inc/theme-blocks/{$block}/block.json" );
 	}

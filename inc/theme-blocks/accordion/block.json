@@ -1,30 +1,26 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 3,
+	"apiVersion": 2,
 	"name": "nextland/accordion",
-	"version": "0.1.0",
-	"title": "Nextland Accordion",
+	"title": "Accordion",
 	"category": "widgets",
-	"icon": "list-view",
-	"description": "A simple accordion block with toggle functionality.",
-	"supports": {
-		"html": false
-	},
+	"icon": "menu",
+	"description": "An accordion block.",
+	"editorScript": "file:../build/accordion.js",
+	"style": "file:./style.css",
+	"editorStyle": "file:./editor.css",
+	"viewScript": "file:./view.js",
 	"attributes": {
 		"tabs": {
 			"type": "array",
 			"default": [
-				{ "title": "Tab 1", "content": "Tab 1 content" },
-				{ "title": "Tab 2", "content": "Tab 2 content" }
+				{ "title": "Tab 1" },
+				{ "title": "Tab 2" }
 			]
 		},
 		"activeTab": {
 			"type": "number",
 			"default": 0
 		}
-	},
-	"editorScript": "file:../build/accordion.js",
-	"editorStyle": "file:./editor.css",
-	"style": "file:./style.css",
-	"viewScript": "file:./view.js"
+	}
 }

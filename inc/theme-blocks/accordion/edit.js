@@ -5,12 +5,7 @@ export default function Edit({ attributes }) {
 
 	return (
 		<div {...useBlockProps()}>
-			{tabs.map((tab, index) => (
-				<div key={index}>
-					<strong>{tab.title}</strong>
-					<p>{tab.content}</p>
-				</div>
-			))}
+			nazmul
 		</div>
 	);
 }
