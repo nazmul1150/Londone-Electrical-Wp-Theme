@@ -164,26 +164,20 @@ if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/inc/redux-con
 //guten block
 //require_once( LONDONE_ELECTRICAL_PATH . '/inc/block-support.php' );
 
-function mytheme_register_blocks() {
-	$blocks = ['accordion'];
-	foreach ($blocks as $block) {
-		register_block_type( get_template_directory() . "/inc/theme-blocks/{$block}/block.json" );
-	}
-}
-add_action('init', 'mytheme_register_blocks');
-
 
 function londone_electrical_register_blocks() {
-    $blocks = ['accordion']; // চাইলে এখানে আরো ব্লক যোগ করো
+    $blocks = ['accordion']; // চাইলে আরো ব্লক অ্যাড করো
 
     foreach ($blocks as $block) {
         $block_dir = get_template_directory() . "/inc/theme-blocks/{$block}";
         $php_file  = "{$block_dir}/{$block}.php";
 
         if ( file_exists( $php_file ) ) {
-            register_block_type( $block_dir ); // PHP render support
+            // PHP-render block (requires "render" key in block.json)
+            register_block_type( $block_dir );
         } else {
-            register_block_type_from_metadata( $block_dir ); // JS fallback
+            // JS-render block (uses edit.js & save.js)
+            register_block_type_from_metadata( $block_dir );
         }
     }
 }

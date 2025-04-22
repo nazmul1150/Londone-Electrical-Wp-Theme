@@ -10,7 +10,7 @@
 	"style": "file:./style.css",
 	"editorStyle": "file:./editor.css",
 	"viewScript": "file:./view.js",
-	//"render": "file:./accordion.php",
+	"render": "file:./accordion.php",
 	"attributes": {
 		"tabs": {
 			"type": "array",
