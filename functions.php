@@ -171,3 +171,20 @@ function mytheme_register_blocks() {
 	}
 }
 add_action('init', 'mytheme_register_blocks');
+
+
+function londone_electrical_register_blocks() {
+    $blocks = ['accordion']; // চাইলে এখানে আরো ব্লক যোগ করো
+
+    foreach ($blocks as $block) {
+        $block_dir = get_template_directory() . "/inc/theme-blocks/{$block}";
+        $php_file  = "{$block_dir}/{$block}.php";
+
+        if ( file_exists( $php_file ) ) {
+            register_block_type( $block_dir ); // PHP render support
+        } else {
+            register_block_type_from_metadata( $block_dir ); // JS fallback
+        }
+    }
+}
+add_action('init', 'londone_electrical_register_blocks');
