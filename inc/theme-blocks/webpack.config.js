@@ -6,6 +6,7 @@ module.exports = {
 	mode: 'development', // optional, but useful
 	entry: {
 		accordion: path.resolve(__dirname, 'accordion/index.js'),
+		heroslider: path.resolve(__dirname, 'hero-slider/index.js'),
 	},
 	output: {
 		path: path.resolve(__dirname, 'build'),

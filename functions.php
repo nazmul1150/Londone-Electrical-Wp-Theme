@@ -164,9 +164,8 @@ if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/inc/redux-con
 //guten block
 //require_once( LONDONE_ELECTRICAL_PATH . '/inc/block-support.php' );
 
-
 function londone_electrical_register_blocks() {
-    $blocks = ['accordion']; // চাইলে আরো ব্লক অ্যাড করো
+    $blocks = ['accordion', 'hero-slider']; // চাইলে আরো ব্লক অ্যাড করো
 
     foreach ($blocks as $block) {
         $block_dir = get_template_directory() . "/inc/theme-blocks/{$block}";
@@ -182,3 +181,4 @@ function londone_electrical_register_blocks() {
     }
 }
 add_action('init', 'londone_electrical_register_blocks');
+
