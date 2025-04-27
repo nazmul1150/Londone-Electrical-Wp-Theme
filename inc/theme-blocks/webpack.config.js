@@ -7,6 +7,8 @@ module.exports = {
 	entry: {
 		accordion: path.resolve(__dirname, 'accordion/index.js'),
 		heroslider: path.resolve(__dirname, 'hero-slider/index.js'),
+		heroctabox: path.resolve(__dirname, 'hero-cta-box/index.js'),
+		aboutus: path.resolve(__dirname, 'about-us/index.js'),
 	},
 	output: {
 		path: path.resolve(__dirname, 'build'),
