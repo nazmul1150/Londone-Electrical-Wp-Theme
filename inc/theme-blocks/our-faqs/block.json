@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "nextland/our-faqs",
+	"name": "londone-electrical/our-faqs",
 	"title": "Our Faqs",
-	"category": "widgets",
+	"category": "londoneelectrical",
 	"icon": "menu",
 	"description": "Our Faqs block.",
 	"editorScript": "file:../build/ourfaqs.js",

@@ -49,7 +49,7 @@
                                                 <!-- Customer Image Start -->
                                                 <div class="customer-image">
                                                     <figure class="image-anime">
-                                                        <img src="images/customer-img-1.jpg" alt="">
+                                                        <img src="<?php echo get_template_directory_uri();?>/images/customer-img-1.jpg" alt="">
                                                     </figure>
                                                 </div>
                                                 <!-- Customer Image End -->
@@ -57,7 +57,7 @@
                                                 <!-- Customer Image Start -->
                                                 <div class="customer-image">
                                                     <figure class="image-anime">
-                                                        <img src="images/customer-img-2.jpg" alt="">
+                                                        <img src="<?php echo get_template_directory_uri();?>/images/customer-img-2.jpg" alt="">
                                                     </figure>
                                                 </div>
                                                 <!-- Customer Image End -->
@@ -65,7 +65,7 @@
                                                 <!-- Customer Image Start -->
                                                 <div class="customer-image">
                                                     <figure class="image-anime">
-                                                        <img src="images/customer-img-3.jpg" alt="">
+                                                        <img src="<?php echo get_template_directory_uri();?>/images/customer-img-3.jpg" alt="">
                                                     </figure>
                                                 </div>
                                                 <!-- Customer Image End -->
@@ -73,7 +73,7 @@
                                                 <!-- Customer Image Start -->
                                                 <div class="customer-image">
                                                     <figure class="image-anime">
-                                                        <img src="images/customer-img-4.jpg" alt="">
+                                                        <img src="<?php echo get_template_directory_uri();?>/images/customer-img-4.jpg" alt="">
                                                     </figure>
                                                 </div>
                                                 <!-- Customer Image End -->
@@ -137,7 +137,7 @@
                                                 <!-- Customer Image Start -->
                                                 <div class="customer-image">
                                                     <figure class="image-anime">
-                                                        <img src="images/customer-img-1.jpg" alt="">
+                                                        <img src="<?php echo get_template_directory_uri();?>/images/customer-img-1.jpg" alt="">
                                                     </figure>
                                                 </div>
                                                 <!-- Customer Image End -->
@@ -145,7 +145,7 @@
                                                 <!-- Customer Image Start -->
                                                 <div class="customer-image">
                                                     <figure class="image-anime">
-                                                        <img src="images/customer-img-2.jpg" alt="">
+                                                        <img src="<?php echo get_template_directory_uri();?>/images/customer-img-2.jpg" alt="">
                                                     </figure>
                                                 </div>
                                                 <!-- Customer Image End -->
@@ -153,7 +153,7 @@
                                                 <!-- Customer Image Start -->
                                                 <div class="customer-image">
                                                     <figure class="image-anime">
-                                                        <img src="images/customer-img-3.jpg" alt="">
+                                                        <img src="<?php echo get_template_directory_uri();?>/images/customer-img-3.jpg" alt="">
                                                     </figure>
                                                 </div>
                                                 <!-- Customer Image End -->
@@ -161,7 +161,7 @@
                                                 <!-- Customer Image Start -->
                                                 <div class="customer-image">
                                                     <figure class="image-anime">
-                                                        <img src="images/customer-img-4.jpg" alt="">
+                                                        <img src="<?php echo get_template_directory_uri();?>/images/customer-img-4.jpg" alt="">
                                                     </figure>
                                                 </div>
                                                 <!-- Customer Image End -->

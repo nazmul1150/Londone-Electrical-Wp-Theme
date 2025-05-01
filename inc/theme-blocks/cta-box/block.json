@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "nextland/cta-box",
+	"name": "londone-electrical/cta-box",
 	"title": "Cta Box",
-	"category": "widgets",
+	"category": "londoneelectrical",
 	"icon": "menu",
 	"description": "Our Goals block.",
 	"editorScript": "file:../build/ctabox.js",

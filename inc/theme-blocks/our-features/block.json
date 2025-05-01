@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "nextland/our-features",
+	"name": "londone-electrical/our-features",
 	"title": "Our Features",
-	"category": "widgets",
+	"category": "londoneelectricall",
 	"icon": "menu",
 	"description": "Our Features block.",
 	"editorScript": "file:../build/ourfeatures.js",

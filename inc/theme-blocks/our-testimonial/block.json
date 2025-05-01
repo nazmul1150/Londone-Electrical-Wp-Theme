@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "nextland/our-testimonial",
+	"name": "londone-electrical/our-testimonial",
 	"title": "Our Testimonial",
-	"category": "widgets",
+	"category": "londoneelectrical",
 	"icon": "menu",
 	"description": "Our Testimonial block.",
 	"editorScript": "file:../build/ourtestimonial.js",

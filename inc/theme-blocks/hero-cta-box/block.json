@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "nextland/hero-cta-box",
+	"name": "londone-electrical/hero-cta-box",
 	"title": "hero cta box",
-	"category": "widgets",
+	"category": "londoneelectrical",
 	"icon": "menu",
 	"description": "An hero cta box.",
 	"editorScript": "file:../build/heroctabox.js",

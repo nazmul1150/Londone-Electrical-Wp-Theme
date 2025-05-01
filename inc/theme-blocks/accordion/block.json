@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "nextland/accordion",
+	"name": "londone-electrical/accordion",
 	"title": "Accordion",
-	"category": "widgets",
+	"category": "londoneelectrical",
 	"icon": "menu",
 	"description": "An accordion block.",
 	"editorScript": "file:../build/accordion.js",

@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "nextland/about-us",
+	"name": "londone-electrical/about-us",
 	"title": "About Us",
-	"category": "widgets",
+	"category": "londoneelectrical",
 	"icon": "menu",
 	"description": "An hero slider block.",
 	"editorScript": "file:../build/aboutus.js",

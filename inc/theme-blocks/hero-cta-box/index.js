@@ -2,7 +2,7 @@ import { registerBlockType } from '@wordpress/blocks';
 import Edit from './edit';
 import Save from './save';
 
-registerBlockType('nextland/hero-cta-box', {
+registerBlockType('londone-electrical/hero-cta-box', {
     edit: Edit,
     save: Save,
 });

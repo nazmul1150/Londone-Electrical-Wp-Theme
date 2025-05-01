@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "nextland/our-pricing",
+	"name": "londone-electrical/our-pricing",
 	"title": "Our Pricing",
-	"category": "widgets",
+	"category": "londoneelectrical",
 	"icon": "menu",
 	"description": "Our Pricing block.",
 	"editorScript": "file:../build/ourpricing.js",

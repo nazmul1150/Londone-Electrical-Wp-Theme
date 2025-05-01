@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "nextland/our-facts",
+	"name": "londone-electrical/our-facts",
 	"title": "Our Facts",
-	"category": "widgets",
+	"category": "londoneelectrical",
 	"icon": "menu",
 	"description": "Our Facts block.",
 	"editorScript": "file:../build/ourfacts.js",

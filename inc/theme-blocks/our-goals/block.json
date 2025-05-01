@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "nextland/our-goals",
+	"name": "londone-electrical/our-goals",
 	"title": "Our Goals",
-	"category": "widgets",
+	"category": "londoneelectrical",
 	"icon": "menu",
 	"description": "Our Goals block.",
 	"editorScript": "file:../build/ourgoals.js",

@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "nextland/hero-slider",
+	"name": "londone-electrical/hero-slider",
 	"title": "hero slider",
-	"category": "widgets",
+	"category": "londoneelectrical",
 	"icon": "menu",
 	"description": "An hero slider block.",
 	"editorScript": "file:../build/heroslider.js",

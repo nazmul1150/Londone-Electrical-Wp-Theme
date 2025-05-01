@@ -19,6 +19,12 @@ module.exports = {
 		ourfaqs: path.resolve(__dirname, 'our-faqs/index.js'),
 		ourblog: path.resolve(__dirname, 'our-blog/index.js'),
 		ourpricing: path.resolve(__dirname, 'our-pricing/index.js'),
+		breadcrumb: path.resolve(__dirname, 'breadcrumb/index.js'),
+		ourapproach: path.resolve(__dirname, 'our-approach/index.js'),
+		trustedexpert: path.resolve(__dirname, 'trusted-expert/index.js'),
+		whychooseus: path.resolve(__dirname, 'why-choose-us/index.js'),
+		ourteam: path.resolve(__dirname, 'our-team/index.js'),
+		companyvalues: path.resolve(__dirname, 'company-values/index.js'),
 	},
 	output: {
 		path: path.resolve(__dirname, 'build'),

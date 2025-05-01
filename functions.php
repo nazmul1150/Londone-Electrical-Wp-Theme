@@ -82,8 +82,9 @@ if (!function_exists('londone_electrical_enqueue_styles_scripts')) :
         wp_enqueue_script('custom-function', LONDONE_ELECTRICAL_URI . '/asset/js/function.js', array('jquery'), null, true);
     }
 endif;
-add_action('wp_enqueue_scripts', 'londone_electrical_enqueue_styles_scripts');
-add_action('enqueue_block_editor_assets', 'londone_electrical_enqueue_styles_scripts');
+add_action( 'wp_enqueue_scripts', 'londone_electrical_enqueue_styles_scripts' );
+add_action( 'enqueue_block_editor_assets', 'londone_electrical_enqueue_styles_scripts' );
+add_action( 'enqueue_block_assets', 'londone_electrical_enqueue_styles_scripts' );
 
 // Adds theme support for post formats.
 if ( ! function_exists( 'londone_electrical_post_format_setup' ) ) :
@@ -162,12 +163,40 @@ if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/inc/redux-con
     require_once( LONDONE_ELECTRICAL_PATH . '/inc/redux-config.php' );
 }
 
+//guten block category register
+add_filter( 'block_categories_all', 'londone_electrical_new_block_category', 5 );
+
+function londone_electrical_new_block_category( $categories ) {
+    // Check if the active theme is "Londone Electrical"
+    if ( 'Londone Electrical' === wp_get_theme()->get( 'Name' ) ) {
+        $position = 0; // Theme-er jonno first position
+    } else {
+        $position = 2; // Plugin ba onno context-er jonno
+    }
+
+    // Define new category
+    $new_category = array(
+        array(
+            'slug'  => 'londoneelectrical',
+            'title' => __( 'Londone Electrical', 'londone-electrical' ),
+            'icon'  => 'lightbulb',
+        )
+    );
+
+    // Insert at desired position
+    array_splice( $categories, $position, 0, $new_category );
+
+    return $categories;
+}
+
 
 //guten block
 //require_once( LONDONE_ELECTRICAL_PATH . '/inc/block-support.php' );
 
 function londone_electrical_register_blocks() {
-    $blocks = ['accordion', 'hero-slider', 'hero-cta-box', 'about-us', 'our-services', 'our-awards', 'our-features', 'our-goals', 'our-facts', 'cta-box', 'our-testimonial', 'our-faqs', 'our-blog', 'our-pricing']; // চাইলে আরো ব্লক অ্যাড করো
+    $blocks = ['accordion', 'hero-slider', 'hero-cta-box', 'about-us', 'our-services', 'our-awards',
+    'our-features', 'our-goals', 'our-facts', 'cta-box', 'our-testimonial', 'our-faqs', 'our-blog', 
+    'our-pricing', 'breadcrumb', 'our-approach', 'trusted-expert', 'why-choose-us', 'our-team', 'company-values']; // চাইলে আরো ব্লক অ্যাড করো
 
     foreach ($blocks as $block) {
         $block_dir = get_template_directory() . "/inc/theme-blocks/{$block}";

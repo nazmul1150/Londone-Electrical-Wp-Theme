@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "londone-electrical/why-choose-us",
+	"title": "Whym Choose Us",
+	"category": "londoneelectrical",
+	"icon": "menu",
+	"description": "Whym Choose Us block.",
+	"editorScript": "file:../build/whychooseus.js",
+	"style": "file:./style.css",
+	"editorStyle": "file:./editor.css",
+	"viewScript": "file:./view.js",
+	"render": "file:./why-choose-us.php",
+	"attributes": {
+		"tabs": {
+			"type": "array",
+			"default": [
+				{ "title": "Tab 1" },
+				{ "title": "Tab 2" }
+			]
+		},
+		"activeTab": {
+			"type": "number",
+			"default": 0
+		}
+	}
+}

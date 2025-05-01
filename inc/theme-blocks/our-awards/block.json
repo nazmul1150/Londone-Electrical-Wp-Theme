@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "nextland/our-awards",
+	"name": "londone-electrical/our-awards",
 	"title": "Our Awards",
-	"category": "widgets",
+	"category": "londoneelectrical",
 	"icon": "menu",
 	"description": "Our Awards block.",
 	"editorScript": "file:../build/ourawards.js",

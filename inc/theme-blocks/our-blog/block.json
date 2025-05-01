@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "nextland/our-blog",
+	"name": "londone-electrical/our-blog",
 	"title": "Our Blog",
-	"category": "widgets",
+	"category": "londoneelectrical",
 	"icon": "menu",
 	"description": "Our Blog block.",
 	"editorScript": "file:../build/ourblog.js",
