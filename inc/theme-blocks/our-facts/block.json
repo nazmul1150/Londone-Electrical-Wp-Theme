@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "nextland/our-facts",
+	"title": "Our Facts",
+	"category": "widgets",
+	"icon": "menu",
+	"description": "Our Facts block.",
+	"editorScript": "file:../build/ourfacts.js",
+	"style": "file:./style.css",
+	"editorStyle": "file:./editor.css",
+	"viewScript": "file:./view.js",
+	"render": "file:./our-facts.php",
+	"attributes": {
+		"tabs": {
+			"type": "array",
+			"default": [
+				{ "title": "Tab 1" },
+				{ "title": "Tab 2" }
+			]
+		},
+		"activeTab": {
+			"type": "number",
+			"default": 0
+		}
+	}
+}

@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "nextland/our-awards",
+	"title": "Our Awards",
+	"category": "widgets",
+	"icon": "menu",
+	"description": "Our Awards block.",
+	"editorScript": "file:../build/ourawards.js",
+	"style": "file:./style.css",
+	"editorStyle": "file:./editor.css",
+	"viewScript": "file:./view.js",
+	"render": "file:./our-awards.php",
+	"attributes": {
+		"tabs": {
+			"type": "array",
+			"default": [
+				{ "title": "Tab 1" },
+				{ "title": "Tab 2" }
+			]
+		},
+		"activeTab": {
+			"type": "number",
+			"default": 0
+		}
+	}
+}

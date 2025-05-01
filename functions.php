@@ -45,6 +45,7 @@ if (!function_exists('londone_electrical_enqueue_styles_scripts')) :
         // jQuery (WordPress includes it by default, so we can load it)
         wp_enqueue_script('jquery'); 
         // Bootstrap JS
+        wp_enqueue_script('jquery-js', LONDONE_ELECTRICAL_URI . '/asset/js/jquery-3.7.1.min.js', array(), null, true);
         wp_enqueue_script('bootstrap', LONDONE_ELECTRICAL_URI . '/asset/js/bootstrap.min.js', array('jquery'), null, true);
         // Validator JS
         wp_enqueue_script('validator', LONDONE_ELECTRICAL_URI . '/asset/js/validator.min.js', array('jquery'), null, true);
@@ -67,7 +68,7 @@ if (!function_exists('londone_electrical_enqueue_styles_scripts')) :
         // GSAP JS
         wp_enqueue_script('gsap', LONDONE_ELECTRICAL_URI . '/asset/js/gsap.min.js', array(), null, true);
         // MagicCursor JS
-        wp_enqueue_script('magiccursor', LONDONE_ELECTRICAL_URI . '/asset/js/magiccursor.js', array(), null, true);
+        wp_enqueue_script('magiccursor', LONDONE_ELECTRICAL_URI . '/asset/js/magiccursor.js', array('jquery'), null, true);
         // SplitText JS
         wp_enqueue_script('splittext', LONDONE_ELECTRICAL_URI . '/asset/js/SplitText.js', array(), null, true);
         // ScrollTrigger JS
@@ -77,7 +78,8 @@ if (!function_exists('londone_electrical_enqueue_styles_scripts')) :
         // WOW JS
         wp_enqueue_script('wow', LONDONE_ELECTRICAL_URI . '/asset/js/wow.min.js', array(), null, true);
         // Custom Function JS (Ensure this is loaded last if it depends on other scripts)
-        wp_enqueue_script('custom-function', LONDONE_ELECTRICAL_URI . '/asset/js/function.js', array('jquery', 'bootstrap', 'swiper', 'wow'), null, true);
+        // wp_enqueue_script('custom-function', LONDONE_ELECTRICAL_URI . '/asset/js/function.js', array('jquery', 'bootstrap', 'swiper', 'wow', 'magiccursor'), null, true);
+        wp_enqueue_script('custom-function', LONDONE_ELECTRICAL_URI . '/asset/js/function.js', array('jquery'), null, true);
     }
 endif;
 add_action('wp_enqueue_scripts', 'londone_electrical_enqueue_styles_scripts');
@@ -165,7 +167,7 @@ if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/inc/redux-con
 //require_once( LONDONE_ELECTRICAL_PATH . '/inc/block-support.php' );
 
 function londone_electrical_register_blocks() {
-    $blocks = ['accordion', 'hero-slider', 'hero-cta-box', 'about-us']; // চাইলে আরো ব্লক অ্যাড করো
+    $blocks = ['accordion', 'hero-slider', 'hero-cta-box', 'about-us', 'our-services', 'our-awards', 'our-features', 'our-goals', 'our-facts', 'cta-box', 'our-testimonial', 'our-faqs', 'our-blog', 'our-pricing']; // চাইলে আরো ব্লক অ্যাড করো
 
     foreach ($blocks as $block) {
         $block_dir = get_template_directory() . "/inc/theme-blocks/{$block}";
