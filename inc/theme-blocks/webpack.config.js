@@ -25,6 +25,7 @@ module.exports = {
 		whychooseus: path.resolve(__dirname, 'why-choose-us/index.js'),
 		ourteam: path.resolve(__dirname, 'our-team/index.js'),
 		companyvalues: path.resolve(__dirname, 'company-values/index.js'),
+		contactus: path.resolve(__dirname, 'contact-us/index.js'),
 	},
 	output: {
 		path: path.resolve(__dirname, 'build'),

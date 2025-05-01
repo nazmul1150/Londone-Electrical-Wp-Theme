@@ -62,14 +62,18 @@ if (!function_exists('londone_electrical_enqueue_styles_scripts')) :
         // Magnific Popup JS
         wp_enqueue_script('magnific-popup', LONDONE_ELECTRICAL_URI . '/asset/js/jquery.magnific-popup.min.js', array('jquery'), null, true);
         // Smooth Scroll JS
-        wp_enqueue_script('smooth-scroll', LONDONE_ELECTRICAL_URI . '/asset/js/SmoothScroll.js', array(), null, true);
-        // Parallaxie JS
+        if ( ! is_admin() ) {
+           wp_enqueue_script('smooth-scroll', LONDONE_ELECTRICAL_URI . '/asset/js/SmoothScroll.js', array(), null, true);
+        }
+           // Parallaxie JS
         wp_enqueue_script('parallaxie', LONDONE_ELECTRICAL_URI . '/asset/js/parallaxie.js', array(), null, true);
         // GSAP JS
         wp_enqueue_script('gsap', LONDONE_ELECTRICAL_URI . '/asset/js/gsap.min.js', array(), null, true);
         // MagicCursor JS
-        wp_enqueue_script('magiccursor', LONDONE_ELECTRICAL_URI . '/asset/js/magiccursor.js', array('jquery'), null, true);
-        // SplitText JS
+        if ( ! is_admin() ) {
+          wp_enqueue_script('magiccursor', LONDONE_ELECTRICAL_URI . '/asset/js/magiccursor.js', array('jquery'), null, true);
+        }
+          // SplitText JS
         wp_enqueue_script('splittext', LONDONE_ELECTRICAL_URI . '/asset/js/SplitText.js', array(), null, true);
         // ScrollTrigger JS
         wp_enqueue_script('scrolltrigger', LONDONE_ELECTRICAL_URI . '/asset/js/ScrollTrigger.min.js', array(), null, true);
@@ -78,13 +82,14 @@ if (!function_exists('londone_electrical_enqueue_styles_scripts')) :
         // WOW JS
         wp_enqueue_script('wow', LONDONE_ELECTRICAL_URI . '/asset/js/wow.min.js', array(), null, true);
         // Custom Function JS (Ensure this is loaded last if it depends on other scripts)
-        // wp_enqueue_script('custom-function', LONDONE_ELECTRICAL_URI . '/asset/js/function.js', array('jquery', 'bootstrap', 'swiper', 'wow', 'magiccursor'), null, true);
-        wp_enqueue_script('custom-function', LONDONE_ELECTRICAL_URI . '/asset/js/function.js', array('jquery'), null, true);
+        wp_enqueue_script('custom-function', LONDONE_ELECTRICAL_URI . '/asset/js/function.js', array('jquery', 'bootstrap', 'swiper', 'wow', 'magiccursor'), null, true);
+        //wp_enqueue_script('custom-function', LONDONE_ELECTRICAL_URI . '/asset/js/function.js', array('jquery'), null, true);
     }
 endif;
 add_action( 'wp_enqueue_scripts', 'londone_electrical_enqueue_styles_scripts' );
 add_action( 'enqueue_block_editor_assets', 'londone_electrical_enqueue_styles_scripts' );
 add_action( 'enqueue_block_assets', 'londone_electrical_enqueue_styles_scripts' );
+
 
 // Adds theme support for post formats.
 if ( ! function_exists( 'londone_electrical_post_format_setup' ) ) :
@@ -196,7 +201,8 @@ function londone_electrical_new_block_category( $categories ) {
 function londone_electrical_register_blocks() {
     $blocks = ['accordion', 'hero-slider', 'hero-cta-box', 'about-us', 'our-services', 'our-awards',
     'our-features', 'our-goals', 'our-facts', 'cta-box', 'our-testimonial', 'our-faqs', 'our-blog', 
-    'our-pricing', 'breadcrumb', 'our-approach', 'trusted-expert', 'why-choose-us', 'our-team', 'company-values']; // চাইলে আরো ব্লক অ্যাড করো
+    'our-pricing', 'breadcrumb', 'our-approach', 'trusted-expert', 'why-choose-us', 'our-team',
+    'company-values', 'contact-us']; // চাইলে আরো ব্লক অ্যাড করো
 
     foreach ($blocks as $block) {
         $block_dir = get_template_directory() . "/inc/theme-blocks/{$block}";
@@ -212,4 +218,5 @@ function londone_electrical_register_blocks() {
     }
 }
 add_action('init', 'londone_electrical_register_blocks');
+
 
