@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "londone-electrical/image-gallery",
+	"title": "Image Gallery",
+	"category": "londoneelectrical",
+	"icon": "menu",
+	"description": "Image gallery block.",
+	"editorScript": "file:../build/image_gallery.js",
+	"style": "file:./style.css",
+	"editorStyle": "file:./editor.css",
+	"viewScript": "file:./view.js",
+	"render": "file:./image-gallery.php",
+	"attributes": {
+		"tabs": {
+			"type": "array",
+			"default": [
+				{ "title": "Tab 1" },
+				{ "title": "Tab 2" }
+			]
+		},
+		"activeTab": {
+			"type": "number",
+			"default": 0
+		}
+	}
+}

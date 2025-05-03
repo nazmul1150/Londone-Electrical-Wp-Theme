@@ -26,6 +26,8 @@ module.exports = {
 		ourteam: path.resolve(__dirname, 'our-team/index.js'),
 		companyvalues: path.resolve(__dirname, 'company-values/index.js'),
 		contactus: path.resolve(__dirname, 'contact-us/index.js'),
+		services: path.resolve(__dirname, 'services/index.js'),
+		image_gallery: path.resolve(__dirname, 'image-gallery/index.js'),
 	},
 	output: {
 		path: path.resolve(__dirname, 'build'),
