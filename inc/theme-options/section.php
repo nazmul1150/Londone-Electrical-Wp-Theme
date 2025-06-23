@@ -174,3 +174,84 @@ Redux::set_section(
         ),
     )
 );
+
+//about us
+Redux::set_section( 
+    $opt_name,
+    array(
+        'title'      => esc_html__( 'About', 'londone-electrical' ),
+        'desc'       => esc_html__( 'About section customize', 'londone-electrical' ),
+        'id'         => 'about-option',
+        'subsection' => true,
+        'priority' => 1,
+        'fields'     => array(
+
+            array(
+            'id' => 'about-experience-box',
+            'type' => 'section',
+            'title' => esc_html__('About Experience Box', 'londone-electrical'),
+            'subtitle' => esc_html__('About Experience Box', 'londone-electrical'),
+            'indent' => true 
+            ),
+                array(
+                    'id'       => 'about-experience-box-img',
+                    'type'     => 'media',
+                    'url'      => true,
+                    'title'    => esc_html__( 'Icon Image', 'londone-electrical' ),
+                    'desc'     => esc_html__( 'Upload icon image', 'londone-electrical' ),
+                    'default'  => array(
+                        'url'=> get_template_directory_uri() . '/images/icon-about-experience.svg'
+                    ),
+                ),
+                array(
+                    'id'     => 'about-experience-box-title',
+                    'type'   => 'text',
+                    'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                    'default'  => '425+ Years Of Experience',
+                ),
+                array(
+                    'id'     => 'about-experience-box-desc',
+                    'type'   => 'textarea',
+                    'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
+                    'default'  => 'Trusted electrical experts with 25+ years of experience.',
+                ),
+                
+            array(
+                'id'     => 'section-end',
+                'type'   => 'section',
+                'indent' => false,
+            ),
+            array(
+            'id' => 'about-video-image',
+            'type' => 'section',
+            'title' => esc_html__('About Video', 'londone-electrical'),
+            'subtitle' => esc_html__('About Video', 'londone-electrical'),
+            'indent' => true 
+            ),
+                array(
+                    'id'       => 'about-video-image-img',
+                    'type'     => 'media',
+                    'url'      => true,
+                    'title'    => esc_html__( 'Background Image', 'londone-electrical' ),
+                    'desc'     => esc_html__( 'Upload background image', 'londone-electrical' ),
+                    'default'  => array(
+                        'url'=> get_template_directory_uri() . '/images/about-image-1.jpg'
+                    ),
+                ),
+                array(
+                    'id'     => 'about-video-image-link',
+                    'type'   => 'text',
+                    'title'  => esc_html__( 'Video Link', 'londone-electrical' ),
+                    'default'  => 'https://www.youtube.com/watch?v=Y-x0efG1seA',
+                ),
+                
+            array(
+                'id'     => 'section-end',
+                'type'   => 'section',
+                'indent' => false,
+            ),
+
+
+        ),
+    )
+);
