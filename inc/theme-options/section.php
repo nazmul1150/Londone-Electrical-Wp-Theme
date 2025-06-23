@@ -221,6 +221,7 @@ Redux::set_section(
                 'type'   => 'section',
                 'indent' => false,
             ),
+
             array(
             'id' => 'about-video-image',
             'type' => 'section',
@@ -229,7 +230,7 @@ Redux::set_section(
             'indent' => true 
             ),
                 array(
-                    'id'       => 'about-video-image-img',
+                    'id'       => 'about-video-image-bgimg',
                     'type'     => 'media',
                     'url'      => true,
                     'title'    => esc_html__( 'Background Image', 'londone-electrical' ),
@@ -239,7 +240,7 @@ Redux::set_section(
                     ),
                 ),
                 array(
-                    'id'     => 'about-video-image-link',
+                    'id'     => 'about-video-image-video_link',
                     'type'   => 'text',
                     'title'  => esc_html__( 'Video Link', 'londone-electrical' ),
                     'default'  => 'https://www.youtube.com/watch?v=Y-x0efG1seA',
@@ -251,6 +252,421 @@ Redux::set_section(
                 'indent' => false,
             ),
 
+            array(
+            'id' => 'about-image',
+            'type' => 'section',
+            'title' => esc_html__('About Image', 'londone-electrical'),
+            'subtitle' => esc_html__('About Image', 'londone-electrical'),
+            'indent' => true 
+            ),
+                array(
+                    'id'       => 'about-image-img',
+                    'type'     => 'media',
+                    'url'      => true,
+                    'title'    => esc_html__( 'About Image', 'londone-electrical' ),
+                    'desc'     => esc_html__( 'Upload about image', 'londone-electrical' ),
+                    'default'  => array(
+                        'url'=> get_template_directory_uri() . '/images/about-image-2.jpg'
+                    ),
+                ),
+                
+            array(
+                'id'     => 'section-end',
+                'type'   => 'section',
+                'indent' => false,
+            ),
+
+            array(
+            'id' => 'about-us-content-section',
+            'type' => 'section',
+            'title' => esc_html__('About Us Content', 'londone-electrical'),
+            'subtitle' => esc_html__('About us content', 'londone-electrical'),
+            'indent' => true 
+            ),
+               array(
+                    'id'     => 'about-us-content-subtitle',
+                    'type'   => 'text',
+                    'title'  => esc_html__( 'Subtitle', 'londone-electrical' ),
+                    'default'  => 'about us',
+                ),
+               array(
+                    'id'     => 'about-us-content-title',
+                    'type'   => 'text',
+                    'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                    'default'  => 'Complete electrical services for',
+                ),
+               array(
+                    'id'     => 'about-us-content-title-span',
+                    'type'   => 'text',
+                    'title'  => esc_html__( 'Title Span', 'londone-electrical' ),
+                    'default'  => 'every need',
+                ),
+               array(
+                    'id'     => 'about-us-content-desc',
+                    'type'   => 'textarea',
+                    'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
+                    'default'  => 'From small repairs to large-scale installations our experienced electricians provide tailored solutions to power your home.',
+                ),
+
+                array(
+                    'id' => 'about-us-content-section-icon1',
+                    'type' => 'section',
+                    'title' => esc_html__('Icon1 Content', 'londone-electrical'),
+                    'subtitle' => esc_html__('Icon1 content', 'londone-electrical'),
+                    'indent' => true 
+                ),
+                    array(
+                        'id'       => 'about-us-content-icon1',
+                        'type'     => 'media',
+                        'url'      => true,
+                        'title'    => esc_html__( 'Icon Image', 'londone-electrical' ),
+                        'desc'     => esc_html__( 'Upload icon image', 'londone-electrical' ),
+                        'default'  => array(
+                            'url'=> get_template_directory_uri() . '/images/icon-about-service-1.svg'
+                        ),
+                    ),
+                    array(
+                        'id'     => 'about-us-content-icon1-title',
+                        'type'   => 'text',
+                        'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                        'default'  => 'Providing Awesome Service',
+                    ),
+                array(
+                        'id'     => 'about-us-content-icon1-desc',
+                        'type'   => 'textarea',
+                        'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
+                        'default'  => 'Skilled professionals dedicated to delivering quality.',
+                    ),
+                array(
+                    'id'     => 'section-end',
+                    'type'   => 'section',
+                    'indent' => false,
+                ),
+
+                array(
+                    'id' => 'about-us-content-section-icon2',
+                    'type' => 'section',
+                    'title' => esc_html__('Icon2 Content', 'londone-electrical'),
+                    'subtitle' => esc_html__('Icon2 content', 'londone-electrical'),
+                    'indent' => true 
+                ),
+                    array(
+                        'id'       => 'about-us-content-icon2',
+                        'type'     => 'media',
+                        'url'      => true,
+                        'title'    => esc_html__( 'Icon Image', 'londone-electrical' ),
+                        'desc'     => esc_html__( 'Upload icon image', 'londone-electrical' ),
+                        'default'  => array(
+                            'url'=> get_template_directory_uri() . '/images/icon-about-service-2.svg'
+                        ),
+                    ),
+                    array(
+                        'id'     => 'about-us-content-icon2-title',
+                        'type'   => 'text',
+                        'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                        'default'  => '24/7 Our Support',
+                    ),
+                array(
+                        'id'     => 'about-us-content-icon2-desc',
+                        'type'   => 'textarea',
+                        'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
+                        'default'  => 'Round-the-clock support for all your urgent repair needs.',
+                    ),
+                array(
+                    'id'     => 'section-end',
+                    'type'   => 'section',
+                    'indent' => false,
+                ),
+
+                array(
+                    'id' => 'about-us-content-section-action-btn',
+                    'type' => 'section',
+                    'title' => esc_html__('Action Button', 'londone-electrical'),
+                    'subtitle' => esc_html__('Button content', 'londone-electrical'),
+                    'indent' => true 
+                ),
+                    array(
+                        'id'     => 'about-us-content-action-btn-text',
+                        'type'   => 'text',
+                        'title'  => esc_html__( 'Button Text', 'londone-electrical' ),
+                        'default'  => 'more about us',
+                    ),
+                    array(
+                        'id'     => 'about-us-content-action-btn-link',
+                        'type'   => 'text',
+                        'title'  => esc_html__( 'Button Link', 'londone-electrical' ),
+                        'default'  => '#',
+                    ),
+                array(
+                    'id'     => 'section-end',
+                    'type'   => 'section',
+                    'indent' => false,
+                ),
+                
+            array(
+                'id'     => 'section-end',
+                'type'   => 'section',
+                'indent' => false,
+            ),
+
+
+        ),
+    )
+);
+
+//Service
+Redux::set_section( 
+    $opt_name,
+    array(
+        'title'      => esc_html__( 'Service', 'londone-electrical' ),
+        'desc'       => esc_html__( 'Service section customize', 'londone-electrical' ),
+        'id'         => 'service-option',
+        'subsection' => true,
+        'priority' => 1,
+        'fields'     => array(
+            array(
+                'id'     => 'our-service-subtitle',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Subtitle', 'londone-electrical' ),
+                'default'  => 'Our Services',
+            ),
+            array(
+                'id'     => 'our-service-title',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                'default'  => 'Specialized electrical services for',
+            ),
+            array(
+                'id'     => 'our-service-title-span',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Title Span', 'londone-electrical' ),
+                'default'  => 'every industry',
+            ),
+            array(
+                'id'     => 'our-service-bottom-text',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Service Bottom Text', 'londone-electrical' ),
+                'default'  => 'Professional electrical solutions for every need.',
+            ),
+            array(
+                'id'     => 'our-service-bottom-link-text',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Service Bottom Link Text', 'londone-electrical' ),
+                'default'  => 'Contact us today!',
+            ),
+            array(
+                'id'     => 'our-service-bottom-link-text-link',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Service Bottom Text Link', 'londone-electrical' ),
+                'default'  => '#',
+            ),
+        ),
+    )
+);
+
+//our-awards
+Redux::set_section( 
+    $opt_name,
+    array(
+        'title'      => esc_html__( 'Our Awards', 'londone-electrical' ),
+        'desc'       => esc_html__( 'Our awards section customize', 'londone-electrical' ),
+        'id'         => 'our-awards-section',
+        'subsection' => true,
+        'priority' => 1,
+        'fields'     => array(
+            array(
+                'id'     => 'our-awards-subtitle',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Subtitle', 'londone-electrical' ),
+                'default'  => 'Awards and certification',
+            ),
+            array(
+                'id'     => 'our-awards-title',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                'default'  => 'Awards and certifications that reflec',
+            ),
+            array(
+                'id'     => 'our-awards-title-span',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Title Span', 'londone-electrical' ),
+                'default'  => 'our commitment',
+            ),
+            array(
+                'id'     => 'our-awards-desc',
+                'type'   => 'textarea',
+                'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
+                'default'  => "Over the years, we've earned awards and accreditations that underscore our unwavering focus on quality, safety.",
+            ),
+
+            array(
+                'id' => 'our-awards-list',
+                'type' => 'section',
+                'title' => esc_html__('Our Awards List', 'londone-electrical'),
+                'subtitle' => esc_html__('Our Awards List', 'londone-electrical'),
+                'indent' => true 
+            ),
+                array(
+                    'id' => 'our-awards-list1',
+                    'type' => 'section',
+                    'title' => esc_html__('Our Awards List1', 'londone-electrical'),
+                    'subtitle' => esc_html__('Our Awards List1', 'londone-electrical'),
+                    'indent' => true 
+                ),
+                    array(
+                        'id'       => 'our-awards-list1-img',
+                        'type'     => 'media',
+                        'url'      => true,
+                        'title'    => esc_html__( 'Our Awards List1 Image', 'londone-electrical' ),
+                        'desc'     => esc_html__( 'Upload list1 image', 'londone-electrical' ),
+                        'default'  => array(
+                            'url'=> get_template_directory_uri() . '/images/awards-1.png'
+                        ),
+                    ),
+                    array(
+                        'id'     => 'our-awards-list1-title',
+                        'type'   => 'text',
+                        'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                        'default'  => 'Certified Master Electrician Accreditation',
+                    ),
+                    array(
+                        'id'     => 'our-awards-list1-desc',
+                        'type'   => 'textarea',
+                        'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
+                        'default'  => 'Awarded to our lead electricians for demonstrating superior technical expertise and industry knowledge',
+                    ),
+                array(
+                    'id'     => 'section-end',
+                    'type'   => 'section',
+                    'indent' => false,
+                ),
+
+                array(
+                    'id' => 'our-awards-list2',
+                    'type' => 'section',
+                    'title' => esc_html__('Our Awards List2', 'londone-electrical'),
+                    'subtitle' => esc_html__('Our Awards List2', 'londone-electrical'),
+                    'indent' => true 
+                ),
+                    array(
+                        'id'       => 'our-awards-list2-img',
+                        'type'     => 'media',
+                        'url'      => true,
+                        'title'    => esc_html__( 'Our Awards List2 Image', 'londone-electrical' ),
+                        'desc'     => esc_html__( 'Upload list2 image', 'londone-electrical' ),
+                        'default'  => array(
+                            'url'=> get_template_directory_uri() . '/images/awards-2.png'
+                        ),
+                    ),
+                    array(
+                        'id'     => 'our-awards-list2-title',
+                        'type'   => 'text',
+                        'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                        'default'  => 'Best Residential Electrician Service (2023)',
+                    ),
+                    array(
+                        'id'     => 'our-awards-list2-desc',
+                        'type'   => 'textarea',
+                        'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
+                        'default'  => 'Voted as the top choice for homeowners in delivering safe and reliable electrical solutions.',
+                    ),
+                array(
+                    'id'     => 'section-end',
+                    'type'   => 'section',
+                    'indent' => false,
+                ),
+
+                array(
+                    'id' => 'our-awards-list3',
+                    'type' => 'section',
+                    'title' => esc_html__('Our Awards List3', 'londone-electrical'),
+                    'subtitle' => esc_html__('Our Awards List3', 'londone-electrical'),
+                    'indent' => true 
+                ),
+                    array(
+                        'id'       => 'our-awards-list3-img',
+                        'type'     => 'media',
+                        'url'      => true,
+                        'title'    => esc_html__( 'Our Awards List3 Image', 'londone-electrical' ),
+                        'desc'     => esc_html__( 'Upload list3 image', 'londone-electrical' ),
+                        'default'  => array(
+                            'url'=> get_template_directory_uri() . '/images/awards-3.png'
+                        ),
+                    ),
+                    array(
+                        'id'     => 'our-awards-list3-title',
+                        'type'   => 'text',
+                        'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                        'default'  => 'Industry Excellence Certificate by IEC',
+                    ),
+                    array(
+                        'id'     => 'our-awards-list3-desc',
+                        'type'   => 'textarea',
+                        'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
+                        'default'  => 'Certified by the International Electrical Contractors Association for adhering to global standards.',
+                    ),
+                array(
+                    'id'     => 'section-end',
+                    'type'   => 'section',
+                    'indent' => false,
+                ),
+
+                array(
+                    'id' => 'our-awards-list4',
+                    'type' => 'section',
+                    'title' => esc_html__('Our Awards List4', 'londone-electrical'),
+                    'subtitle' => esc_html__('Our Awards List4', 'londone-electrical'),
+                    'indent' => true 
+                ),
+                    array(
+                        'id'       => 'our-awards-list4-img',
+                        'type'     => 'media',
+                        'url'      => true,
+                        'title'    => esc_html__( 'Our Awards List4 Image', 'londone-electrical' ),
+                        'desc'     => esc_html__( 'Upload list4 image', 'londone-electrical' ),
+                        'default'  => array(
+                            'url'=> get_template_directory_uri() . '/images/awards-4.png'
+                        ),
+                    ),
+                    array(
+                        'id'     => 'our-awards-list4-title',
+                        'type'   => 'text',
+                        'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                        'default'  => 'Emergency Service Provider Recognition',
+                    ),
+                    array(
+                        'id'     => 'our-awards-list4-desc',
+                        'type'   => 'textarea',
+                        'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
+                        'default'  => 'Honored for delivering fast and efficient 24/7 emergency electrical repairs.',
+                    ),
+                array(
+                    'id'     => 'section-end',
+                    'type'   => 'section',
+                    'indent' => false,
+                ),
+                
+            array(
+                'id'     => 'section-end',
+                'type'   => 'section',
+                'indent' => false,
+            ),
+
+        )
+    )
+);
+
+
+//our-features
+Redux::set_section( 
+    $opt_name,
+    array(
+        'title'      => esc_html__( 'Our Features', 'londone-electrical' ),
+        'desc'       => esc_html__( 'Our features section customize', 'londone-electrical' ),
+        'id'         => 'our-features-section',
+        'subsection' => true,
+        'priority' => 1,
+        'fields'     => array(
 
         ),
     )
