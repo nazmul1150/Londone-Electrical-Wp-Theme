@@ -866,7 +866,178 @@ Redux::set_section(
         'subsection' => true,
         'priority' => 1,
         'fields'     => array(
-            //
+            
+            array(
+                'id'     => 'our-goals-subtitle',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Subtitle', 'londone-electrical' ),
+                'default'  => 'our Goals',
+            ),
+            array(
+                'id'     => 'our-goals-title',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                'default'  => 'Our goals to deliver top-notch',
+            ),
+            array(
+                'id'     => 'our-goals-title-span',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Title Span', 'londone-electrical' ),
+                'default'  => 'electrical solutions',
+            ),
+            array(
+                'id'     => 'our-goals-title-span',
+                'type'   => 'textarea',
+                'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
+                'default'  => 'Our goal is to be a leader in providing environmentally conscious electrical services. We focus on energy-efficient solutions and sustainable practices to not only meet industry standards but to exceed them.',
+            ),
+
+            array(
+                'id' => 'our-goals-content-list',
+                'type' => 'section',
+                'title' => esc_html__('Goals Content ', 'londone-electrical'),
+                'subtitle' => esc_html__('Goals content ', 'londone-electrical'),
+                'indent' => true 
+            ),
+                array(
+                    'id' => 'our-goals-content-list1',
+                    'type' => 'section',
+                    'title' => esc_html__('Goals Content List1', 'londone-electrical'),
+                    'subtitle' => esc_html__('Goals content list1', 'londone-electrical'),
+                    'indent' => true 
+                ),
+                    array(
+                        'id'       => 'our-goals-list1-img',
+                        'type'     => 'media',
+                        'url'      => true,
+                        'title'    => esc_html__( 'Our Goals Content List1 Image', 'londone-electrical' ),
+                        'desc'     => esc_html__( 'Upload list1 image', 'londone-electrical' ),
+                        'default'  => array(
+                            'url'=> get_template_directory_uri() . '/images/icon-goals-item-1.svg'
+                        ),
+                    ),
+                    array(
+                        'id'     => 'our-goals-list1-title',
+                        'type'   => 'text',
+                        'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                        'default'  => 'Commitment to Innovation',
+                    ),
+                    array(
+                        'id'     => 'our-goals-list1-desc',
+                        'type'   => 'textarea',
+                        'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
+                        'default'  => "We strive to continuously innovate, incorporating.",
+                    ),
+                array(
+                    'id'     => 'section-end',
+                    'type'   => 'section',
+                    'indent' => false,
+                ),
+                array(
+                    'id' => 'our-goals-content-list2',
+                    'type' => 'section',
+                    'title' => esc_html__('Goals Content List2', 'londone-electrical'),
+                    'subtitle' => esc_html__('Goals content list2', 'londone-electrical'),
+                    'indent' => true 
+                ),
+                    array(
+                        'id'       => 'our-goals-list2-img',
+                        'type'     => 'media',
+                        'url'      => true,
+                        'title'    => esc_html__( 'Our Goals Content List2 Image', 'londone-electrical' ),
+                        'desc'     => esc_html__( 'Upload list2 image', 'londone-electrical' ),
+                        'default'  => array(
+                            'url'=> get_template_directory_uri() . '/images/icon-goals-item-2.svg'
+                        ),
+                    ),
+                    array(
+                        'id'     => 'our-goals-list2-title',
+                        'type'   => 'text',
+                        'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                        'default'  => 'Customer-Centric Focus',
+                    ),
+                    array(
+                        'id'     => 'our-goals-list2-desc',
+                        'type'   => 'textarea',
+                        'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
+                        'default'  => "We aim to build long-lasting relationships by providing.",
+                    ),
+                array(
+                    'id'     => 'section-end',
+                    'type'   => 'section',
+                    'indent' => false,
+                ),
+            array(
+            'id'     => 'section-end',
+            'type'   => 'section',
+            'indent' => false,
+            ),
+
+        array(
+                'id' => 'our-goals-images',
+                'type' => 'section',
+                'title' => esc_html__('Goals Images', 'londone-electrical'),
+                'subtitle' => esc_html__('Goals images', 'londone-electrical'),
+                'indent' => true 
+            ),
+                array(
+                    'id'       => 'our-goals-images1',
+                    'type'     => 'media',
+                    'url'      => true,
+                    'title'    => esc_html__( 'Our Goals Images1', 'londone-electrical' ),
+                    'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
+                    'default'  => array(
+                        'url'=> get_template_directory_uri() . '/images/our-goals-img-1.jpg'
+                    ),
+                ),
+                array(
+                    'id'       => 'our-goals-images2',
+                    'type'     => 'media',
+                    'url'      => true,
+                    'title'    => esc_html__( 'Our Goals Images2', 'londone-electrical' ),
+                    'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
+                    'default'  => array(
+                        'url'=> get_template_directory_uri() . '/images/our-goals-img-2.jpg'
+                    ),
+                ),
+                array(
+                    'id'       => 'our-goals-images3',
+                    'type'     => 'media',
+                    'url'      => true,
+                    'title'    => esc_html__( 'Our Goals Images3', 'londone-electrical' ),
+                    'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
+                    'default'  => array(
+                        'url'=> get_template_directory_uri() . '/images/our-goals-img-3.jpg'
+                    ),
+                ),
+                array(
+                    'id'       => 'our-goals-images4',
+                    'type'     => 'media',
+                    'url'      => true,
+                    'title'    => esc_html__( 'Our Goals Images4', 'londone-electrical' ),
+                    'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
+                    'default'  => array(
+                        'url'=> get_template_directory_uri() . '/images/our-goals-img-4.jpg'
+                    ),
+                ),
+                array(
+                    'id'       => 'our-goals-images5',
+                    'type'     => 'media',
+                    'url'      => true,
+                    'title'    => esc_html__( 'Our Goals circle Images', 'londone-electrical' ),
+                    'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
+                    'default'  => array(
+                        'url'=> get_template_directory_uri() . '/images/contact-now-circle.png'
+                    ),
+                ),
+            array(
+                'id'     => 'section-end',
+                'type'   => 'section',
+                'indent' => false,
+            ),
+
+
+
         )
 
     )
