@@ -668,6 +668,206 @@ Redux::set_section(
         'priority' => 1,
         'fields'     => array(
 
+            array(
+                'id'     => 'our-features-subtitle',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Subtitle', 'londone-electrical' ),
+                'default'  => 'our features',
+            ),
+            array(
+                'id'     => 'our-features-title',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                'default'  => 'Features that define our quality',
+            ),
+            array(
+                'id'     => 'our-features-title-span',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Title Span', 'londone-electrical' ),
+                'default'  => 'and reliability',
+            ),
+            array(
+                'id'       => 'our-features-img',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => esc_html__( 'Image', 'londone-electrical' ),
+                'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
+                'default'  => array(
+                    'url'=> get_template_directory_uri() . '/images/intro-bg-image.jpg'
+                ),
+            ),
+            array(
+                'id'     => 'our-features-img-video-link',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Video Link', 'londone-electrical' ),
+                'default'  => 'https://www.youtube.com/watch?v=Y-x0efG1seA',
+            ),
+
+            array(
+                    'id' => 'our-features-list',
+                    'type' => 'section',
+                    'title' => esc_html__('Our Features Lists', 'londone-electrical'),
+                    'subtitle' => esc_html__('Our Features Lists', 'londone-electrical'),
+                    'indent' => true 
+                ),
+                    array(
+                        'id' => 'our-features-list1',
+                        'type' => 'section',
+                        'title' => esc_html__('Our Features List1', 'londone-electrical'),
+                        'subtitle' => esc_html__('Our Features List1', 'londone-electrical'),
+                        'indent' => true 
+                    ),
+                        array(
+                            'id'       => 'our-features-list1-img',
+                            'type'     => 'media',
+                            'url'      => true,
+                            'title'    => esc_html__( 'Our Features List1 Image', 'londone-electrical' ),
+                            'desc'     => esc_html__( 'Upload list1 image', 'londone-electrical' ),
+                            'default'  => array(
+                                'url'=> get_template_directory_uri() . '/images/icon-features-list-1.svg'
+                            ),
+                        ),
+                        array(
+                            'id'     => 'our-features-list1-title',
+                            'type'   => 'text',
+                            'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                            'default'  => '24/7 Emergency Services',
+                        ),
+                        array(
+                            'id'     => 'our-features-list1-desc',
+                            'type'   => 'textarea',
+                            'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
+                            'default'  => "We're here for you any time, day or night, to resolve urgent issues.",
+                        ),
+                     array(
+                        'id'     => 'section-end',
+                        'type'   => 'section',
+                        'indent' => false,
+                    ),
+                    array(
+                        'id' => 'our-features-list2',
+                        'type' => 'section',
+                        'title' => esc_html__('Our Features List2', 'londone-electrical'),
+                        'subtitle' => esc_html__('Our Features List2', 'londone-electrical'),
+                        'indent' => true 
+                    ),
+                        array(
+                            'id'       => 'our-features-list2-img',
+                            'type'     => 'media',
+                            'url'      => true,
+                            'title'    => esc_html__( 'Our Features List2 Image', 'londone-electrical' ),
+                            'desc'     => esc_html__( 'Upload list1 image', 'londone-electrical' ),
+                            'default'  => array(
+                                'url'=> get_template_directory_uri() . '/images/icon-features-list-2.svg'
+                            ),
+                        ),
+                        array(
+                            'id'     => 'our-features-list2-title',
+                            'type'   => 'text',
+                            'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                            'default'  => 'Advanced Technology',
+                        ),
+                        array(
+                            'id'     => 'our-features-list2-desc',
+                            'type'   => 'textarea',
+                            'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
+                            'default'  => "We use state-of-the-art tools and techniques to deliver efficient.",
+                        ),
+                     array(
+                        'id'     => 'section-end',
+                        'type'   => 'section',
+                        'indent' => false,
+                    ),
+                    array(
+                        'id' => 'our-features-list3',
+                        'type' => 'section',
+                        'title' => esc_html__('Our Features List3', 'londone-electrical'),
+                        'subtitle' => esc_html__('Our Features List3', 'londone-electrical'),
+                        'indent' => true 
+                    ),
+                        array(
+                            'id'       => 'our-features-list3-img',
+                            'type'     => 'media',
+                            'url'      => true,
+                            'title'    => esc_html__( 'Our Features List3 Image', 'londone-electrical' ),
+                            'desc'     => esc_html__( 'Upload list1 image', 'londone-electrical' ),
+                            'default'  => array(
+                                'url'=> get_template_directory_uri() . '/images/icon-features-list-3.svg'
+                            ),
+                        ),
+                        array(
+                            'id'     => 'our-features-list3-title',
+                            'type'   => 'text',
+                            'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                            'default'  => 'Safety First Approach',
+                        ),
+                        array(
+                            'id'     => 'our-features-list3-desc',
+                            'type'   => 'textarea',
+                            'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
+                            'default'  => "Your safety is our top priority. We follow strict industry standards.",
+                        ),
+                     array(
+                        'id'     => 'section-end',
+                        'type'   => 'section',
+                        'indent' => false,
+                    ),
+                    array(
+                        'id' => 'our-features-list4',
+                        'type' => 'section',
+                        'title' => esc_html__('Our Features List4', 'londone-electrical'),
+                        'subtitle' => esc_html__('Our Features List4', 'londone-electrical'),
+                        'indent' => true 
+                    ),
+                        array(
+                            'id'       => 'our-features-list4-img',
+                            'type'     => 'media',
+                            'url'      => true,
+                            'title'    => esc_html__( 'Our Features List4 Image', 'londone-electrical' ),
+                            'desc'     => esc_html__( 'Upload list1 image', 'londone-electrical' ),
+                            'default'  => array(
+                                'url'=> get_template_directory_uri() . '/images/icon-features-list-4.svg'
+                            ),
+                        ),
+                        array(
+                            'id'     => 'our-features-list4-title',
+                            'type'   => 'text',
+                            'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                            'default'  => 'Customizable Solutions',
+                        ),
+                        array(
+                            'id'     => 'our-features-list4-desc',
+                            'type'   => 'textarea',
+                            'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
+                            'default'  => "We provide tailored electrical services designed.",
+                        ),
+                     array(
+                        'id'     => 'section-end',
+                        'type'   => 'section',
+                        'indent' => false,
+                    ),
+            array(
+                'id'     => 'section-end',
+                'type'   => 'section',
+                'indent' => false,
+            ),
+
         ),
+    )
+);
+
+//our-goals
+Redux::set_section( 
+    $opt_name,
+    array(
+        'title'      => esc_html__( 'Our Goals', 'londone-electrical' ),
+        'desc'       => esc_html__( 'Our goals section customize', 'londone-electrical' ),
+        'id'         => 'our-goals-section',
+        'subsection' => true,
+        'priority' => 1,
+        'fields'     => array(
+            //
+        )
+
     )
 );
