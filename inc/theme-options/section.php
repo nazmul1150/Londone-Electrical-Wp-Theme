@@ -886,7 +886,7 @@ Redux::set_section(
                 'default'  => 'electrical solutions',
             ),
             array(
-                'id'     => 'our-goals-title-span',
+                'id'     => 'our-goals-title-desc',
                 'type'   => 'textarea',
                 'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
                 'default'  => 'Our goal is to be a leader in providing environmentally conscious electrical services. We focus on energy-efficient solutions and sustainable practices to not only meet industry standards but to exceed them.',
@@ -1040,5 +1040,293 @@ Redux::set_section(
 
         )
 
+    )
+);
+
+//our-facts-box
+
+Redux::set_section( 
+    $opt_name,
+    array(
+        'title'      => esc_html__( 'Our Facts', 'londone-electrical' ),
+        'desc'       => esc_html__( 'Our facts section customize', 'londone-electrical' ),
+        'id'         => 'our-facts-section',
+        'subsection' => true,
+        'priority' => 1,
+        'fields'     => array(
+
+            array(
+                'id'     => 'our-facts-subtitle',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Subtitle', 'londone-electrical' ),
+                'default'  => 'get a estimate',
+            ),
+            array(
+                'id'     => 'our-facts-title',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                'default'  => 'Hassle-free estimates just a',
+            ),
+            array(
+                'id'     => 'our-facts-title-span',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Title Span', 'londone-electrical' ),
+                'default'  => 'click away',
+            ),
+            array(
+                'id'     => 'our-facts-title-desc',
+                'type'   => 'textarea',
+                'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
+                'default'  => 'Our goal is to be a leader in providing environmentally conscious electrical services. We focus on energy-efficient solutions.',
+            ),
+
+            array(
+                'id'     => 'our-facts-lists',
+                'type'   => 'repeater',
+                'title'  => esc_html__('Our Facts Lists', 'londone-electrical'),
+                'desc'   => esc_html__('Our facts fists', 'londone-electrical'),
+                'group_values' => true,
+                'fields' => array(
+                    array(
+                        'id'     => 'our-facts-list',
+                        'type'   => 'text',
+                        'title'  => esc_html__( 'Our Facts List', 'londone-electrical' ),
+                        'default'  => 'Seasonal & Locally Sourced Ingredients',
+                    ),
+                ),
+            ),
+
+            array(
+                    'id' => 'our-facts-images',
+                    'type' => 'section',
+                    'title' => esc_html__('Our Facts Image', 'londone-electrical'),
+                    'subtitle' => esc_html__('our facts images', 'londone-electrical'),
+                    'indent' => true 
+                ),
+                    array(
+                        'id'       => 'our-facts-image1',
+                        'type'     => 'media',
+                        'url'      => true,
+                        'title'    => esc_html__( 'Our Facts Image1', 'londone-electrical' ),
+                        'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
+                        'default'  => array(
+                            'url'=> get_template_directory_uri() . '/images/facts-image.png'
+                        ),
+                    ),
+                    array(
+                        'id'       => 'our-facts-image2',
+                        'type'     => 'media',
+                        'url'      => true,
+                        'title'    => esc_html__( 'Our Facts Image2', 'londone-electrical' ),
+                        'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
+                        'default'  => array(
+                            'url'=> get_template_directory_uri() . '/images/contact-now-circle.png'
+                        ),
+                    ),
+                array(
+                    'id'     => 'section-end',
+                    'type'   => 'section',
+                    'indent' => false,
+                ),
+            array(
+                    'id' => 'facts-counter-box',
+                    'type' => 'section',
+                    'title' => esc_html__('Our Facts Counter', 'londone-electrical'),
+                    'subtitle' => esc_html__('our facts counter', 'londone-electrical'),
+                    'indent' => true 
+                ),
+                    array(
+                        'id' => 'facts-counter-box1',
+                        'type' => 'section',
+                        'title' => esc_html__('Our Facts Counter1', 'londone-electrical'),
+                        'subtitle' => esc_html__('our facts counter1', 'londone-electrical'),
+                        'indent' => true 
+                    ),
+                        array(
+                            'id'       => 'our-facts-counter1-image',
+                            'type'     => 'media',
+                            'url'      => true,
+                            'title'    => esc_html__( 'Our Facts Counter1 Image', 'londone-electrical' ),
+                            'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
+                            'default'  => array(
+                                'url'=> get_template_directory_uri() . '/images/icon-facts-counter-1.svg'
+                            ),
+                        ),
+                        array( 
+                            'id' => 'our-facts-counter1-number',
+                            'type' => 'text',
+                            'title'  => esc_html__( 'Count Number', 'londone-electrical' ),
+                            'data' => array(
+                                'count-number' => '500',
+                                'count-increment' => '+',
+                            )
+                        ),
+                        array( 
+                            'id' => 'our-facts-counter1-desc',
+                            'type' => 'text',
+                            'title'  => esc_html__( 'Count Descripation', 'londone-electrical' ),
+                            'default' => 'Projects Completed',
+                        ),
+                     array(
+                        'id'     => 'section-end',
+                        'type'   => 'section',
+                        'indent' => false,
+                    ),
+                    array(
+                        'id' => 'facts-counter-box2',
+                        'type' => 'section',
+                        'title' => esc_html__('Our Facts Counter2', 'londone-electrical'),
+                        'subtitle' => esc_html__('our facts counter2', 'londone-electrical'),
+                        'indent' => true 
+                    ),
+                        array(
+                            'id'       => 'our-facts-counter2-image',
+                            'type'     => 'media',
+                            'url'      => true,
+                            'title'    => esc_html__( 'Our Facts Counter2 Image', 'londone-electrical' ),
+                            'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
+                            'default'  => array(
+                                'url'=> get_template_directory_uri() . '/images/icon-facts-counter-2.svg'
+                            ),
+                        ),
+                        array( 
+                            'id' => 'our-facts-counter2-number',
+                            'type' => 'text',
+                            'title'  => esc_html__( 'Count Number', 'londone-electrical' ),
+                            'data' => array(
+                                'count-number' => '1000',
+                                'count-increment' => '+',
+                            )
+                        ),
+                        array( 
+                            'id' => 'our-facts-counter2-desc',
+                            'type' => 'text',
+                            'title'  => esc_html__( 'Count Descripation', 'londone-electrical' ),
+                            'default' => 'Emergency Repairs',
+                        ),
+                     array(
+                        'id'     => 'section-end',
+                        'type'   => 'section',
+                        'indent' => false,
+                    ),
+                    array(
+                        'id' => 'facts-counter-box3',
+                        'type' => 'section',
+                        'title' => esc_html__('Our Facts Counter3', 'londone-electrical'),
+                        'subtitle' => esc_html__('our facts counter3', 'londone-electrical'),
+                        'indent' => true 
+                    ),
+                        array(
+                            'id'       => 'our-facts-counter3-image',
+                            'type'     => 'media',
+                            'url'      => true,
+                            'title'    => esc_html__( 'Our Facts Counter3 Image', 'londone-electrical' ),
+                            'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
+                            'default'  => array(
+                                'url'=> get_template_directory_uri() . '/images/icon-facts-counter-3.svg'
+                            ),
+                        ),
+                        array( 
+                            'id' => 'our-facts-counter3-number',
+                            'type' => 'text',
+                            'title'  => esc_html__( 'Count Number', 'londone-electrical' ),
+                            'data' => array(
+                                'count-number' => '3500',
+                                'count-increment' => '+',
+                            )
+                        ),
+                        array( 
+                            'id' => 'our-facts-counter3-desc',
+                            'type' => 'text',
+                            'title'  => esc_html__( 'Count Descripation', 'londone-electrical' ),
+                            'default' => 'Happy Clients',
+                        ),
+                     array(
+                        'id'     => 'section-end',
+                        'type'   => 'section',
+                        'indent' => false,
+                    ),
+                    array(
+                        'id' => 'facts-counter-box4',
+                        'type' => 'section',
+                        'title' => esc_html__('Our Facts Counter4', 'londone-electrical'),
+                        'subtitle' => esc_html__('our facts counter4', 'londone-electrical'),
+                        'indent' => true 
+                    ),
+                        array(
+                            'id'       => 'our-facts-counter4-image',
+                            'type'     => 'media',
+                            'url'      => true,
+                            'title'    => esc_html__( 'Our Facts Counter4 Image', 'londone-electrical' ),
+                            'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
+                            'default'  => array(
+                                'url'=> get_template_directory_uri() . '/images/icon-facts-counter-4.svg'
+                            ),
+                        ),
+                        array( 
+                            'id' => 'our-facts-counter4-number',
+                            'type' => 'text',
+                            'title'  => esc_html__( 'Count Number', 'londone-electrical' ),
+                            'data' => array(
+                                'count-number' => '100',
+                                'count-increment' => '+',
+                            )
+                        ),
+                        array( 
+                            'id' => 'our-facts-counter4-desc',
+                            'type' => 'text',
+                            'title'  => esc_html__( 'Count Descripation', 'londone-electrical' ),
+                            'default' => 'Skilled Professionals',
+                        ),
+                     array(
+                        'id'     => 'section-end',
+                        'type'   => 'section',
+                        'indent' => false,
+                    ),
+                array(
+                    'id'     => 'section-end',
+                    'type'   => 'section',
+                    'indent' => false,
+                ),
+
+        )
+    )
+);
+//image gallery
+Redux::set_section( 
+    $opt_name,
+    array(
+        'title'      => esc_html__( 'Image Gallery', 'londone-electrical' ),
+        'desc'       => esc_html__( 'image gallery section customize', 'londone-electrical' ),
+        'id'         => 'image-gallery-section',
+        'subsection' => true,
+        'priority' => 1,
+        'fields'     => array(
+
+            array(
+                'id'     => 'our-gallery-subtitle',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Subtitle', 'londone-electrical' ),
+                'default'  => 'Image Gallery',
+            ),
+            array(
+                'id'     => 'our-gallery-title',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                'default'  => 'High-quality electrical services without breaking',
+            ),
+            array(
+                'id'     => 'our-gallery-title-span',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Title Span', 'londone-electrical' ),
+                'default'  => 'he bank',
+            ),
+            array(
+                'id'       => 'our-gallery-img',
+                'type'     => 'gallery',
+                'title'    => esc_html__( 'Add Gallery', 'londone-electrical' ),
+                'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
+            ),
+        )
     )
 );
