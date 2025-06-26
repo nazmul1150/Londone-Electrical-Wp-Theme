@@ -1587,21 +1587,23 @@ Redux::set_section(
             ),
 
             array(
-                'id'     => 'companies-image-items',
+                'id'     => 'our-faqs-items',
                 'type'   => 'repeater',
                 'title'  => esc_html__('Companies Image', 'londone-electrical'),
                 'desc'   => esc_html__('companies image', 'londone-electrical'),
                 'group_values' => true,
                 'fields' => array(
+                     array(
+                        'id'     => 'our-faqs-item-title',
+                        'type'   => 'text',
+                        'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                        'default'  => "Q1. Are your electricians licensed and insured?",
+                    ),
                     array(
-                        'id'       => 'companies-image-item',
-                        'type'     => 'media',
-                        'url'      => true,
-                        'title'    => esc_html__( 'Image', 'londone-electrical' ),
-                        'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
-                        'default'  => array(
-                            'url'=> get_template_directory_uri() . '/images/company-logo-3.svg'
-                        ),
+                        'id'     => 'our-faqs-item-desc',
+                        'type'   => 'textarea',
+                        'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
+                        'default'  => "We offer a wide range of services including regular home cleaning, deep cleaning, office cleaning, move-in/move-out cleaning.",
                     ),
                 ),
             ),
@@ -1609,3 +1611,36 @@ Redux::set_section(
     )
 );
 
+
+
+//our-blog
+Redux::set_section( 
+    $opt_name,
+    array(
+        'title'      => esc_html__( 'Our Blog ', 'londone-electrical' ),
+        'desc'       => esc_html__( 'Our blog section customize', 'londone-electrical' ),
+        'id'         => 'our-blog-section',
+        'subsection' => true,
+        'priority' => 1,
+        'fields'     => array(
+            array(
+                'id'     => 'our-blog-subtitle',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Subtitle', 'londone-electrical' ),
+                'default'  => 'Latest blog',
+            ),
+            array(
+                'id'     => 'our-blog-title',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                'default'  => "Discover our latest insights and",
+            ),
+            array(
+                'id'     => 'our-blog-title-span',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Title Span', 'londone-electrical' ),
+                'default'  => 'expert advice',
+            ),
+        )
+    )
+);
