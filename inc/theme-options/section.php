@@ -1330,3 +1330,282 @@ Redux::set_section(
         )
     )
 );
+
+
+//cta box
+Redux::set_section( 
+    $opt_name,
+    array(
+        'title'      => esc_html__( 'Cta Box', 'londone-electrical' ),
+        'desc'       => esc_html__( 'Cta box section customize', 'londone-electrical' ),
+        'id'         => 'cta-box-section',
+        'subsection' => true,
+        'priority' => 1,
+        'fields'     => array(
+
+            array(
+                'id'     => 'cta-box-subtitle',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Subtitle', 'londone-electrical' ),
+                'default'  => 'get a estimate',
+            ),
+            array(
+                'id'     => 'cta-box-title',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                'default'  => "get a estimate We're here to answer your",
+            ),
+            array(
+                'id'     => 'cta-box-title-span',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Title Span', 'londone-electrical' ),
+                'default'  => 'questions and help',
+            ),
+            array(
+                'id'     => 'cta-box-desc',
+                'type'   => 'textarea',
+                'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
+                'default'  => "Whether you're planning a new project or need emergency support, we're available to provide fast and reliable assistance.",
+            ),
+
+            array(
+                'id' => 'cta-box-contact-btn',
+                'type' => 'section',
+                'title' => esc_html__('Contact btutton', 'londone-electrical'),
+                'subtitle' => esc_html__('Contact button', 'londone-electrical'),
+                'indent' => true 
+            ),
+                array(
+                    'id'     => 'cta-box-contact-btn-text',
+                    'type'   => 'text',
+                    'title'  => esc_html__( 'Button Text', 'londone-electrical' ),
+                    'default'  => 'Contact Us',
+                ), 
+                array(
+                    'id'     => 'cta-box-contact-btn-link',
+                    'type'   => 'text',
+                    'title'  => esc_html__( 'Button Link', 'londone-electrical' ),
+                    'default'  => '#',
+                ), 
+            array(
+                'id'     => 'section-end',
+                'type'   => 'section',
+                'indent' => false,
+            ),
+            array(
+                'id' => 'cta-box-contact-info',
+                'type' => 'section',
+                'title' => esc_html__('Contact Info', 'londone-electrical'),
+                'subtitle' => esc_html__('Contact info', 'londone-electrical'),
+                'indent' => true 
+            ),
+                array(
+                    'id'     => 'cta-box-contact-info-text',
+                    'type'   => 'text',
+                    'title'  => esc_html__( 'Contact Info Text', 'londone-electrical' ),
+                    'default'  => 'Call Us any time',
+                ), 
+                array(
+                    'id'     => 'cta-box-contact-info-ph-number',
+                    'type'   => 'text',
+                    'title'  => esc_html__( 'Contact Info Phon Number', 'londone-electrical' ),
+                    'default'  => '+ 0 (123) 456 789',
+                ), 
+            array(
+                'id'     => 'section-end',
+                'type'   => 'section',
+                'indent' => false,
+            ),
+
+            array(
+                'id'       => 'cta-box-image',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => esc_html__( 'Cta Box Image', 'londone-electrical' ),
+                'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
+                'default'  => array(
+                    'url'=> get_template_directory_uri() . '/images/cta-box-img.png'
+                ),
+            ),
+        )
+    )
+);
+
+//our-testimonial
+Redux::set_section( 
+    $opt_name,
+    array(
+        'title'      => esc_html__( 'Our Testimonial', 'londone-electrical' ),
+        'desc'       => esc_html__( 'Our testimonial section customize', 'londone-electrical' ),
+        'id'         => 'our-testimonial-section',
+        'subsection' => true,
+        'priority' => 1,
+        'fields'     => array(
+            array(
+                'id'     => 'our-testimonial-subtitle',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Subtitle', 'londone-electrical' ),
+                'default'  => 'testimonials',
+            ),
+            array(
+                'id'     => 'our-testimonial-title',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                'default'  => "Testimonials that reflect our",
+            ),
+            array(
+                'id'     => 'our-testimonial-title-span',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Title Span', 'londone-electrical' ),
+                'default'  => 'consistent efforts',
+            ),
+            array(
+                'id'     => 'our-testimonial-desc',
+                'type'   => 'textarea',
+                'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
+                'default'  => "The feedback from our clients speaks volumes about the quality of our services. Read how we've helped them with reliable solutions.",
+            ),
+            array(
+                'id'     => 'our-testimonial-lists',
+                'type'   => 'repeater',
+                'title'  => esc_html__('Testimonial', 'londone-electrical'),
+                'desc'   => esc_html__('Create testimonial', 'londone-electrical'),
+                'group_values' => true,
+                'fields' => array(
+                    array(
+                        'id'       => 'our-testimonial-image',
+                        'type'     => 'media',
+                        'url'      => true,
+                        'title'    => esc_html__( 'Image', 'londone-electrical' ),
+                        'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
+                        'default'  => array(
+                            'url'=> get_template_directory_uri() . '/images/author-2.jpg'
+                        ),
+                    ),
+                    array(
+                        'id'     => 'our-testimonial-name',
+                        'type'   => 'text',
+                        'title'  => esc_html__( 'Name', 'londone-electrical' ),
+                        'default'  => 'David Lee',
+                    ),
+                    array(
+                        'id'     => 'our-testimonial-desc',
+                        'type'   => 'textarea',
+                        'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
+                        'default'  => 'We hired them to handle the complete electrical setup for our office renovation, and they delivered flawlessly. From designing the layout to installing energy-efficient light and upgrading our panel, everything was done.',
+                    ),
+                ),
+            ),
+        )
+    )
+);
+
+
+//Companies
+Redux::set_section( 
+    $opt_name,
+    array(
+        'title'      => esc_html__( 'Companies', 'londone-electrical' ),
+        'desc'       => esc_html__( 'companies section customize', 'londone-electrical' ),
+        'id'         => 'companies-section',
+        'subsection' => true,
+        'priority' => 1,
+        'fields'     => array(
+            array(
+                'id'     => 'companies-text',
+                'type'   => 'textarea',
+                'title'  => esc_html__( 'Text', 'londone-electrical' ),
+                'default'  => "We're Trusted by more than 1000+ companies",
+            ),
+            array(
+                'id'     => 'companies-image-items',
+                'type'   => 'repeater',
+                'title'  => esc_html__('Companies Image', 'londone-electrical'),
+                'desc'   => esc_html__('companies image', 'londone-electrical'),
+                'group_values' => true,
+                'fields' => array(
+                    array(
+                        'id'       => 'companies-image-item',
+                        'type'     => 'media',
+                        'url'      => true,
+                        'title'    => esc_html__( 'Image', 'londone-electrical' ),
+                        'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
+                        'default'  => array(
+                            'url'=> get_template_directory_uri() . '/images/company-logo-3.svg'
+                        ),
+                    ),
+                ),
+            ),
+        )
+    )
+);
+
+//our-faqs
+Redux::set_section( 
+    $opt_name,
+    array(
+        'title'      => esc_html__( 'Our Faqs ', 'londone-electrical' ),
+        'desc'       => esc_html__( 'Our faqs  section customize', 'londone-electrical' ),
+        'id'         => 'our-faqs-section',
+        'subsection' => true,
+        'priority' => 1,
+        'fields'     => array(
+            array(
+                'id'     => 'our-faqs-subtitle',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Subtitle', 'londone-electrical' ),
+                'default'  => 'frequently asked question',
+            ),
+            array(
+                'id'     => 'our-faqs-title',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                'default'  => "Common questions about our",
+            ),
+            array(
+                'id'     => 'our-faqs-title-span',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Title Span', 'londone-electrical' ),
+                'default'  => 'services',
+            ),
+            array(
+                'id'     => 'our-faqs-desc',
+                'type'   => 'textarea',
+                'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
+                'default'  => "The feedback from our clients speaks volumes about the quality of our services. Read how we've helped them with reliable solutions.",
+            ),
+
+            array(
+                'id'       => 'our-faqs-image',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => esc_html__( 'Image', 'londone-electrical' ),
+                'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
+                'default'  => array(
+                    'url'=> get_template_directory_uri() . '/images/faqs-image.jpg'
+                ),
+            ),
+
+            array(
+                'id'     => 'companies-image-items',
+                'type'   => 'repeater',
+                'title'  => esc_html__('Companies Image', 'londone-electrical'),
+                'desc'   => esc_html__('companies image', 'londone-electrical'),
+                'group_values' => true,
+                'fields' => array(
+                    array(
+                        'id'       => 'companies-image-item',
+                        'type'     => 'media',
+                        'url'      => true,
+                        'title'    => esc_html__( 'Image', 'londone-electrical' ),
+                        'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
+                        'default'  => array(
+                            'url'=> get_template_directory_uri() . '/images/company-logo-3.svg'
+                        ),
+                    ),
+                ),
+            ),
+        )
+    )
+);
+
