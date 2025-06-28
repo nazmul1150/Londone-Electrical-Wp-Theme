@@ -2382,29 +2382,80 @@ Redux::set_section(
         'priority' => 1,
         'fields'     => array(
             array(
-                'id'     => 'company-values-content-subtitle',
+                'id'     => 'page-contact-us-subtitle',
                 'type'   => 'text',
                 'title'  => esc_html__( 'Subtitle', 'londone-electrical' ),
-                'default'  => 'Our Core Values',
+                'default'  => 'contact us',
             ),
             array(
-                'id'     => 'company-values-content-title',
+                'id'     => 'page-contact-us-title',
                 'type'   => 'text',
                 'title'  => esc_html__( 'Title', 'londone-electrical' ),
-                'default'  => "Guiding principles behind our",
+                'default'  => "Contact us &",
             ),
             array(
-                'id'     => 'company-values-content-title-span',
+                'id'     => 'page-contact-us-title-span',
                 'type'   => 'text',
                 'title'  => esc_html__( 'Title Span', 'londone-electrical' ),
-                'default'  => 'excellence',
+                'default'  => "let’s collaborate!",
             ),
             array(
-                'id'     => 'company-values-content-title-desc ',
+                'id'     => 'page-contact-us-title-desc',
                 'type'   => 'textarea',
                 'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
-                'default'  => 'Our goal is to be a leader in providing environmentally conscious electrical services. We focus on energy-efficient solutions.',
+                'default'  => 'From small repairs to large-scale installations, our experience electricians provide tailored solutions to power your home.',
             ),
+            array(
+                'id'     => 'page-contact-us-form-shortcode',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Contact Form Shortcode', 'londone-electrical' ),
+                'desc'     => 'You can enter contact form shortcode here.',
+                'default'  => '[your_contact_form_shortcode]',
+            ),
+            array(
+                'id'     => 'page-contact-us-form-shortcode',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Contact Form Shortcode', 'londone-electrical' ),
+                'desc'     => 'You can enter contact form shortcode here.',
+                'default'  => '[your_contact_form_shortcode]',
+            ),
+            array(
+                'id'       => 'page-contact-us-map_iframe',
+                'type'     => 'textarea',
+                'title'    => 'Google Map Embed Code',
+                'desc'     => 'Paste your iframe embed code here.',
+                'default'  => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96737.10562045308!2d-74.08535042841811!3d40.739265258395164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1703158537552!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+            ),
+
+            
+             // Icon/Image Upload Field
+            array(
+                'id'       => 'page-contact-us_location_icon',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => 'Location Icon',
+                'desc'     => 'Upload an icon for location section.',
+                'default'  => array(
+                    'url' => get_template_directory_uri() . '/images/icon-location.svg',
+                ),
+            ),
+
+            // Title Field
+            array(
+                'id'       => 'page-contact-us_location_title',
+                'type'     => 'text',
+                'title'    => 'Location Title',
+                'default'  => 'Location',
+            ),
+
+            // Address Field
+            array(
+                'id'       => 'page-contact-us_location_address',
+                'type'     => 'textarea',
+                'title'    => 'Location Address',
+                'default'  => '3891 Ranchview. Richardson, California 62639 United Kingdoms 56',
+            ),
+
         )
     )
 );
