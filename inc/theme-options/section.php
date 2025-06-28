@@ -2004,7 +2004,7 @@ Redux::set_section(
 Redux::set_section( 
     $opt_name,
     array(
-        'title'      => esc_html__( 'Why choose us', 'londone-electrical' ),
+        'title'      => esc_html__( 'Why Choose Us', 'londone-electrical' ),
         'desc'       => esc_html__( 'Why choose us section customize', 'londone-electrical' ),
         'id'         => 'why-choose-us-section',
         'subsection' => true,
@@ -2036,12 +2036,6 @@ Redux::set_section(
                 'id'     => 'why-choose-us-title-span',
                 'type'   => 'text',
                 'title'  => esc_html__( 'Title Span', 'londone-electrical' ),
-                'default'  => 'excellence',
-            ),
-            array(
-                'id'     => 'why-choose-us-title-span',
-                'type'   => 'text',
-                'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
                 'default'  => 'excellence',
             ),
             array(
@@ -2153,23 +2147,23 @@ Redux::set_section(
                 'indent' => true 
             ),
                 array(
-                    'id'       => 'why-choose-item-list2-image',
+                    'id'       => 'why-choose-item-list3-image',
                     'type'     => 'media',
                     'url'      => true,
                     'title'    => esc_html__( 'Image', 'londone-electrical' ),
                     'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
                     'default'  => array(
-                        'url'=> get_template_directory_uri() . '/images/icon-why-choose-list-2.svg'
+                        'url'=> get_template_directory_uri() . '/images/icon-why-choose-list-3.svg'
                     ),
                 ),
                 array(
-                    'id'     => 'why-choose-item-list2-title',
+                    'id'     => 'why-choose-item-list3-title',
                     'type'   => 'text',
                     'title'  => esc_html__( 'Title', 'londone-electrical' ),
-                    'default'  => 'Commitment to excellence',
+                    'default'  => 'Your trusted partner',
                 ), 
                 array(
-                    'id'     => 'why-choose-item-list2-text',
+                    'id'     => 'why-choose-item-list3-text',
                     'type'   => 'textarea',
                     'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
                     'default'  => 'Expert teams ensuring precision and safety in every project.',
@@ -2181,6 +2175,236 @@ Redux::set_section(
             ),
             
 
+        )
+    )
+);
+
+//Our Team
+Redux::set_section( 
+    $opt_name,
+    array(
+        'title'      => esc_html__( 'Our Team', 'londone-electrical' ),
+        'desc'       => esc_html__( 'Our Team section customize', 'londone-electrical' ),
+        'id'         => 'our-team-section',
+        'subsection' => true,
+        'priority' => 1,
+        'fields'     => array(
+            array(
+                'id'     => 'our-team-subtitle',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Subtitle', 'londone-electrical' ),
+                'default'  => 'Join our team',
+            ),
+            array(
+                'id'     => 'our-team-title',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                'default'  => "Join us in powering a safer and",
+            ),
+            array(
+                'id'     => 'our-team-title-span',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Title Span', 'londone-electrical' ),
+                'default'  => 'brighter future',
+            ),
+            array(
+                'id'     => 'our-team-items',
+                'type'   => 'repeater',
+                'title'  => esc_html__('Team items', 'londone-electrical'),
+                'desc'   => esc_html__('Team items', 'londone-electrical'),
+                'group_values' => true,
+                'fields' => array(
+                    array(
+                        'id'       => 'our-team-item-image',
+                        'type'     => 'media',
+                        'url'      => true,
+                        'title'    => esc_html__( 'Image', 'londone-electrical' ),
+                        'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
+                        'default'  => array(
+                            'url'=> get_template_directory_uri() . '/images/team-1.jpg'
+                        ),
+                    ),
+                    array(
+                        'id'     => 'our-team-item-name',
+                        'type'   => 'text',
+                        'title'  => esc_html__( 'Name', 'londone-electrical' ),
+                        'default'  => "Michael Johnson",
+                    ),
+                    array(
+                        'id'     => 'our-team-item-designation',
+                        'type'   => 'text',
+                        'title'  => esc_html__( 'Designation', 'londone-electrical' ),
+                        'default'  => "Security Officer",
+                    ),
+                    array(
+                        'id'     => 'our-team-item-social-link-facebook',
+                        'type'   => 'text',
+                        'title'  => esc_html__( 'Facebook Link', 'londone-electrical' ),
+                        'default'  => "#",
+                    ),
+                    array(
+                        'id'     => 'our-team-item-social-link-x',
+                        'type'   => 'text',
+                        'title'  => esc_html__( 'Twitter/X Link', 'londone-electrical' ),
+                        'default'  => "#",
+                    ),
+                ),
+            ),
+        )
+    )
+);
+
+//company-values
+Redux::set_section( 
+    $opt_name,
+    array(
+        'title'      => esc_html__( 'Company Values', 'londone-electrical' ),
+        'desc'       => esc_html__( 'company values section customize', 'londone-electrical' ),
+        'id'         => 'company-values-section',
+        'subsection' => true,
+        'priority' => 1,
+        'fields'     => array(
+            //company-values-images
+            array(
+                'id' => 'company-values-images',
+                'type' => 'section',
+                'title' => esc_html__('Company values images', 'londone-electrical'),
+                'subtitle' => esc_html__('company values images', 'londone-electrical'),
+                'indent' => true 
+            ),
+                array(
+                    'id'       => 'company-values-image-1',
+                    'type'     => 'media',
+                    'url'      => true,
+                    'title'    => esc_html__( 'Image 1', 'londone-electrical' ),
+                    'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
+                    'default'  => array(
+                        'url'=> get_template_directory_uri() . '/images/company-values-image-1.jpg'
+                    ),
+                ),
+                array(
+                    'id'       => 'company-values-image-2',
+                    'type'     => 'media',
+                    'url'      => true,
+                    'title'    => esc_html__( 'Image 2', 'londone-electrical' ),
+                    'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
+                    'default'  => array(
+                        'url'=> get_template_directory_uri() . '/images/company-values-image-2.jpg'
+                    ),
+                ),
+                array(
+                    'id'       => 'company-values-image-3',
+                    'type'     => 'media',
+                    'url'      => true,
+                    'title'    => esc_html__( 'Image 3', 'londone-electrical' ),
+                    'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
+                    'default'  => array(
+                        'url'=> get_template_directory_uri() . '/images/contact-now-circle.png'
+                    ),
+                ),
+            array(
+                'id'     => 'section-end',
+                'type'   => 'section',
+                'indent' => false,
+            ),
+
+            //company-values-content
+             array(
+                'id' => 'company-values-content',
+                'type' => 'section',
+                'title' => esc_html__('Company values content', 'londone-electrical'),
+                'subtitle' => esc_html__('company values content', 'londone-electrical'),
+                'indent' => true 
+            ),
+                array(
+                    'id'     => 'company-values-content-subtitle',
+                    'type'   => 'text',
+                    'title'  => esc_html__( 'Subtitle', 'londone-electrical' ),
+                    'default'  => 'Our Core Values',
+                ),
+                array(
+                    'id'     => 'company-values-content-title',
+                    'type'   => 'text',
+                    'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                    'default'  => "Guiding principles behind our",
+                ),
+                array(
+                    'id'     => 'company-values-content-title-span',
+                    'type'   => 'text',
+                    'title'  => esc_html__( 'Title Span', 'londone-electrical' ),
+                    'default'  => 'excellence',
+                ),
+                array(
+                    'id'     => 'company-values-content-title-desc ',
+                    'type'   => 'textarea',
+                    'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
+                    'default'  => 'Our goal is to be a leader in providing environmentally conscious electrical services. We focus on energy-efficient solutions.',
+                ),
+                array(
+                'id'     => 'company-values-counters',
+                'type'   => 'repeater',
+                'title'  => esc_html__('Company Values Counters', 'londone-electrical'),
+                'desc'   => esc_html__('company values counters', 'londone-electrical'),
+                'group_values' => true,
+                'fields' => array(
+                    array(
+                        'id'     => 'values-counter-item-number',
+                        'type'   => 'text',
+                        'title'  => esc_html__( 'Counter Number', 'londone-electrical' ),
+                        'default'  => "250",
+                    ),
+                    array(
+                        'id'     => 'values-counter-item-text',
+                        'type'   => 'text',
+                        'title'  => esc_html__( 'Counter Text', 'londone-electrical' ),
+                        'default'  => "Trusted client",
+                    ),
+                ),
+              ),
+            array(
+                'id'     => 'section-end',
+                'type'   => 'section',
+                'indent' => false,
+            ),
+        )
+    )
+);
+
+
+//page-contact-us
+Redux::set_section( 
+    $opt_name,
+    array(
+        'title'      => esc_html__( 'Contact Us', 'londone-electrical' ),
+        'desc'       => esc_html__( 'contact us section customize', 'londone-electrical' ),
+        'id'         => 'page-contact-us-section',
+        'subsection' => true,
+        'priority' => 1,
+        'fields'     => array(
+            array(
+                'id'     => 'company-values-content-subtitle',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Subtitle', 'londone-electrical' ),
+                'default'  => 'Our Core Values',
+            ),
+            array(
+                'id'     => 'company-values-content-title',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                'default'  => "Guiding principles behind our",
+            ),
+            array(
+                'id'     => 'company-values-content-title-span',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Title Span', 'londone-electrical' ),
+                'default'  => 'excellence',
+            ),
+            array(
+                'id'     => 'company-values-content-title-desc ',
+                'type'   => 'textarea',
+                'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
+                'default'  => 'Our goal is to be a leader in providing environmentally conscious electrical services. We focus on energy-efficient solutions.',
+            ),
         )
     )
 );
