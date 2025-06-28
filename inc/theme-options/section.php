@@ -1793,7 +1793,7 @@ Redux::set_section(
     $opt_name,
     array(
         'title'      => esc_html__( 'Trusted Expert', 'londone-electrical' ),
-        'desc'       => esc_html__( 'trusted expertsection customize', 'londone-electrical' ),
+        'desc'       => esc_html__( 'trusted expert section customize', 'londone-electrical' ),
         'id'         => 'trusted-expert-section',
         'subsection' => true,
         'priority' => 1,
@@ -1975,7 +1975,7 @@ Redux::set_section(
                     'title'    => esc_html__( 'Contact Image', 'londone-electrical' ),
                     'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
                     'default'  => array(
-                        'url'=> get_template_directory_uri() . '/images//icon-phone-accent.svg'
+                        'url'=> get_template_directory_uri() . '/images/icon-phone-accent.svg'
                     ),
                 ),
                 array(
@@ -1995,6 +1995,89 @@ Redux::set_section(
                 'type'   => 'section',
                 'indent' => false,
             ),
+        )
+    )
+);
+
+
+//why choose us
+Redux::set_section( 
+    $opt_name,
+    array(
+        'title'      => esc_html__( 'Why choose us', 'londone-electrical' ),
+        'desc'       => esc_html__( 'Why choose us section customize', 'londone-electrical' ),
+        'id'         => 'why-choose-us-section',
+        'subsection' => true,
+        'priority' => 1,
+        'fields'     => array(
+            array(
+                'id'       => 'why-choose-us-img',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => esc_html__( 'Why Choose Us Image', 'londone-electrical' ),
+                'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
+                'default'  => array(
+                    'url'=> get_template_directory_uri() . '/images/why-choose-image.jpg'
+                ),
+            ),
+            array(
+                'id'     => 'why-choose-us-subtitle',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Subtitle', 'londone-electrical' ),
+                'default'  => 'why choose us',
+            ),
+            array(
+                'id'     => 'why-choose-us-title',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                'default'  => "Powering progress through",
+            ),
+            array(
+                'id'     => 'why-choose-us-title-span',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Title Span', 'londone-electrical' ),
+                'default'  => 'excellence',
+            ),
+            array(
+                'id'     => 'why-choose-us-title-span',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
+                'default'  => 'excellence',
+            ),
+            array(
+                'id'     => 'why-choose-us-desc',
+                'type'   => 'textarea',
+                'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
+                'default'  => 'Over the years, we’ve accomplished remarkable milestones in the electrical services industry. From completing complex projects to earning',
+            ),
+            array(
+                'id'     => 'why-choose-body-items',
+                'type'   => 'repeater',
+                'title'  => esc_html__('Why choose body items', 'londone-electrical'),
+                'desc'   => esc_html__('why choose body items', 'londone-electrical'),
+                'group_values' => true,
+                'fields' => array(
+                    array(
+                        'id'     => 'why-choose-body-item',
+                        'type'   => 'textarea',
+                        'title'  => esc_html__( 'Why choose body item', 'londone-electrical' ),
+                        'default'  => "Committed to delivering safe and efficient electrical solutions.",
+                    ),
+                ),
+            ),
+             array(
+                'id'     => 'why-choose-us-btn-text',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Button Text', 'londone-electrical' ),
+                'default'  => 'View our milestones',
+            ),
+             array(
+                'id'     => 'why-choose-us-btn-link',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Button Link', 'londone-electrical' ),
+                'default'  => '#',
+            ),
+
         )
     )
 );
