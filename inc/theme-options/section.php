@@ -2077,6 +2077,41 @@ Redux::set_section(
                 'title'  => esc_html__( 'Button Link', 'londone-electrical' ),
                 'default'  => '#',
             ),
+              array(
+                'id' => 'why-choose-item-list1',
+                'type' => 'section',
+                'title' => esc_html__('Why choose item', 'londone-electrical'),
+                'subtitle' => esc_html__('why choose item', 'londone-electrical'),
+                'indent' => true 
+            ),
+                array(
+                    'id'       => 'why-choose-item-list1-image',
+                    'type'     => 'media',
+                    'url'      => true,
+                    'title'    => esc_html__( 'Image', 'londone-electrical' ),
+                    'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
+                    'default'  => array(
+                        'url'=> get_template_directory_uri() . '/images/icon-why-choose-list-1.svg'
+                    ),
+                ),
+                array(
+                    'id'     => 'why-choose-item-list1-title',
+                    'type'   => 'text',
+                    'title'  => esc_html__( 'Title', 'londone-electrical' ),
+                    'default'  => 'Delivering reliable solutions',
+                ), 
+                array(
+                    'id'     => 'why-choose-item-list1-text',
+                    'type'   => 'textarea',
+                    'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
+                    'default'  => 'Expert teams ensuring precision and safety in every project.',
+                ), 
+            array(
+                'id'     => 'section-end',
+                'type'   => 'section',
+                'indent' => false,
+            ),
+            
 
         )
     )
