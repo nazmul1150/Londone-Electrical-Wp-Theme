@@ -2427,8 +2427,8 @@ Redux::set_section(
                 'default'  => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96737.10562045308!2d-74.08535042841811!3d40.739265258395164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1703158537552!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
             ),
 
-            
-             // Icon/Image Upload Field
+
+           // Icon/Image Upload Field
             array(
                 'id'       => 'page-contact-us_location_icon',
                 'type'     => 'media',
@@ -2454,6 +2454,62 @@ Redux::set_section(
                 'type'     => 'textarea',
                 'title'    => 'Location Address',
                 'default'  => '3891 Ranchview. Richardson, California 62639 United Kingdoms 56',
+            ),
+
+
+            // Icon/Image Upload Field
+            array(
+                'id'       => 'page-contact-us_email_icon',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => 'Email Icon',
+                'desc'     => 'Upload an icon for email section.',
+                'default'  => array(
+                    'url' => get_template_directory_uri() . '/images/icon-mail-primary.svg',
+                ),
+            ),
+            // Title Field
+            array(
+                'id'       => 'page-contact-us_email_title',
+                'type'     => 'text',
+                'title'    => 'Email Title',
+                'default'  => 'Email',
+            ),
+
+            // Email Address
+            array(
+                'id'       => 'page-contact-us_email_address',
+                'type'     => 'text',
+                'title'    => 'Email Address',
+                'validate' => 'email',
+                'default'  => 'info@domainname.com',
+            ),
+
+             // Phone Icon
+            array(
+                'id'       => 'page-contact-us_phone_icon',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => 'Phone Icon',
+                'default'  => array(
+                    'url' => get_template_directory_uri() . '/images/icon-phone-primary.svg',
+                ),
+            ),
+
+            // Section Title
+            array(
+                'id'       => 'page-contact-us_phone_title',
+                'type'     => 'text',
+                'title'    => 'Phone Title',
+                'default'  => 'Phone',
+            ),
+
+            // Phone Number
+            array(
+                'id'       => 'page-contact-us_phone_number',
+                'type'     => 'text',
+                'title'    => 'Phone Number',
+                'default'  => '+01 456 785 889',
             ),
 
         )
