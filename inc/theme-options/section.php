@@ -29,6 +29,8 @@ Redux::set_section(
                 'title'  => esc_html__('Slider Items', 'londone-electrical'),
                 'desc'   => esc_html__('Slider create home page', 'londone-electrical'),
                 'group_values' => true,
+                // 'sortable' => true,
+                // 'multi' => true,
                 'fields' => array(
                     array(
                         'id'       => 'slider-img',
