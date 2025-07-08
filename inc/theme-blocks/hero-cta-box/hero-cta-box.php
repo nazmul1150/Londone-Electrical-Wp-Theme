@@ -1,4 +1,11 @@
 <!-- Hero CTA Box Start -->
+<?php
+     global $londone_electrical;
+
+     $slider_bottom_content1 = $londone_electrical['slider-bottom-content1'];
+     $slider_bottom_content2 = $londone_electrical['slider-bottom-content2'];
+?>
+
 <div class="hero-cta-box">
         <div class="container">
             <div class="row">
