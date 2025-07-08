@@ -2,8 +2,10 @@
 <?php
      global $londone_electrical;
 
-     $slider_bottom_content1 = $londone_electrical['slider-bottom-content1'];
-     $slider_bottom_content2 = $londone_electrical['slider-bottom-content2'];
+
+    // echo"<pre>";
+    // print_r($slider_options);
+    // echo "</pre>";
 ?>
 
 <div class="hero-cta-box">
@@ -19,15 +21,15 @@
                                     <img src="<?php echo get_template_directory_uri();?>/images/icon-contact-now.svg" alt="">
                                 </div>
                                 <div class="hero-cta-item-title">
-                                    <h3>Contact Us</h3>
+                                    <h3><?php echo esc_html($londone_electrical['slider-bottom-content1-title']); ?></h3>
                                 </div>
                             </div>
                             <!-- Hero Cta Item Header End -->
 
                             <!-- Hero Cta Item Content Start -->
                             <div class="hero-cta-item-content">
-                                <p><a href="mailto:info@domainname.com"><span>Email:</span> info@domainname.com</a></p>
-                                <p><a href="mailto:123456789"><span>Phone:</span> (123) 465 - 798</a></p>
+                                <p><a href="mailto:<?php echo esc_html($londone_electrical['slider-bottom-content1-email']); ?>"><span>Email:</span> <?php echo esc_html($londone_electrical['slider-bottom-content1-email']); ?></a></p>
+                                <p><a href="mailto:<?php echo esc_html($londone_electrical['slider-bottom-content1-phone']); ?>"><span>Phone:</span> <?php echo esc_html($londone_electrical['slider-bottom-content1-phone']); ?></a></p>
                             </div>
                             <!-- Hero Cta Item Content End -->
                         </div>
@@ -41,14 +43,14 @@
                                     <img src="<?php echo get_template_directory_uri();?>/images/icon-location.svg" alt="">
                                 </div>
                                 <div class="hero-cta-item-title">
-                                    <h3>Our Location</h3>
+                                    <h3><?php echo esc_html($londone_electrical['slider-bottom-content2-title']); ?></h3>
                                 </div>
                             </div>
                             <!-- Hero Cta Item Header End -->
 
                             <!-- Hero Cta Item Content Start -->
                             <div class="hero-cta-item-content">
-                                <p>4517 Washington Ave. Manchester, Kentucky 39495</p>
+                                <p><?php echo esc_html($londone_electrical['slider-bottom-content2-location-address']); ?></p>
                             </div>
                             <!-- Hero Cta Item Content End -->
                         </div>
@@ -59,8 +61,10 @@
                 <div class="col-lg-5 order-lg-2 order-1">
                     <!-- Our Expert Box Start -->
                     <div class="our-expert-box">
-                        <h2 class="wow fadeInUp" data-wow-delay="0.4s">Contact our expert handyman today!</h2>
-                        <a href="contact.html" class="btn-default btn-highlighted wow fadeInUp" data-wow-delay="0.4s">book-now</a>
+                        <h2 class="wow fadeInUp" data-wow-delay="0.4s"><?php echo esc_html($londone_electrical['slider-bottom-content3-book-now-title']); ?></h2>
+                        <?php if(! empty( $londone_electrical['slider-bottom-content3-book-now-button-link'] )){ ?>
+                           <a href="<?php echo esc_url($londone_electrical['slider-bottom-content3-book-now-button-link']); ?>" class="btn-default btn-highlighted wow fadeInUp" data-wow-delay="0.4s"><?php echo esc_html($londone_electrical['slider-bottom-content3-book-now-button-text']); ?></a>
+                        <?php } ?>
                     </div>
                     <!-- Our Expert Box End -->
                 </div>

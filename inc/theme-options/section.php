@@ -91,20 +91,20 @@ Redux::set_section(
             'indent' => true 
             ),
                 array(
-                    'id'     => 'title',
+                    'id'     => 'slider-bottom-content1-title',
                     'type'   => 'text',
                     'title'  => esc_html__( 'Contact Us', 'londone-electrical' ),
                     'default'  => 'Contact Us',
                      
                 ),
                 array(
-                    'id'     => 'email',
+                    'id'     => 'slider-bottom-content1-email',
                     'type'   => 'text',
                     'title'  => esc_html__( 'Email', 'londone-electrical' ),
                     'default'  => 'info@domainname.com',
                 ),
                 array(
-                    'id'     => 'phone',
+                    'id'     => 'slider-bottom-content1-phone',
                     'type'   => 'text',
                     'title'  => esc_html__( 'Phone', 'londone-electrical' ),
                     'default'  => '(123) 465 - 798',
@@ -122,8 +122,15 @@ Redux::set_section(
             'subtitle' => esc_html__('Our Location information', 'londone-electrical'),
             'indent' => true 
             ),
+            array(
+                    'id'     => 'slider-bottom-content2-title',
+                    'type'   => 'text',
+                    'title'  => esc_html__( 'Our Location', 'londone-electrical' ),
+                    'default'  => 'Our Location',
+                     
+                ),
                 array(
-                    'id'     => 'location-address',
+                    'id'     => 'slider-bottom-content2-location-address',
                     'type'   => 'text',
                     'title'  => esc_html__( 'Address', 'londone-electrical' ),
                     'default'  => '4517 Washington Ave. Manchester, Kentucky 39495',
@@ -142,19 +149,19 @@ Redux::set_section(
             'indent' => true 
             ),
                 array(
-                    'id'     => 'book-now-title',
+                    'id'     => 'slider-bottom-content3-book-now-title',
                     'type'   => 'text',
                     'title'  => esc_html__( 'Title', 'londone-electrical' ),
                     'default'  => 'Contact our expert handyman today!',
                 ),
                 array(
-                    'id'     => 'book-now-button-text',
+                    'id'     => 'slider-bottom-content3-book-now-button-text',
                     'type'   => 'text',
                     'title'  => esc_html__( 'Button text', 'londone-electrical' ),
                     'default'  => 'Book-Now',
                 ),
                 array(
-                    'id'     => 'book-now-button-link',
+                    'id'     => 'slider-bottom-content3-book-now-button-link',
                     'type'   => 'text',
                     'title'  => esc_html__( 'Button link', 'londone-electrical' ),
                     'default'  => '#',
@@ -206,10 +213,16 @@ Redux::set_section(
                     ),
                 ),
                 array(
+                    'id'     => 'about-experience-box-title-count',
+                    'type'   => 'text',
+                    'title'  => esc_html__( 'Count Number', 'londone-electrical' ),
+                    'default'  => '25',
+                ),
+                array(
                     'id'     => 'about-experience-box-title',
                     'type'   => 'text',
                     'title'  => esc_html__( 'Title', 'londone-electrical' ),
-                    'default'  => '425+ Years Of Experience',
+                    'default'  => 'Years Of Experience',
                 ),
                 array(
                     'id'     => 'about-experience-box-desc',
