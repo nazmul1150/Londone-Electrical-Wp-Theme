@@ -515,157 +515,43 @@ Redux::set_section(
             ),
 
             array(
-                'id' => 'our-awards-list',
-                'type' => 'section',
-                'title' => esc_html__('Our Awards List', 'londone-electrical'),
-                'subtitle' => esc_html__('Our Awards List', 'londone-electrical'),
-                'indent' => true 
+                'id'       => 'our-awards-items',
+                'type'     => 'slides',
+                'title'    => esc_html__('Awards items', 'londone-electrical'),
+                'show'        => array( 'title' => true,'description' => true, 'thumb' => true, 'image' => true, 'url' => false ),
+                'default'  => array(
+                    array(
+                        'title'       => 'Certified Master Electrician Accreditation',
+                        'description' => 'Awarded to our lead electricians for demonstrating superior technical expertise and industry knowledge',
+                        'thumb'       => get_template_directory_uri() . '/images/awards-1.png',
+                        'image'       => get_template_directory_uri() . '/images/awards-1.png',
+                    ),
+                    array(
+                        'title'       => 'Best Residential Electrician Service (2023)',
+                        'description' => 'Voted as the top choice for homeowners in delivering safe and reliable electrical solutions.',
+                        'thumb'       => get_template_directory_uri() . '/images/awards-2.png',
+                        'image'       => get_template_directory_uri() . '/images/awards-2.png',
+                    ),
+                    array(
+                        'title'       => 'Industry Excellence Certificate by IEC',
+                        'description' => 'Certified by the International Electrical Contractors Association for adhering to global standards.',
+                        'thumb'       => get_template_directory_uri() . '/images/awards-3.png',
+                        'image'       => get_template_directory_uri() . '/images/awards-3.png',
+                    ),
+                    array(
+                        'title'       => 'Emergency Service Provider Recognition',
+                        'description' => 'Honored for delivering fast and efficient 24/7 emergency electrical repairs.',
+                        'url'         => get_template_directory_uri() . '/images/awards-4.png',
+                        'thumb'       => get_template_directory_uri() . '/images/awards-4.png',
+                        'image'       => get_template_directory_uri() . '/images/awards-4.png',
+                    ),
+                ),
+                'placeholder' => array(
+                    'title'       => esc_html__('This is a title', 'londone-electrical'),
+                    'description' => esc_html__('Description Here', 'londone-electrical'),
+                ),
             ),
-                array(
-                    'id' => 'our-awards-list1',
-                    'type' => 'section',
-                    'title' => esc_html__('Our Awards List1', 'londone-electrical'),
-                    'subtitle' => esc_html__('Our Awards List1', 'londone-electrical'),
-                    'indent' => true 
-                ),
-                    array(
-                        'id'       => 'our-awards-list1-img',
-                        'type'     => 'media',
-                        'url'      => true,
-                        'title'    => esc_html__( 'Our Awards List1 Image', 'londone-electrical' ),
-                        'desc'     => esc_html__( 'Upload list1 image', 'londone-electrical' ),
-                        'default'  => array(
-                            'url'=> get_template_directory_uri() . '/images/awards-1.png'
-                        ),
-                    ),
-                    array(
-                        'id'     => 'our-awards-list1-title',
-                        'type'   => 'text',
-                        'title'  => esc_html__( 'Title', 'londone-electrical' ),
-                        'default'  => 'Certified Master Electrician Accreditation',
-                    ),
-                    array(
-                        'id'     => 'our-awards-list1-desc',
-                        'type'   => 'textarea',
-                        'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
-                        'default'  => 'Awarded to our lead electricians for demonstrating superior technical expertise and industry knowledge',
-                    ),
-                array(
-                    'id'     => 'section-end',
-                    'type'   => 'section',
-                    'indent' => false,
-                ),
 
-                array(
-                    'id' => 'our-awards-list2',
-                    'type' => 'section',
-                    'title' => esc_html__('Our Awards List2', 'londone-electrical'),
-                    'subtitle' => esc_html__('Our Awards List2', 'londone-electrical'),
-                    'indent' => true 
-                ),
-                    array(
-                        'id'       => 'our-awards-list2-img',
-                        'type'     => 'media',
-                        'url'      => true,
-                        'title'    => esc_html__( 'Our Awards List2 Image', 'londone-electrical' ),
-                        'desc'     => esc_html__( 'Upload list2 image', 'londone-electrical' ),
-                        'default'  => array(
-                            'url'=> get_template_directory_uri() . '/images/awards-2.png'
-                        ),
-                    ),
-                    array(
-                        'id'     => 'our-awards-list2-title',
-                        'type'   => 'text',
-                        'title'  => esc_html__( 'Title', 'londone-electrical' ),
-                        'default'  => 'Best Residential Electrician Service (2023)',
-                    ),
-                    array(
-                        'id'     => 'our-awards-list2-desc',
-                        'type'   => 'textarea',
-                        'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
-                        'default'  => 'Voted as the top choice for homeowners in delivering safe and reliable electrical solutions.',
-                    ),
-                array(
-                    'id'     => 'section-end',
-                    'type'   => 'section',
-                    'indent' => false,
-                ),
-
-                array(
-                    'id' => 'our-awards-list3',
-                    'type' => 'section',
-                    'title' => esc_html__('Our Awards List3', 'londone-electrical'),
-                    'subtitle' => esc_html__('Our Awards List3', 'londone-electrical'),
-                    'indent' => true 
-                ),
-                    array(
-                        'id'       => 'our-awards-list3-img',
-                        'type'     => 'media',
-                        'url'      => true,
-                        'title'    => esc_html__( 'Our Awards List3 Image', 'londone-electrical' ),
-                        'desc'     => esc_html__( 'Upload list3 image', 'londone-electrical' ),
-                        'default'  => array(
-                            'url'=> get_template_directory_uri() . '/images/awards-3.png'
-                        ),
-                    ),
-                    array(
-                        'id'     => 'our-awards-list3-title',
-                        'type'   => 'text',
-                        'title'  => esc_html__( 'Title', 'londone-electrical' ),
-                        'default'  => 'Industry Excellence Certificate by IEC',
-                    ),
-                    array(
-                        'id'     => 'our-awards-list3-desc',
-                        'type'   => 'textarea',
-                        'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
-                        'default'  => 'Certified by the International Electrical Contractors Association for adhering to global standards.',
-                    ),
-                array(
-                    'id'     => 'section-end',
-                    'type'   => 'section',
-                    'indent' => false,
-                ),
-
-                array(
-                    'id' => 'our-awards-list4',
-                    'type' => 'section',
-                    'title' => esc_html__('Our Awards List4', 'londone-electrical'),
-                    'subtitle' => esc_html__('Our Awards List4', 'londone-electrical'),
-                    'indent' => true 
-                ),
-                    array(
-                        'id'       => 'our-awards-list4-img',
-                        'type'     => 'media',
-                        'url'      => true,
-                        'title'    => esc_html__( 'Our Awards List4 Image', 'londone-electrical' ),
-                        'desc'     => esc_html__( 'Upload list4 image', 'londone-electrical' ),
-                        'default'  => array(
-                            'url'=> get_template_directory_uri() . '/images/awards-4.png'
-                        ),
-                    ),
-                    array(
-                        'id'     => 'our-awards-list4-title',
-                        'type'   => 'text',
-                        'title'  => esc_html__( 'Title', 'londone-electrical' ),
-                        'default'  => 'Emergency Service Provider Recognition',
-                    ),
-                    array(
-                        'id'     => 'our-awards-list4-desc',
-                        'type'   => 'textarea',
-                        'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
-                        'default'  => 'Honored for delivering fast and efficient 24/7 emergency electrical repairs.',
-                    ),
-                array(
-                    'id'     => 'section-end',
-                    'type'   => 'section',
-                    'indent' => false,
-                ),
-                
-            array(
-                'id'     => 'section-end',
-                'type'   => 'section',
-                'indent' => false,
-            ),
 
         )
     )

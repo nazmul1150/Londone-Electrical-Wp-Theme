@@ -1,3 +1,15 @@
+
+<?php
+     global $londone_electrical;
+     $our_service_subtitle = !empty($londone_electrical['our-service-subtitle']) ? esc_html($londone_electrical['our-service-subtitle']) : '';
+     $our_service_title = !empty($londone_electrical['our-service-title']) ? esc_html($londone_electrical['our-service-title']) : '';
+     $our_service_title_span = !empty($londone_electrical['our-service-title-span']) ? esc_html($londone_electrical['our-service-title-span']) : '';
+     $our_service_bottom_text = !empty($londone_electrical['our-service-bottom-text']) ? esc_html($londone_electrical['our-service-bottom-text']) : '';
+     $our_service_bottom_link_text = !empty($londone_electrical['our-service-bottom-link-text']) ? esc_html($londone_electrical['our-service-bottom-link-text']) : '';
+     $our_service_bottom_link_text_link = !empty($londone_electrical['our-service-bottom-link-text-link']) ? esc_html($londone_electrical['our-service-bottom-link-text-link']) : '';
+
+?>
+
 <!-- Our Services Section Start -->
 <div class="our-services bg-section dark-section">
         <div class="container">
@@ -5,8 +17,8 @@
                 <div class="col-lg-12">
                     <!-- Section Title Start -->
                     <div class="section-title section-title-center">
-                        <h3 class="wow fadeInUp">Our Services</h3>
-                        <h2 class="text-anime-style-2" data-cursor="-opaque">Specialized electrical services for <span>every industry</span></h2>
+                        <h3 class="wow fadeInUp"><?php echo esc_html($our_service_subtitle); ?></h3>
+                        <h2 class="text-anime-style-2" data-cursor="-opaque"><?php echo esc_html($our_service_title); ?> <span><?php echo esc_html($our_service_title_span); ?></span></h2>
                     </div>
                     <!-- Section Title End -->
                 </div>
@@ -201,7 +213,7 @@
                 <div class="col-lg-12">
                     <!-- Section Footer Text Start -->
                     <div class="section-footer-text wow fadeInUp" data-wow-delay="0.2s">
-                        <p>Professional electrical solutions for every need. <a href="contact.html">Contact us today!</a></p>
+                        <p><?php echo esc_html($our_service_bottom_text); ?> <?php if (! empty($our_service_bottom_link_text_link)){ ?><a href="<?php echo esc_url($our_service_bottom_link_text_link); ?>"><?php echo esc_html($our_service_bottom_link_text); ?></a><?php } ?></p>
                     </div>
                     <!-- Section Footer Text End -->
                 </div>

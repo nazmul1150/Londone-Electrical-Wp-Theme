@@ -1,3 +1,14 @@
+<?php
+     global $londone_electrical;
+     $our_awards_subtitle = !empty($londone_electrical['our-awards-subtitle']) ? esc_html($londone_electrical['our-awards-subtitle']) : '';
+     $our_awards_title = !empty($londone_electrical['our-awards-title']) ? esc_html($londone_electrical['our-awards-title']) : '';
+     $our_awards_title_span = !empty($londone_electrical['our-awards-title-span']) ? esc_html($londone_electrical['our-awards-title-span']) : '';
+     $our_awards_desc = !empty($londone_electrical['our-awards-desc']) ? esc_html($londone_electrical['our-awards-desc']) : '';
+
+     $our_service_bottom_link_text = !empty($londone_electrical['our-service-bottom-link-text']) ? esc_html($londone_electrical['our-service-bottom-link-text']) : '';
+     $our_service_bottom_link_text_link = !empty($londone_electrical['our-service-bottom-link-text-link']) ? esc_html($londone_electrical['our-service-bottom-link-text-link']) : '';
+
+?>
 <!-- Our Awards Section Start -->
 <div class="our-awards">
         <div class="container">
@@ -5,8 +16,8 @@
                 <div class="col-lg-6">
                     <!-- Section Title Start -->
                     <div class="section-title">
-                        <h3 class="wow fadeInUp">Awards and certification</h3>
-                        <h2 class="text-anime-style-2" data-cursor="-opaque">Awards and certifications that reflect <span>our commitment</span></h2>
+                        <h3 class="wow fadeInUp"><?php echo esc_html($our_awards_subtitle); ?></h3>
+                        <h2 class="text-anime-style-2" data-cursor="-opaque"><?php echo esc_html($our_awards_title); ?> <span><?php echo esc_html($our_awards_title_span); ?></span></h2>
                     </div>
                     <!-- Section Title End -->
                 </div>
@@ -14,7 +25,7 @@
                 <div class="col-lg-6">
                     <!-- Section Title Content Start -->
                     <div class="section-title-content wow fadeInUp" data-wow-delay="0.2s">
-                        <p>Over the years, we've earned awards and accreditations that underscore our unwavering focus on quality, safety.</p>
+                        <p><?php echo esc_html($our_awards_desc); ?></p>
                     </div>
                     <!-- Section Title Content End -->
                 </div>
@@ -25,55 +36,28 @@
                     <!-- Our Awards List Start -->
                     <div class="our-awards-list wow fadeInUp" data-wow-delay="0.4s">
                         <!-- Awards Item Start -->
-                        <div class="awards-item">
-                            <div class="icon-box">
-                                <img src="<?php echo get_template_directory_uri();?>/images/awards-1.png" alt="">
-                            </div>
+                       <?php
+                        global $londone_electrical;
 
-                            <div class="awards-item-content">
-                                <h3>Certified Master Electrician Accreditation</h3>
-                                <p>Awarded to our lead electricians for demonstrating superior technical expertise and industry knowledge</p>
+                        if ( !empty($londone_electrical['our-awards-items']) && is_array($londone_electrical['our-awards-items']) ) :
+                            foreach ( $londone_electrical['our-awards-items'] as $award ) :
+                                $award_image = !empty($award['image']) ? esc_url($award['image']) : get_template_directory_uri() . '/images/default-award.png';
+                                $award_title = !empty($award['title']) ? esc_html($award['title']) : '';
+                                $award_desc  = !empty($award['description']) ? esc_html($award['description']) : '';
+                        ?>
+                            <div class="awards-item">
+                                <div class="icon-box">
+                                    <img src="<?php echo $award_image; ?>" alt="<?php echo esc_attr($award_title); ?>">
+                                </div>
+                                <div class="awards-item-content">
+                                    <h3><?php echo $award_title; ?></h3>
+                                    <p><?php echo $award_desc; ?></p>
+                                </div>
                             </div>
-                        </div>
-                        <!-- Awards Item End -->
-
-                        <!-- Awards Item Start -->
-                        <div class="awards-item">
-                            <div class="icon-box">
-                                <img src="<?php echo get_template_directory_uri();?>/images/awards-2.png" alt="">
-                            </div>
-
-                            <div class="awards-item-content">
-                                <h3>Best Residential Electrician Service (2023)</h3>
-                                <p>Voted as the top choice for homeowners in delivering safe and reliable electrical solutions.</p>
-                            </div>
-                        </div>
-                        <!-- Awards Item End -->
-
-                        <!-- Awards Item Start -->
-                        <div class="awards-item">
-                            <div class="icon-box">
-                                <img src="<?php echo get_template_directory_uri();?>/images/awards-3.png" alt="">
-                            </div>
-
-                            <div class="awards-item-content">
-                                <h3>Industry Excellence Certificate by IEC</h3>
-                                <p>Certified by the International Electrical Contractors Association for adhering to global standards.</p>
-                            </div>
-                        </div>
-                        <!-- Awards Item End -->
-
-                        <!-- Awards Item Start -->
-                        <div class="awards-item">
-                            <div class="icon-box">
-                                <img src="<?php echo get_template_directory_uri();?>/images/awards-4.png" alt="">
-                            </div>
-
-                            <div class="awards-item-content">
-                                <h3>Emergency Service Provider Recognition</h3>
-                                <p>Honored for delivering fast and efficient 24/7 emergency electrical repairs.</p>
-                            </div>
-                        </div>
+                        <?php
+                            endforeach;
+                        endif;
+                        ?>
                         <!-- Awards Item End -->
                     </div>
                     <!-- Our Awards List End -->
