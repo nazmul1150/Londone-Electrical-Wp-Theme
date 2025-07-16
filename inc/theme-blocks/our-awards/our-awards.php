@@ -37,7 +37,6 @@
                     <div class="our-awards-list wow fadeInUp" data-wow-delay="0.4s">
                         <!-- Awards Item Start -->
                        <?php
-                        global $londone_electrical;
 
                         if ( !empty($londone_electrical['our-awards-items']) && is_array($londone_electrical['our-awards-items']) ) :
                             foreach ( $londone_electrical['our-awards-items'] as $award ) :
