@@ -879,18 +879,24 @@ Redux::set_section(
             ),
 
             array(
-                'id'     => 'our-facts-lists',
-                'type'   => 'repeater',
-                'title'  => esc_html__('Our Facts Lists', 'londone-electrical'),
-                'desc'   => esc_html__('Our facts fists', 'londone-electrical'),
-                'group_values' => true,
-                'fields' => array(
+                'id'       => 'our-facts-lists',
+                'type'     => 'slides',
+                'thumb' => false,
+                'title'    => esc_html__('Our Facts Lists', 'londone-electrical'),
+                'show'        => array( 'thumb' => false, 'image' => false, 'title' => false,'description' => true, 'url' => false ),
+                'default'  => array(
                     array(
-                        'id'     => 'our-facts-list',
-                        'type'   => 'text',
-                        'title'  => esc_html__( 'Our Facts List', 'londone-electrical' ),
-                        'default'  => 'Seasonal & Locally Sourced Ingredients',
+                        'description' => 'Seasonal & Locally Sourced Ingredients',
                     ),
+                    array(
+                        'description' => 'Vegetarian & Dietary-Friendly Options',
+                    ),
+                    array(
+                        'description' => 'Exquisite Pairings & Unique Flavors',
+                    ),
+                ),
+                'placeholder' => array(
+                    'description' => esc_html__('Enter Your List', 'londone-electrical'),
                 ),
             ),
 
@@ -921,171 +927,55 @@ Redux::set_section(
                             'url'=> get_template_directory_uri() . '/images/contact-now-circle.png'
                         ),
                     ),
-                array(
-                    'id'     => 'section-end',
-                    'type'   => 'section',
-                    'indent' => false,
-                ),
-            array(
-                    'id' => 'facts-counter-box',
-                    'type' => 'section',
-                    'title' => esc_html__('Our Facts Counter', 'londone-electrical'),
-                    'subtitle' => esc_html__('our facts counter', 'londone-electrical'),
-                    'indent' => true 
-                ),
                     array(
-                        'id' => 'facts-counter-box1',
-                        'type' => 'section',
-                        'title' => esc_html__('Our Facts Counter1', 'londone-electrical'),
-                        'subtitle' => esc_html__('our facts counter1', 'londone-electrical'),
-                        'indent' => true 
-                    ),
-                        array(
-                            'id'       => 'our-facts-counter1-image',
-                            'type'     => 'media',
-                            'url'      => true,
-                            'title'    => esc_html__( 'Our Facts Counter1 Image', 'londone-electrical' ),
-                            'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
-                            'default'  => array(
-                                'url'=> get_template_directory_uri() . '/images/icon-facts-counter-1.svg'
-                            ),
-                        ),
-                        array( 
-                            'id' => 'our-facts-counter1-number',
-                            'type' => 'text',
-                            'title'  => esc_html__( 'Count Number', 'londone-electrical' ),
-                            'data' => array(
-                                'count-number' => '500',
-                                'count-increment' => '+',
-                            )
-                        ),
-                        array( 
-                            'id' => 'our-facts-counter1-desc',
-                            'type' => 'text',
-                            'title'  => esc_html__( 'Count Descripation', 'londone-electrical' ),
-                            'default' => 'Projects Completed',
-                        ),
-                     array(
-                        'id'     => 'section-end',
-                        'type'   => 'section',
-                        'indent' => false,
-                    ),
-                    array(
-                        'id' => 'facts-counter-box2',
-                        'type' => 'section',
-                        'title' => esc_html__('Our Facts Counter2', 'londone-electrical'),
-                        'subtitle' => esc_html__('our facts counter2', 'londone-electrical'),
-                        'indent' => true 
-                    ),
-                        array(
-                            'id'       => 'our-facts-counter2-image',
-                            'type'     => 'media',
-                            'url'      => true,
-                            'title'    => esc_html__( 'Our Facts Counter2 Image', 'londone-electrical' ),
-                            'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
-                            'default'  => array(
-                                'url'=> get_template_directory_uri() . '/images/icon-facts-counter-2.svg'
-                            ),
-                        ),
-                        array( 
-                            'id' => 'our-facts-counter2-number',
-                            'type' => 'text',
-                            'title'  => esc_html__( 'Count Number', 'londone-electrical' ),
-                            'data' => array(
-                                'count-number' => '1000',
-                                'count-increment' => '+',
-                            )
-                        ),
-                        array( 
-                            'id' => 'our-facts-counter2-desc',
-                            'type' => 'text',
-                            'title'  => esc_html__( 'Count Descripation', 'londone-electrical' ),
-                            'default' => 'Emergency Repairs',
-                        ),
-                     array(
-                        'id'     => 'section-end',
-                        'type'   => 'section',
-                        'indent' => false,
-                    ),
-                    array(
-                        'id' => 'facts-counter-box3',
-                        'type' => 'section',
-                        'title' => esc_html__('Our Facts Counter3', 'londone-electrical'),
-                        'subtitle' => esc_html__('our facts counter3', 'londone-electrical'),
-                        'indent' => true 
-                    ),
-                        array(
-                            'id'       => 'our-facts-counter3-image',
-                            'type'     => 'media',
-                            'url'      => true,
-                            'title'    => esc_html__( 'Our Facts Counter3 Image', 'londone-electrical' ),
-                            'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
-                            'default'  => array(
-                                'url'=> get_template_directory_uri() . '/images/icon-facts-counter-3.svg'
-                            ),
-                        ),
-                        array( 
-                            'id' => 'our-facts-counter3-number',
-                            'type' => 'text',
-                            'title'  => esc_html__( 'Count Number', 'londone-electrical' ),
-                            'data' => array(
-                                'count-number' => '3500',
-                                'count-increment' => '+',
-                            )
-                        ),
-                        array( 
-                            'id' => 'our-facts-counter3-desc',
-                            'type' => 'text',
-                            'title'  => esc_html__( 'Count Descripation', 'londone-electrical' ),
-                            'default' => 'Happy Clients',
-                        ),
-                     array(
-                        'id'     => 'section-end',
-                        'type'   => 'section',
-                        'indent' => false,
-                    ),
-                    array(
-                        'id' => 'facts-counter-box4',
-                        'type' => 'section',
-                        'title' => esc_html__('Our Facts Counter4', 'londone-electrical'),
-                        'subtitle' => esc_html__('our facts counter4', 'londone-electrical'),
-                        'indent' => true 
-                    ),
-                        array(
-                            'id'       => 'our-facts-counter4-image',
-                            'type'     => 'media',
-                            'url'      => true,
-                            'title'    => esc_html__( 'Our Facts Counter4 Image', 'londone-electrical' ),
-                            'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
-                            'default'  => array(
-                                'url'=> get_template_directory_uri() . '/images/icon-facts-counter-4.svg'
-                            ),
-                        ),
-                        array( 
-                            'id' => 'our-facts-counter4-number',
-                            'type' => 'text',
-                            'title'  => esc_html__( 'Count Number', 'londone-electrical' ),
-                            'data' => array(
-                                'count-number' => '100',
-                                'count-increment' => '+',
-                            )
-                        ),
-                        array( 
-                            'id' => 'our-facts-counter4-desc',
-                            'type' => 'text',
-                            'title'  => esc_html__( 'Count Descripation', 'londone-electrical' ),
-                            'default' => 'Skilled Professionals',
-                        ),
-                     array(
-                        'id'     => 'section-end',
-                        'type'   => 'section',
-                        'indent' => false,
+                        'id'     => 'our-facts-image2-link',
+                        'type'   => 'text',
+                        'title'  => esc_html__( 'Our Facts circle Image Link', 'londone-electrical' ),
+                        'default'  => '#',
                     ),
                 array(
                     'id'     => 'section-end',
                     'type'   => 'section',
                     'indent' => false,
                 ),
+
+                array(
+                'id'       => 'facts-counter-box',
+                'type'     => 'slides',
+                'thumb' => false,
+                'title'    => esc_html__('Our Facts Counter', 'londone-electrical'),
+                'show'        => array( 'thumb' => true, 'image' => true, 'title' => true,'description' => true, 'url' => false ),
+                'default'  => array(
+                    array(
+                        'title' => '500',
+                        'description' => 'Projects Completed',
+                        'thumb'=> get_template_directory_uri() . '/images/icon-facts-counter-1.svg',
+                        'image'=> get_template_directory_uri() . '/images/icon-facts-counter-1.svg',
+                    ),
+                    array(
+                        'title' => '1000',
+                        'description' => 'Emergency Repairs',
+                        'thumb'=> get_template_directory_uri() . '/images/icon-facts-counter-2.svg',
+                        'image'=> get_template_directory_uri() . '/images/icon-facts-counter-2.svg',
+                    ),
+                    array(
+                        'title' => '3500',
+                        'description' => 'Happy Clients',
+                        'thumb'=> get_template_directory_uri() . '/images/icon-facts-counter-3.svg',
+                        'image'=> get_template_directory_uri() . '/images/icon-facts-counter-3.svg',
+                    ),
+                    array(
+                        'title' => '100',
+                        'description' => 'Skilled Professionals',
+                        'thumb'=> get_template_directory_uri() . '/images/icon-facts-counter-4.svg',
+                        'image'=> get_template_directory_uri() . '/images/icon-facts-counter-4.svg',
+                    ),
+                ),
+                'placeholder' => array(
+                    'title' => esc_html__('Count Number', 'londone-electrical'),
+                    'description' => esc_html__('Counter Title', 'londone-electrical'),
+                ),
+            ),
 
         )
     )
@@ -1119,12 +1009,68 @@ Redux::set_section(
                 'title'  => esc_html__( 'Title Span', 'londone-electrical' ),
                 'default'  => 'he bank',
             ),
+
             array(
-                'id'       => 'our-gallery-img',
-                'type'     => 'gallery',
-                'title'    => esc_html__( 'Add Gallery', 'londone-electrical' ),
-                'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
+                'id'     => 'our-gallery-btn-text-home',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Home Page Gallery Button Text', 'londone-electrical' ),
+                'descripation'  => esc_html__( 'Home Page Setup All Gallery Page Text', 'londone-electrical' ),
+                'default'  => 'View More',
             ),
+            array(
+                'id'     => 'our-gallery-btn-link-home',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Home Page Gallery Button Link', 'londone-electrical' ),
+                'descripation'  => esc_html__( 'Home Page Setup All Gallery Page Link', 'londone-electrical' ),
+                'default'  => '#',
+            ),
+
+             array(
+                'id'       => 'our-gallery-img',
+                'type'     => 'slides',
+                'thumb' => false,
+                'title'    => esc_html__('Our Facts Counter', 'londone-electrical'),
+                'show'        => array( 'thumb' => true, 'image' => true, 'title' => false,'description' => false, 'url' => false ),
+                'default'  => array(
+                    array(
+                        'thumb' => get_template_directory_uri() . '/images/gallery-1.jpg',
+                        'image' => get_template_directory_uri() . '/images/gallery-1.jpg',
+                    ),
+                    array(
+                        'url' => get_template_directory_uri() . '/images/gallery-2.jpg',
+                        'image' => get_template_directory_uri() . '/images/gallery-2.jpg',
+                    ),
+                    array(
+                        'thumb' => get_template_directory_uri() . '/images/gallery-3.jpg',
+                        'thumbnail' => get_template_directory_uri() . '/images/gallery-3.jpg',
+                    ),
+                    array(
+                        'thumb' => get_template_directory_uri() . '/images/gallery-4.jpg',
+                        'image' => get_template_directory_uri() . '/images/gallery-4.jpg',
+                    ),
+                    array(
+                        'thumb' => get_template_directory_uri() . '/images/gallery-5.jpg',
+                        'image' => get_template_directory_uri() . '/images/gallery-5.jpg',
+                    ),
+                    array(
+                        'thumb' => get_template_directory_uri() . '/images/gallery-6.jpg',
+                        'image' => get_template_directory_uri() . '/images/gallery-6.jpg',
+                    ),
+                    array(
+                        'thumb' => get_template_directory_uri() . '/images/gallery-7.jpg',
+                        'image' => get_template_directory_uri() . '/images/gallery-7.jpg',
+                    ),
+                    array(
+                        'thumb' => get_template_directory_uri() . '/images/gallery-8.jpg',
+                        'image' => get_template_directory_uri() . '/images/gallery-8.jpg',
+                    ),
+                    array(
+                        'thumb' => get_template_directory_uri() . '/images/gallery-9.jpg',
+                        'image' => get_template_directory_uri() . '/images/gallery-9.jpg',
+                    ),
+                ),
+            ),
+
         )
     )
 );

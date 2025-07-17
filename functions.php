@@ -202,7 +202,7 @@ function londone_electrical_register_blocks() {
     $blocks = ['accordion', 'hero-slider', 'hero-cta-box', 'about-us', 'our-services', 'our-awards',
     'our-features', 'our-goals', 'our-facts', 'cta-box', 'our-testimonial', 'our-faqs', 'our-blog', 
     'our-pricing', 'breadcrumb', 'our-approach', 'trusted-expert', 'why-choose-us', 'our-team',
-    'company-values', 'contact-us', 'services', 'image-gallery']; // চাইলে আরো ব্লক অ্যাড করো
+    'company-values', 'contact-us', 'services', 'image-gallery', 'our-gallery']; // চাইলে আরো ব্লক অ্যাড করো
 
     foreach ($blocks as $block) {
         $block_dir = get_template_directory() . "/inc/theme-blocks/{$block}";

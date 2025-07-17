@@ -28,6 +28,7 @@ module.exports = {
 		contactus: path.resolve(__dirname, 'contact-us/index.js'),
 		services: path.resolve(__dirname, 'services/index.js'),
 		image_gallery: path.resolve(__dirname, 'image-gallery/index.js'),
+		ourgallery: path.resolve(__dirname, 'our-gallery/index.js'),
 	},
 	output: {
 		path: path.resolve(__dirname, 'build'),
