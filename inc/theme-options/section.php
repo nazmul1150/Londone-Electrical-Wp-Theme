@@ -1144,6 +1144,16 @@ Redux::set_section(
                 'indent' => true 
             ),
                 array(
+                    'id'       => 'cta-box-contact-info-icon',
+                    'type'     => 'media',
+                    'url'      => true,
+                    'title'    => esc_html__( 'Contact Info icon', 'londone-electrical' ),
+                    'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
+                    'default'  => array(
+                        'url'=> get_template_directory_uri() . '/images/icon-phone.svg'
+                    ),
+                ),
+                array(
                     'id'     => 'cta-box-contact-info-text',
                     'type'   => 'text',
                     'title'  => esc_html__( 'Contact Info Text', 'londone-electrical' ),
@@ -1210,36 +1220,52 @@ Redux::set_section(
                 'default'  => "The feedback from our clients speaks volumes about the quality of our services. Read how we've helped them with reliable solutions.",
             ),
             array(
-                'id'     => 'our-testimonial-lists',
-                'type'   => 'repeater',
-                'title'  => esc_html__('Testimonial', 'londone-electrical'),
-                'desc'   => esc_html__('Create testimonial', 'londone-electrical'),
-                'group_values' => true,
-                'fields' => array(
+                'id' => 'our-testimonial-btn',
+                'type' => 'section',
+                'title' => esc_html__('Contact btutton', 'londone-electrical'),
+                'subtitle' => esc_html__('Contact button', 'londone-electrical'),
+                'indent' => true 
+            ),
+                array(
+                    'id'     => 'our-testimonial-btn-text',
+                    'type'   => 'text',
+                    'title'  => esc_html__( 'Button Text', 'londone-electrical' ),
+                    'default'  => 'Contact Us',
+                ), 
+                array(
+                    'id'     => 'our-testimonial-btn-link',
+                    'type'   => 'text',
+                    'title'  => esc_html__( 'Button Link', 'londone-electrical' ),
+                    'default'  => '#',
+                ), 
+            array(
+                'id'     => 'section-end',
+                'type'   => 'section',
+                'indent' => false,
+            ),
+
+            array(
+                'id'       => 'our-testimonial-items',
+                'type'     => 'slides',
+                'thumb' => false,
+                'title'    => esc_html__('Testimonial Items', 'londone-electrical'),
+                'show'        => array( 'thumb' => true, 'image' => true, 'title' => true,'description' => true, 'url' => false ),
+                'default'  => array(
                     array(
-                        'id'       => 'our-testimonial-image',
-                        'type'     => 'media',
-                        'url'      => true,
-                        'title'    => esc_html__( 'Image', 'londone-electrical' ),
-                        'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
-                        'default'  => array(
-                            'url'=> get_template_directory_uri() . '/images/author-2.jpg'
-                        ),
+                        'title' => 'Sarah Miller',
+                        'description' => 'We hired them to handle the complete electrical setup for our office renovation, and they delivered flawlessly. From designing the layout to installing energy-efficient light and upgrading our panel, everything was done.',
+                        'thumb' => get_template_directory_uri() . '/images/author-1.jpg',
+                        'image' => get_template_directory_uri() . '/images/author-1.jpg',
                     ),
                     array(
-                        'id'     => 'our-testimonial-name',
-                        'type'   => 'text',
-                        'title'  => esc_html__( 'Name', 'londone-electrical' ),
-                        'default'  => 'David Lee',
-                    ),
-                    array(
-                        'id'     => 'our-testimonial-desc',
-                        'type'   => 'textarea',
-                        'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
-                        'default'  => 'We hired them to handle the complete electrical setup for our office renovation, and they delivered flawlessly. From designing the layout to installing energy-efficient light and upgrading our panel, everything was done.',
+                        'title' => 'David Lee',
+                        'description' => 'We hired them to handle the complete electrical setup for our office renovation, and they delivered flawlessly. From designing the layout to installing energy-efficient light and upgrading our panel, everything was done.',
+                        'url' => get_template_directory_uri() . '/images/author-2.jpg',
+                        'image' => get_template_directory_uri() . '/images/author-2.jpg',
                     ),
                 ),
             ),
+
         )
     )
 );
@@ -1259,27 +1285,60 @@ Redux::set_section(
                 'id'     => 'companies-text',
                 'type'   => 'textarea',
                 'title'  => esc_html__( 'Text', 'londone-electrical' ),
-                'default'  => "We're Trusted by more than 1000+ companies",
+                'default'  => "We're Trusted by more than",
             ),
             array(
-                'id'     => 'companies-image-items',
-                'type'   => 'repeater',
-                'title'  => esc_html__('Companies Image', 'londone-electrical'),
-                'desc'   => esc_html__('companies image', 'londone-electrical'),
-                'group_values' => true,
-                'fields' => array(
+                'id'     => 'companies-text-count',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Text', 'londone-electrical' ),
+                'default'  => "1000",
+            ),
+            array(
+                'id'     => 'companies-text-span',
+                'type'   => 'text',
+                'title'  => esc_html__( 'Last Text', 'londone-electrical' ),
+                'default'  => "+ companies",
+            ),
+
+            array(
+                'id'       => 'companies-image-items',
+                'type'     => 'slides',
+                'thumb' => false,
+                'title'    => esc_html__('Companies Image', 'londone-electrical'),
+                'show'        => array( 'thumb' => true, 'image' => true, 'title' => false,'description' => false, 'url' => false ),
+                'default'  => array(
                     array(
-                        'id'       => 'companies-image-item',
-                        'type'     => 'media',
-                        'url'      => true,
-                        'title'    => esc_html__( 'Image', 'londone-electrical' ),
-                        'desc'     => esc_html__( 'Upload image', 'londone-electrical' ),
-                        'default'  => array(
-                            'url'=> get_template_directory_uri() . '/images/company-logo-3.svg'
-                        ),
+                        'thumb' => get_template_directory_uri() . '/images/company-logo-3.svg',
+                        'image' => get_template_directory_uri() . '/images/company-logo-3.svg',
+                    ),
+                    array(
+                        'url' => get_template_directory_uri() . '/images/company-logo-3.svg',
+                        'image' => get_template_directory_uri() . '/images/company-logo-3.svg',
+                    ),
+                    array(
+                        'url' => get_template_directory_uri() . '/images/company-logo-3.svg',
+                        'image' => get_template_directory_uri() . '/images/company-logo-3.svg',
+                    ),
+                    array(
+                        'url' => get_template_directory_uri() . '/images/company-logo-3.svg',
+                        'image' => get_template_directory_uri() . '/images/company-logo-3.svg',
+                    ),
+                    array(
+                        'url' => get_template_directory_uri() . '/images/company-logo-3.svg',
+                        'image' => get_template_directory_uri() . '/images/company-logo-3.svg',
+                    ),
+                    array(
+                        'url' => get_template_directory_uri() . '/images/company-logo-3.svg',
+                        'image' => get_template_directory_uri() . '/images/company-logo-3.svg',
+                    ),
+                    array(
+                        'url' => get_template_directory_uri() . '/images/company-logo-3.svg',
+                        'image' => get_template_directory_uri() . '/images/company-logo-3.svg',
                     ),
                 ),
             ),
+
+
         )
     )
 );
@@ -1351,6 +1410,37 @@ Redux::set_section(
                     ),
                 ),
             ),
+
+            array(
+                'id'       => 'our-faqs-items',
+                'type'     => 'slides',
+                'thumb' => false,
+                'title'    => esc_html__('Companies Image', 'londone-electrical'),
+                'show'        => array( 'thumb' => false, 'image' => false, 'title' => true,'description' => true, 'url' => false ),
+                'default'  => array(
+                    array(
+                        'title' => 'Are your electricians licensed and insured?',
+                        'description' => 'We offer a wide range of services including regular home cleaning, deep cleaning, office cleaning, move-in/move-out cleaning.',
+                    ),
+                    array(
+                        'title' => 'Are your electricians licensed and insured?',
+                        'description' => 'We offer a wide range of services including regular home cleaning, deep cleaning, office cleaning, move-in/move-out cleaning.',
+                    ),
+                    array(
+                        'title' => 'Are your electricians licensed and insured?',
+                        'description' => 'We offer a wide range of services including regular home cleaning, deep cleaning, office cleaning, move-in/move-out cleaning.',
+                    ),
+                    array(
+                        'title' => 'Are your electricians licensed and insured?',
+                        'description' => 'We offer a wide range of services including regular home cleaning, deep cleaning, office cleaning, move-in/move-out cleaning.',
+                    ),
+                    array(
+                        'title' => 'Are your electricians licensed and insured?',
+                        'description' => 'We offer a wide range of services including regular home cleaning, deep cleaning, office cleaning, move-in/move-out cleaning.',
+                    ),
+                ),
+            ),
+
         )
     )
 );

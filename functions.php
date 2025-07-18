@@ -220,3 +220,6 @@ function londone_electrical_register_blocks() {
 add_action('init', 'londone_electrical_register_blocks');
 
 
+require_once( LONDONE_ELECTRICAL_PATH . '/inc/custom-post.php' );
+
+

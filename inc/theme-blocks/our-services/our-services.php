@@ -30,14 +30,37 @@
                     <div class="services-slider">
                         <div class="swiper">
                             <div class="swiper-wrapper">
+
+                            <?php
+                            $args = array(
+                                'post_type'      => 'services',
+                                'posts_per_page' => -1,
+                                'order'          => 'DESC',
+                            );
+
+                            $service_query = new WP_Query($args);
+
+                            if ( $service_query->have_posts() ) :
+                                $i = 1;
+                                while ( $service_query->have_posts() ) : $service_query->the_post();
+
+                                    // Featured Image
+                                    $image_url = has_post_thumbnail() ? get_the_post_thumbnail_url(get_the_ID(), 'large') : get_template_directory_uri() . '/images/default-service.jpg';
+
+                                    // Title
+                                    $title = get_the_title();
+
+                                    // Excerpt or trimmed content
+                                    $excerpt = has_excerpt() ? get_the_excerpt() : wp_trim_words( get_the_content(), 15 );
+                            ?>
                                 <!-- Services Slide Start -->
                                 <div class="swiper-slide">
                                     <div class="service-item">
                                         <!-- Service Image Start -->
                                         <div class="service-image">
-                                            <a href="service-single.html" data-cursor-text="View">
+                                            <a href="<?php the_permalink(); ?>" data-cursor-text="View">
                                                 <figure class="image-anime">
-                                                    <img src="<?php echo get_template_directory_uri();?>/images/service-image-1.jpg" alt="">
+                                                    <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($title); ?>">
                                                 </figure>
                                             </a>
                                         </div>
@@ -45,164 +68,26 @@
 
                                         <!-- Service Number Start -->
                                         <div class="service-no">
-                                            <h2>01</h2>
+                                            <h2><?php echo str_pad($i, 2, '0', STR_PAD_LEFT); ?></h2>
                                         </div>
                                         <!-- Service Number End -->
 
                                         <!-- Service Content Start -->
                                         <div class="service-content">
-                                            <h3><a href="service-single.html">Electrical repairing</a></h3>
-                                            <p>From new installations to repairs, we ensure your home is safe and fully</p>
+                                            <h3><a href="<?php the_permalink(); ?>"><?php echo esc_html($title); ?></a></h3>
+                                            <p><?php echo esc_html($excerpt); ?></p>
                                         </div>
                                         <!-- Service Content End -->
                                     </div>
                                 </div>
                                 <!-- Services Slide End -->
+                            <?php
+                                    $i++;
+                                endwhile;
+                                wp_reset_postdata();
+                            endif;
+                            ?>
 
-                                <!-- Services Slide Start -->
-                                <div class="swiper-slide">
-                                    <div class="service-item">
-                                        <!-- Service Image Start -->
-                                        <div class="service-image">
-                                            <a href="service-single.html" data-cursor-text="View">
-                                                <figure class="image-anime">
-                                                    <img src="<?php echo get_template_directory_uri();?>/images/service-image-2.jpg" alt="">
-                                                </figure>
-                                            </a>
-                                        </div>
-                                        <!-- Service Image End -->
-
-                                        <!-- Service Number Start -->
-                                        <div class="service-no">
-                                            <h2>02</h2>
-                                        </div>
-                                        <!-- Service Number End -->
-
-                                        <!-- Service Content Start -->
-                                        <div class="service-content">
-                                            <h3><a href="service-single.html">Commercial services</a></h3>
-                                            <p>From new installations to repairs, we ensure your home is safe and fully</p>
-                                        </div>
-                                        <!-- Service Content End -->
-                                    </div>
-                                </div>
-                                <!-- Services Slide End -->
-
-                                <!-- Services Slide Start -->
-                                <div class="swiper-slide">
-                                    <div class="service-item">
-                                        <!-- Service Image Start -->
-                                        <div class="service-image">
-                                            <a href="service-single.html" data-cursor-text="View">
-                                                <figure class="image-anime">
-                                                    <img src="<?php echo get_template_directory_uri();?>/images/service-image-3.jpg" alt="">
-                                                </figure>
-                                            </a>
-                                        </div>
-                                        <!-- Service Image End -->
-
-                                        <!-- Service Number Start -->
-                                        <div class="service-no">
-                                            <h2>03</h2>
-                                        </div>
-                                        <!-- Service Number End -->
-
-                                        <!-- Service Content Start -->
-                                        <div class="service-content">
-                                            <h3><a href="service-single.html">Industrial services</a></h3>
-                                            <p>From new installations to repairs, we ensure your home is safe and fully</p>
-                                        </div>
-                                        <!-- Service Content End -->
-                                    </div>
-                                </div>
-                                <!-- Services Slide End -->
-
-                                <!-- Services Slide Start -->
-                                <div class="swiper-slide">
-                                    <div class="service-item">
-                                        <!-- Service Image Start -->
-                                        <div class="service-image">
-                                            <a href="service-single.html" data-cursor-text="View">
-                                                <figure class="image-anime">
-                                                    <img src="<?php echo get_template_directory_uri();?>/images/service-image-4.jpg" alt="">
-                                                </figure>
-                                            </a>
-                                        </div>
-                                        <!-- Service Image End -->
-
-                                        <!-- Service Number Start -->
-                                        <div class="service-no">
-                                            <h2>04</h2>
-                                        </div>
-                                        <!-- Service Number End -->
-
-                                        <!-- Service Content Start -->
-                                        <div class="service-content">
-                                            <h3><a href="service-single.html">Power restoration</a></h3>
-                                            <p>From new installations to repairs, we ensure your home is safe and fully</p>
-                                        </div>
-                                        <!-- Service Content End -->
-                                    </div>
-                                </div>
-                                <!-- Services Slide End -->
-
-                                <!-- Services Slide Start -->
-                                <div class="swiper-slide">
-                                    <div class="service-item">
-                                        <!-- Service Image Start -->
-                                        <div class="service-image">
-                                            <a href="service-single.html" data-cursor-text="View">
-                                                <figure class="image-anime">
-                                                    <img src="<?php echo get_template_directory_uri();?>/images/service-image-5.jpg" alt="">
-                                                </figure>
-                                            </a>
-                                        </div>
-                                        <!-- Service Image End -->
-
-                                        <!-- Service Number Start -->
-                                        <div class="service-no">
-                                            <h2>05</h2>
-                                        </div>
-                                        <!-- Service Number End -->
-
-                                        <!-- Service Content Start -->
-                                        <div class="service-content">
-                                            <h3><a href="service-single.html">Circuit maintenance</a></h3>
-                                            <p>From new installations to repairs, we ensure your home is safe and fully</p>
-                                        </div>
-                                        <!-- Service Content End -->
-                                    </div>
-                                </div>
-                                <!-- Services Slide End -->
-
-                                <!-- Services Slide Start -->
-                                <div class="swiper-slide">
-                                    <div class="service-item">
-                                        <!-- Service Image Start -->
-                                        <div class="service-image">
-                                            <a href="service-single.html" data-cursor-text="View">
-                                                <figure class="image-anime">
-                                                    <img src="<?php echo get_template_directory_uri();?>/images/service-image-6.jpg" alt="">
-                                                </figure>
-                                            </a>
-                                        </div>
-                                        <!-- Service Image End -->
-
-                                        <!-- Service Number Start -->
-                                        <div class="service-no">
-                                            <h2>06</h2>
-                                        </div>
-                                        <!-- Service Number End -->
-
-                                        <!-- Service Content Start -->
-                                        <div class="service-content">
-                                            <h3><a href="service-single.html">Energy repairs</a></h3>
-                                            <p>From new installations to repairs, we ensure your home is safe and fully</p>
-                                        </div>
-                                        <!-- Service Content End -->
-                                    </div>
-                                </div>
-                                <!-- Services Slide End -->
                             </div>
                             <div class="services-pagination"></div>
                         </div>
