@@ -1,3 +1,19 @@
+<?php
+     global $londone_electrical;
+
+     $why_choose_us_img = !empty($londone_electrical['why-choose-us-img']['url']) ? esc_html($londone_electrical['why-choose-us-img']['url']) : get_template_directory_uri() . '/images/why-choose-image.jpg';
+
+     $why_choose_us_subtitle = !empty($londone_electrical['why-choose-us-subtitle']) ? esc_html($londone_electrical['why-choose-us-subtitle']) : '';
+     $why_choose_us_title = !empty($londone_electrical['why-choose-us-title']) ? esc_html($londone_electrical['why-choose-us-title']) : '';
+     $why_choose_us_title_span = !empty($londone_electrical['why-choose-us-title-span']) ? esc_html($londone_electrical['why-choose-us-title-span']) : '';
+     $why_choose_us_desc = !empty($londone_electrical['why-choose-us-desc']) ? esc_html($londone_electrical['why-choose-us-desc']) : '';
+     
+     $why_choose_us_btn_text = !empty($londone_electrical['why-choose-us-btn-text']) ? esc_html($londone_electrical['why-choose-us-btn-text']) : '';
+     $why_choose_us_btn_link = !empty($londone_electrical['why-choose-us-btn-link']) ? esc_html($londone_electrical['why-choose-us-btn-link']) : '';
+
+
+?>
+
 <!-- Why Choose Us Section Start -->
 <div class="why-choose-us">
         <div class="container">
@@ -6,7 +22,7 @@
                     <!-- Why Choose Image Start -->
                     <div class="why-choose-image">
                         <figure class="image-anime reveal">
-                            <img src="<?php echo get_template_directory_uri();?>/images/why-choose-image.jpg" alt="">
+                            <img src="<?php echo esc_url($why_choose_us_img); ?>" alt="">
                         </figure>
                     </div>
                     <!-- Why Choose Image End -->
@@ -17,24 +33,33 @@
                     <div class="why-choose-content">
                         <!-- Section Title Start -->
                         <div class="section-title">
-                            <h3 class="wow fadeInUp">why choose us</h3>
-                            <h2 class="text-anime-style-2" data-cursor="-opaque">Powering progress through <span>excellence</span></h2>
-                            <p class="wow fadeInUp" data-wow-delay="0.2s">Over the years, we've accomplished remarkable milestones in the electrical services industry. From completing complex projects to earning</p>
+                            <h3 class="wow fadeInUp"><?php echo esc_html($why_choose_us_subtitle); ?></h3>
+                            <h2 class="text-anime-style-2" data-cursor="-opaque"><?php echo esc_html($why_choose_us_title); ?> <span><?php echo esc_html($why_choose_us_title_span); ?></span></h2>
+                            <p class="wow fadeInUp" data-wow-delay="0.2s"><?php echo esc_html($why_choose_us_desc); ?></p>
                         </div>
                         <!-- Section Title End -->
 
                         <!-- Why Choose Body Start -->
                         <div class="why-choose-body wow fadeInUp" data-wow-delay="0.4s">
                             <ul>
-                                <li>Committed to delivering safe and efficient electrical solutions.</li>
-                                <li>Backed by years of expertise and professional excellence.</li>
+                                <?php
+
+                                if ( !empty($londone_electrical['why-choose-body-items']) && is_array($londone_electrical['why-choose-body-items']) ) :
+                                    foreach ( $londone_electrical['why-choose-body-items'] as $item ) :
+                                        $desc  = !empty($item['description']) ? esc_html($item['description']) : '';
+                                ?>
+                                <li><?php echo esc_html($desc); ?></li>
+                                <?php
+                                    endforeach;
+                                endif;
+                                ?>
                             </ul>
                         </div>
                         <!-- Why Choose Body End -->
 
                         <!-- Why Choose Button Start -->
                         <div class="why-choose-button wow fadeInUp" data-wow-delay="0.6s">
-                            <a href="projects.html" class="btn-default">View our milestones</a>
+                            <a href="<?php echo esc_url($why_choose_us_btn_link); ?>" class="btn-default"><?php echo esc_html($why_choose_us_btn_text); ?></a>
                         </div>
                         <!-- Why Choose Button End -->
                     </div>

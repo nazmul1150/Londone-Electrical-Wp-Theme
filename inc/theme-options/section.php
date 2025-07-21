@@ -1613,6 +1613,12 @@ Redux::set_section(
                         'url'=> get_template_directory_uri() . '/images/contact-now-circle.png'
                     ),
                 ),
+                array(
+                    'id'     => 'our-approach-img3-link',
+                    'type'   => 'text',
+                    'title'  => esc_html__( 'Image 3 Link', 'londone-electrical' ),
+                    'default'  => '#',
+                ), 
             array(
                 'id'     => 'section-end',
                 'type'   => 'section',
@@ -1658,7 +1664,7 @@ Redux::set_section(
                 ), 
                 array(
                     'id'     => 'exprience-box-text',
-                    'type'   => 'textarea',
+                    'type'   => 'text',
                     'title'  => esc_html__( 'Exprience box text', 'londone-electrical' ),
                     'default'  => 'Since',
                 ),
@@ -1739,25 +1745,33 @@ Redux::set_section(
                 ),
                 array(
                     'id'     => 'trusted-expert-content-title-desc',
-                    'type'   => 'text',
+                    'type'   => 'textarea',
                     'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
                     'default'  => 'From small repairs to large-scale installations, our experienced electricians provide tailored solutions to power your home.',
                 ),
+
                 array(
-                'id'     => 'trusted-expert-list-items',
-                'type'   => 'repeater',
-                'title'  => esc_html__('Companies Image', 'londone-electrical'),
-                'desc'   => esc_html__('companies image', 'londone-electrical'),
-                'group_values' => true,
-                'fields' => array(
+                    'id'       => 'trusted-expert-list-items',
+                    'type'     => 'slides',
+                    'thumb' => false,
+                    'title'    => esc_html__('Expert list text', 'londone-electrical'),
+                    'show'        => array( 'thumb' => false, 'image' => false, 'title' => false,'description' => true, 'url' => false ),
+                    'default'  => array(
                         array(
-                            'id'     => 'trusted-expert-list-item-text',
-                            'type'   => 'textarea',
-                            'title'  => esc_html__( 'Expert list text', 'londone-electrical' ),
-                            'default'  => "Committed to delivering safe and efficient electrical solutions.",
+                            'description' => 'Committed to delivering safe and efficient electrical solutions.',
+                        ),
+                        array(
+                            'description' => 'Backed by years of expertise and professional excellence.',
+                        ),
+                        array(
+                            'description' => 'Focused on innovation and customer satisfaction at every step.',
                         ),
                     ),
+                    'placeholder' => array(
+                        'description' => esc_html__('Enter Your List', 'londone-electrical'),
+                    ),
                 ),
+
                 array(
                     'id'       => 'trusted-expert-content-item1-img',
                     'type'     => 'media',
@@ -1878,19 +1892,25 @@ Redux::set_section(
                 'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
                 'default'  => 'Over the years, we’ve accomplished remarkable milestones in the electrical services industry. From completing complex projects to earning',
             ),
-            array(
-                'id'     => 'why-choose-body-items',
-                'type'   => 'repeater',
-                'title'  => esc_html__('Why choose body items', 'londone-electrical'),
-                'desc'   => esc_html__('why choose body items', 'londone-electrical'),
-                'group_values' => true,
-                'fields' => array(
+             array(
+                'id'       => 'why-choose-body-items',
+                'type'     => 'slides',
+                'thumb' => false,
+                'title'    => esc_html__('Why choose body items', 'londone-electrical'),
+                'show'        => array( 'thumb' => false, 'image' => false, 'title' => false,'description' => true, 'url' => false ),
+                'default'  => array(
                     array(
-                        'id'     => 'why-choose-body-item',
-                        'type'   => 'textarea',
-                        'title'  => esc_html__( 'Why choose body item', 'londone-electrical' ),
-                        'default'  => "Committed to delivering safe and efficient electrical solutions.",
+                        'description' => 'Committed to delivering safe and efficient electrical solutions.',
                     ),
+                    array(
+                        'description' => 'Backed by years of expertise and professional excellence.',
+                    ),
+                    array(
+                        'description' => 'Focused on innovation and customer satisfaction at every step.',
+                    ),
+                ),
+                'placeholder' => array(
+                    'description' => esc_html__('Enter Your List', 'londone-electrical'),
                 ),
             ),
              array(
