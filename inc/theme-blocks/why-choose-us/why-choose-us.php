@@ -2,7 +2,7 @@
      global $londone_electrical;
 
      $why_choose_us_img = !empty($londone_electrical['why-choose-us-img']['url']) ? esc_html($londone_electrical['why-choose-us-img']['url']) : get_template_directory_uri() . '/images/why-choose-image.jpg';
-
+     
      $why_choose_us_subtitle = !empty($londone_electrical['why-choose-us-subtitle']) ? esc_html($londone_electrical['why-choose-us-subtitle']) : '';
      $why_choose_us_title = !empty($londone_electrical['why-choose-us-title']) ? esc_html($londone_electrical['why-choose-us-title']) : '';
      $why_choose_us_title_span = !empty($londone_electrical['why-choose-us-title-span']) ? esc_html($londone_electrical['why-choose-us-title-span']) : '';
@@ -10,6 +10,19 @@
      
      $why_choose_us_btn_text = !empty($londone_electrical['why-choose-us-btn-text']) ? esc_html($londone_electrical['why-choose-us-btn-text']) : '';
      $why_choose_us_btn_link = !empty($londone_electrical['why-choose-us-btn-link']) ? esc_html($londone_electrical['why-choose-us-btn-link']) : '';
+     
+     
+     $why_choose_item_list1_image = !empty($londone_electrical['why-choose-item-list1-image']['url']) ? esc_html($londone_electrical['why-choose-item-list1-image']['url']) : get_template_directory_uri() . '/images/icon-why-choose-list-1.svg';
+     $why_choose_item_list1_title = !empty($londone_electrical['why-choose-item-list1-title']) ? esc_html($londone_electrical['why-choose-item-list1-title']) : '';
+     $why_choose_item_list1_text = !empty($londone_electrical['why-choose-item-list1-text']) ? esc_html($londone_electrical['why-choose-item-list1-text']) : '';
+     
+     $why_choose_item_list2_image = !empty($londone_electrical['why-choose-item-list2-image']['url']) ? esc_html($londone_electrical['why-choose-item-list2-image']['url']) : get_template_directory_uri() . '/images/icon-why-choose-list-2.svg';
+     $why_choose_item_list2_title = !empty($londone_electrical['why-choose-item-list2-title']) ? esc_html($londone_electrical['why-choose-item-list2-title']) : '';
+     $why_choose_item_list2_text = !empty($londone_electrical['why-choose-item-list2-text']) ? esc_html($londone_electrical['why-choose-item-list2-text']) : '';
+     
+     $why_choose_item_list3_image = !empty($londone_electrical['why-choose-item-list3-image']['url']) ? esc_html($londone_electrical['why-choose-item-list3-image']['url']) : get_template_directory_uri() . '/images/icon-why-choose-list-3.svg';
+     $why_choose_item_list3_title = !empty($londone_electrical['why-choose-item-list3-title']) ? esc_html($londone_electrical['why-choose-item-list3-title']) : '';
+     $why_choose_item_list3_text = !empty($londone_electrical['why-choose-item-list3-text']) ? esc_html($londone_electrical['why-choose-item-list3-text']) : '';
 
 
 ?>
@@ -72,11 +85,11 @@
                         <!-- Why Choose Item Start -->
                         <div class="why-choose-item">
                             <div class="icon-box">
-                                <img src="<?php echo get_template_directory_uri();?>/images/icon-why-choose-list-1.svg" alt="">
+                                <img src="<?php echo esc_url($why_choose_item_list1_image); ?>" alt="">
                             </div>
                             <div class="why-choose-item-content">
-                                <h3>Delivering reliable solutions</h3>
-                                <p>Expert teams ensuring precision and safety in every project.</p>
+                                <h3><?php echo esc_html($why_choose_item_list1_title); ?></h3>
+                                <p><?php echo esc_html($why_choose_item_list1_text); ?></p>
                             </div>
                         </div>
                         <!-- Why Choose Item End -->
@@ -84,11 +97,11 @@
                         <!-- Why Choose Item Start -->
                         <div class="why-choose-item active">
                             <div class="icon-box">
-                                <img src="<?php echo get_template_directory_uri();?>/images/icon-why-choose-list-2.svg" alt="">
+                                <img src="<?php echo esc_url($why_choose_item_list2_image); ?>" alt="">
                             </div>
                             <div class="why-choose-item-content">
-                                <h3>Commitment to excellence</h3>
-                                <p>Expert teams ensuring precision and safety in every project.</p>
+                                <h3><?php echo esc_html($why_choose_item_list2_title); ?></h3>
+                                <p><?php echo esc_html($why_choose_item_list2_text); ?></p>
                             </div>
                         </div>
                         <!-- Why Choose Item End -->
@@ -96,11 +109,11 @@
                         <!-- Why Choose Item Start -->
                         <div class="why-choose-item">
                             <div class="icon-box">
-                                <img src="<?php echo get_template_directory_uri();?>/images/icon-why-choose-list-3.svg" alt="">
+                                <img src="<?php echo esc_url($why_choose_item_list3_image); ?>" alt="">
                             </div>
                             <div class="why-choose-item-content">
-                                <h3>Your trusted partner</h3>
-                                <p>Expert teams ensuring precision and safety in every project.</p>
+                                <h3><?php echo esc_html($why_choose_item_list3_title); ?></h3>
+                                <p><?php echo esc_html($why_choose_item_list3_text); ?></p>
                             </div>
                         </div>
                         <!-- Why Choose Item End -->

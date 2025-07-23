@@ -1,3 +1,29 @@
+<?php
+    global $londone_electrical;
+
+    $page_contact_us_subtitle = !empty($londone_electrical['page-contact-us-subtitle']) ? esc_html($londone_electrical['page-contact-us-subtitle']) : '';
+    $page_contact_us_title = !empty($londone_electrical['page-contact-us-title']) ? esc_html($londone_electrical['page-contact-us-title']) : '';
+    $page_contact_us_title_span = !empty($londone_electrical['page-contact-us-title-span']) ? esc_html($londone_electrical['page-contact-us-title-span']) : '';
+    $page_contact_us_title_desc = !empty($londone_electrical['page-contact-us-title-desc']) ? esc_html($londone_electrical['page-contact-us-title-desc']) : '';
+    
+    $form_shortcode = !empty($londone_electrical['page-contact-us-form-shortcode']) ? $londone_electrical['page-contact-us-form-shortcode'] : '[your_contact_form_shortcode]';
+    $page_contact_us_map_iframe = !empty($londone_electrical['page-contact-us-map-iframe']) ? esc_html($londone_electrical['page-contact-us-map-iframe']) : '';
+    
+    $page_contact_us_location_icon = !empty($londone_electrical['page-contact-us_location_icon']['url']) ? esc_html($londone_electrical['page-contact-us_location_icon']['url']) : get_template_directory_uri() . '/images/icon-location.svg';
+    $page_contact_us_location_title = !empty($londone_electrical['page-contact-us_location_title']) ? esc_html($londone_electrical['page-contact-us_location_title']) : '';
+    $page_contact_us_location_address = !empty($londone_electrical['page-contact-us_location_address']) ? esc_html($londone_electrical['page-contact-us_location_address']) : '';
+    
+    $page_contact_us_email_icon = !empty($londone_electrical['page-contact-us_email_icon']['url']) ? esc_html($londone_electrical['page-contact-us_email_icon']['url']) : get_template_directory_uri() . '/images/icon-mail-primary.svg';
+    $page_contact_us_email_title = !empty($londone_electrical['page-contact-us_email_title']) ? esc_html($londone_electrical['page-contact-us_email_title']) : '';
+    $page_contact_us_email_address = !empty($londone_electrical['page-contact-us_email_address']) ? esc_html($londone_electrical['page-contact-us_email_address']) : '';
+    
+    $page_contact_us_phone_icon = !empty($londone_electrical['page-contact-us_phone_icon']['url']) ? esc_html($londone_electrical['page-contact-us_phone_icon']['url']) : get_template_directory_uri() . '/images/icon-phone-primary.svg';
+    $page_contact_us_phone_title = !empty($londone_electrical['page-contact-us_phone_title']) ? esc_html($londone_electrical['page-contact-us_phone_title']) : '';
+    $page_contact_us_phone_number = !empty($londone_electrical['page-contact-us_phone_number']) ? esc_html($londone_electrical['page-contact-us_phone_number']) : '';
+    
+     
+?>
+
 <!-- Page Contact Us Start -->
 <div class="page-contact-us">
         <div class="container">
@@ -7,15 +33,15 @@
                     <div class="contact-us-content">
                         <!-- Section Title Start -->
                         <div class="section-title">
-                            <h3 class="wow fadeInUp">contact us</h3>
-                            <h2 class="text-anime-style-2" data-cursor="-opaque">Contact us & <span>let's collaborate!</span></h2>
-                            <p class="wow fadeInUp" data-wow-delay="0.2s">From small repairs to large-scale installations, our experience electricians provide tailored solutions to power your home.</p>
+                            <h3 class="wow fadeInUp"><?php echo esc_html($page_contact_us_subtitle); ?></h3>
+                            <h2 class="text-anime-style-2" data-cursor="-opaque"><?php echo esc_html($page_contact_us_title); ?> <span><?php echo esc_html($page_contact_us_title_span); ?></span></h2>
+                            <p class="wow fadeInUp" data-wow-delay="0.2s"><?php echo esc_html($page_contact_us_title_desc); ?></p>
                         </div>
                         <!-- Section Title End -->
 
                         <!-- Contact Form Start -->
                         <div class="contact-form">
-                            <form id="contactForm" action="#" method="POST" data-toggle="validator" class="wow fadeInUp" data-wow-delay="0.4s">
+                            <!-- <form id="contactForm" action="#" method="POST" data-toggle="validator" class="wow fadeInUp" data-wow-delay="0.4s">
                                 <div class="row">                                
                                     <div class="form-group col-md-6 mb-4">
                                         <input type="text" name="fname" class="form-control" id="fname" placeholder="First name" required>
@@ -47,7 +73,8 @@
                                         <div id="msgSubmit" class="h3 hidden"></div>
                                     </div>
                                 </div>
-                            </form>
+                            </form> -->
+                           <?php echo do_shortcode($form_shortcode); ?>
                         </div>
                         <!-- Contact Form End -->
                     </div>
@@ -57,7 +84,7 @@
                 <div class="col-lg-6">
                     <!-- Google Map Start -->
                     <div class="google-map-iframe">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96737.10562045308!2d-74.08535042841811!3d40.739265258395164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1703158537552!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="<?php echo esc_url($page_contact_us_map_iframe); ?>" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <!-- Google Map End -->
 
@@ -67,14 +94,14 @@
                         <div class="contact-info-item location-item wow fadeInUp">
                             <div class="contact-info-header">
                                 <div class="icon-box">
-                                    <img src="<?php echo get_template_directory_uri();?>/images/icon-location.svg" alt="">
+                                    <img src="<?php echo esc_url($page_contact_us_location_icon); ?>" alt="">
                                 </div>
                                 <div class="contact-info-title">
-                                    <h3>location</h3>
+                                    <h3><?php echo esc_html($page_contact_us_location_title); ?></h3>
                                 </div>
                             </div>        
                             <div class="contact-info-content">
-                                <p>3891 Ranchview. Richardson, California 62639 United Kingdoms 56</p>
+                                <p><?php echo esc_html($page_contact_us_location_address); ?></p>
                             </div>
                         </div>
                         <!-- Contact Info Item End -->
@@ -83,14 +110,14 @@
                         <div class="contact-info-item wow fadeInUp" data-wow-delay="0.2s">
                             <div class="contact-info-header">
                                 <div class="icon-box">
-                                    <img src="<?php echo get_template_directory_uri();?>/images/icon-mail-primary.svg" alt="">
+                                    <img src="<?php echo esc_url($page_contact_us_email_icon); ?>" alt="">
                                 </div>
                                 <div class="contact-info-title">
-                                    <h3>email</h3>
+                                    <h3><?php echo esc_html($page_contact_us_email_title); ?></h3>
                                 </div>
                             </div>        
                             <div class="contact-info-content">
-                                <p><a href="mailto:info@domainname.com">info@domainname.com</a></p>
+                                <p><a href="mailto:<?php echo $page_contact_us_email_address; ?>"><?php echo esc_html($page_contact_us_email_address); ?></a></p>
                             </div>
                         </div>
                         <!-- Contact Info Item End -->
@@ -99,14 +126,14 @@
                         <div class="contact-info-item wow fadeInUp" data-wow-delay="0.4s">
                             <div class="contact-info-header">
                                 <div class="icon-box">
-                                    <img src="<?php echo get_template_directory_uri();?>/images/icon-phone-primary.svg" alt="">
+                                    <img src="<?php echo esc_url($page_contact_us_phone_icon); ?>" alt="">
                                 </div>
                                 <div class="contact-info-title">
-                                    <h3>phone</h3>
+                                    <h3><?php echo esc_html($page_contact_us_phone_title); ?></h3>
                                 </div>
                             </div>        
                             <div class="contact-info-content">
-                                <p><a href="tel:+456785889">+01 456 785 889</a></p>
+                                <p><a href="tel:<?php echo $page_contact_us_phone_number; ?>"><?php echo esc_html($page_contact_us_phone_number); ?></a></p>
                             </div>
                         </div>
                         <!-- Contact Info Item End -->

@@ -219,7 +219,40 @@ function londone_electrical_register_blocks() {
 }
 add_action('init', 'londone_electrical_register_blocks');
 
-
+//custom post
 require_once( LONDONE_ELECTRICAL_PATH . '/inc/custom-post.php' );
+
+
+//breadcrumb
+function londone_custom_breadcrumbs() {
+    echo '<ol class="breadcrumb">';
+    if (!is_front_page()) {
+        echo '<li class="breadcrumb-item"><a href="' . home_url() . '">home</a></li>';
+
+        if (is_page()) {
+            echo '<li class="breadcrumb-item active" aria-current="page">' . get_the_title() . '</li>';
+        } elseif (is_single()) {
+            $category = get_the_category();
+            if (!empty($category)) {
+                echo '<li class="breadcrumb-item"><a href="' . esc_url(get_category_link($category[0]->term_id)) . '">' . esc_html($category[0]->name) . '</a></li>';
+            }
+            echo '<li class="breadcrumb-item active" aria-current="page">' . get_the_title() . '</li>';
+        } elseif (is_category()) {
+            echo '<li class="breadcrumb-item active" aria-current="page">' . single_cat_title('', false) . '</li>';
+        } elseif (is_tag()) {
+            echo '<li class="breadcrumb-item active" aria-current="page">' . single_tag_title('', false) . '</li>';
+        } elseif (is_search()) {
+            echo '<li class="breadcrumb-item active" aria-current="page">Search: ' . get_search_query() . '</li>';
+        } elseif (is_404()) {
+            echo '<li class="breadcrumb-item active" aria-current="page">404 Not Found</li>';
+        } elseif (is_archive()) {
+            echo '<li class="breadcrumb-item active" aria-current="page">' . post_type_archive_title('', false) . '</li>';
+        }
+    } else {
+        echo '<li class="breadcrumb-item active">home</li>';
+    }
+    echo '</ol>';
+}
+
 
 

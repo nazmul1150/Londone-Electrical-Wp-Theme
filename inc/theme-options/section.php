@@ -2156,6 +2156,12 @@ Redux::set_section(
                         'url'=> get_template_directory_uri() . '/images/contact-now-circle.png'
                     ),
                 ),
+                array(
+                    'id'     => 'company-values-image-3-link',
+                    'type'   => 'text',
+                    'title'  => esc_html__( 'Image Link', 'londone-electrical' ),
+                    'default'  => '#',
+                ),
             array(
                 'id'     => 'section-end',
                 'type'   => 'section',
@@ -2189,32 +2195,41 @@ Redux::set_section(
                     'default'  => 'excellence',
                 ),
                 array(
-                    'id'     => 'company-values-content-title-desc ',
+                    'id'     => 'company-values-content-title-desc',
                     'type'   => 'textarea',
                     'title'  => esc_html__( 'Descripation', 'londone-electrical' ),
                     'default'  => 'Our goal is to be a leader in providing environmentally conscious electrical services. We focus on energy-efficient solutions.',
                 ),
+
                 array(
-                'id'     => 'company-values-counters',
-                'type'   => 'repeater',
-                'title'  => esc_html__('Company Values Counters', 'londone-electrical'),
-                'desc'   => esc_html__('company values counters', 'londone-electrical'),
-                'group_values' => true,
-                'fields' => array(
-                    array(
-                        'id'     => 'values-counter-item-number',
-                        'type'   => 'text',
-                        'title'  => esc_html__( 'Counter Number', 'londone-electrical' ),
-                        'default'  => "250",
+                    'id'       => 'company-values-counters',
+                    'type'     => 'slides',
+                    'title'    => esc_html__('Company Values items', 'londone-electrical'),
+                    'show'        => array( 'title' => true,'description' => true, 'thumb' => false, 'image' => false, 'url' => false ),
+                    'default'  => array(
+                        array(
+                            'title'       => '500',
+                            'description' => 'Projects completed',
+                        ),
+                        array(
+                            'title'       => '1000',
+                            'description' => 'Emergency repairs',
+                        ),
+                        array(
+                            'title'       => '250',
+                            'description' => 'Trusted client',
+                        ),
+                        array(
+                            'title'       => '100',
+                            'description' => 'Experienced worker',
+                        ),
                     ),
-                    array(
-                        'id'     => 'values-counter-item-text',
-                        'type'   => 'text',
-                        'title'  => esc_html__( 'Counter Text', 'londone-electrical' ),
-                        'default'  => "Trusted client",
+                    'placeholder' => array(
+                        'title'       => esc_html__('Count Number', 'londone-electrical'),
+                        'description' => esc_html__('Short Title', 'londone-electrical'),
                     ),
                 ),
-              ),
+
             array(
                 'id'     => 'section-end',
                 'type'   => 'section',
@@ -2267,18 +2282,11 @@ Redux::set_section(
                 'default'  => '[your_contact_form_shortcode]',
             ),
             array(
-                'id'     => 'page-contact-us-form-shortcode',
-                'type'   => 'text',
-                'title'  => esc_html__( 'Contact Form Shortcode', 'londone-electrical' ),
-                'desc'     => 'You can enter contact form shortcode here.',
-                'default'  => '[your_contact_form_shortcode]',
-            ),
-            array(
-                'id'       => 'page-contact-us-map_iframe',
+                'id'       => 'page-contact-us-map-iframe',
                 'type'     => 'textarea',
                 'title'    => 'Google Map Embed Code',
                 'desc'     => 'Paste your iframe embed code here.',
-                'default'  => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96737.10562045308!2d-74.08535042841811!3d40.739265258395164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1703158537552!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+                'default'  => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96737.10562045308!2d-74.08535042841811!3d40.739265258395164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1703158537552!5m2!1sen!2sin',
             ),
 
 
