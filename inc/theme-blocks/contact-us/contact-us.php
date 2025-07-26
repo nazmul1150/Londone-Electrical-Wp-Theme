@@ -41,39 +41,6 @@
 
                         <!-- Contact Form Start -->
                         <div class="contact-form">
-                            <!-- <form id="contactForm" action="#" method="POST" data-toggle="validator" class="wow fadeInUp" data-wow-delay="0.4s">
-                                <div class="row">                                
-                                    <div class="form-group col-md-6 mb-4">
-                                        <input type="text" name="fname" class="form-control" id="fname" placeholder="First name" required>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-    
-                                    <div class="form-group col-md-6 mb-4">
-                                        <input type="text" name="lname" class="form-control" id="lname" placeholder="Last name" required>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-    
-                                    <div class="form-group col-md-6 mb-4">
-                                        <input type="text" name="phone" class="form-control" id="phone" placeholder="Phone no." required>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-    
-                                    <div class="form-group col-md-6 mb-4">
-                                        <input type="email" name ="email" class="form-control" id="email" placeholder="E-mail" required>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-    
-                                    <div class="form-group col-md-12 mb-5">
-                                        <textarea name="message" class="form-control" id="message" rows="4" placeholder="Write message..."></textarea>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-    
-                                    <div class="col-md-12">
-                                        <button type="submit" class="btn-default"><span>submit message</span></button>
-                                        <div id="msgSubmit" class="h3 hidden"></div>
-                                    </div>
-                                </div>
-                            </form> -->
                            <?php echo do_shortcode($form_shortcode); ?>
                         </div>
                         <!-- Contact Form End -->

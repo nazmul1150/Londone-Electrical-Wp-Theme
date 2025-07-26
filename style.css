@@ -11,3 +11,9 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: londone-electrical
 Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready, wide-blocks, block-styles, style-variations, accessibility-ready, blog, portfolio, news
 */
+
+
+
+a:where(:not(.wp-element-button)){
+    text-decoration: none !important;
+}

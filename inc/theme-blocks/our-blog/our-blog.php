@@ -37,7 +37,7 @@
                     while ( $blog_query->have_posts() ) : $blog_query->the_post();
                         $post_title = get_the_title();
                         $post_link  = get_permalink();
-                        $post_image = get_the_post_thumbnail_url(get_the_ID(), 'medium'); // fallback later
+                        $post_image = get_the_post_thumbnail_url(get_the_ID(), 'full'); // fallback later
                         if ( !$post_image ) {
                             $post_image = get_template_directory_uri() . '/images/default.jpg';
                         }

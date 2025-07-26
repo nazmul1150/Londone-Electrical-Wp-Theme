@@ -202,7 +202,7 @@ function londone_electrical_register_blocks() {
     $blocks = ['accordion', 'hero-slider', 'hero-cta-box', 'about-us', 'our-services', 'our-awards',
     'our-features', 'our-goals', 'our-facts', 'cta-box', 'our-testimonial', 'our-faqs', 'our-blog', 
     'our-pricing', 'breadcrumb', 'our-approach', 'trusted-expert', 'why-choose-us', 'our-team',
-    'company-values', 'contact-us', 'services', 'image-gallery', 'our-gallery']; // চাইলে আরো ব্লক অ্যাড করো
+    'company-values', 'contact-us', 'services', 'image-gallery', 'our-gallery', 'blog']; // চাইলে আরো ব্লক অ্যাড করো
 
     foreach ($blocks as $block) {
         $block_dir = get_template_directory() . "/inc/theme-blocks/{$block}";
@@ -223,36 +223,177 @@ add_action('init', 'londone_electrical_register_blocks');
 require_once( LONDONE_ELECTRICAL_PATH . '/inc/custom-post.php' );
 
 
-//breadcrumb
+// Breadcrumb function
 function londone_custom_breadcrumbs() {
     echo '<ol class="breadcrumb">';
+    
     if (!is_front_page()) {
         echo '<li class="breadcrumb-item"><a href="' . home_url() . '">home</a></li>';
 
         if (is_page()) {
             echo '<li class="breadcrumb-item active" aria-current="page">' . get_the_title() . '</li>';
-        } elseif (is_single()) {
-            $category = get_the_category();
-            if (!empty($category)) {
-                echo '<li class="breadcrumb-item"><a href="' . esc_url(get_category_link($category[0]->term_id)) . '">' . esc_html($category[0]->name) . '</a></li>';
+
+        } elseif ( is_home() && ! is_front_page() ) {
+            // Blog posts page
+            echo '<li class="breadcrumb-item active" aria-current="page">' . get_the_title(get_option('page_for_posts')) . '</li>';
+
+        } elseif (is_singular()) {
+            $post_type = get_post_type();
+
+            if ($post_type === 'post') {
+                // Normal blog post - show category
+                $category = get_the_category();
+                if (!empty($category)) {
+                    echo '<li class="breadcrumb-item"><a href="' . esc_url(get_category_link($category[0]->term_id)) . '">' . esc_html($category[0]->name) . '</a></li>';
+                }
+                echo '<li class="breadcrumb-item active" aria-current="page">' . get_the_title() . '</li>';
+
+            } else {
+                // Custom post type single - show archive link if exists
+                $post_type_obj = get_post_type_object($post_type);
+                if ($post_type_obj && $post_type_obj->has_archive) {
+                    $archive_link = get_post_type_archive_link($post_type);
+                    echo '<li class="breadcrumb-item"><a href="' . esc_url($archive_link) . '">' . esc_html($post_type_obj->labels->name) . '</a></li>';
+                }
+                echo '<li class="breadcrumb-item active" aria-current="page">' . get_the_title() . '</li>';
             }
-            echo '<li class="breadcrumb-item active" aria-current="page">' . get_the_title() . '</li>';
+
         } elseif (is_category()) {
             echo '<li class="breadcrumb-item active" aria-current="page">' . single_cat_title('', false) . '</li>';
+
         } elseif (is_tag()) {
             echo '<li class="breadcrumb-item active" aria-current="page">' . single_tag_title('', false) . '</li>';
+
         } elseif (is_search()) {
             echo '<li class="breadcrumb-item active" aria-current="page">Search: ' . get_search_query() . '</li>';
+
         } elseif (is_404()) {
             echo '<li class="breadcrumb-item active" aria-current="page">404 Not Found</li>';
+
+        } elseif (is_post_type_archive()) {
+            echo '<li class="breadcrumb-item active" aria-current="page">' . post_type_archive_title('', false) . '</li>';
+
         } elseif (is_archive()) {
             echo '<li class="breadcrumb-item active" aria-current="page">' . post_type_archive_title('', false) . '</li>';
         }
+
     } else {
+        // Front page only
         echo '<li class="breadcrumb-item active">home</li>';
     }
+
     echo '</ol>';
 }
+
+
+// ALLOW SVG
+function nextland_file_types_to_uploads($file_types){
+    $new_filetypes = array();
+    $new_filetypes['svg'] = 'image/svg+xml';
+    $file_types = array_merge($file_types, $new_filetypes );
+    return $file_types;
+}
+add_action('upload_mimes', 'nextland_file_types_to_uploads');
+
+function nextland_common_svg_media_thumbnails($response, $attachment, $meta){
+    if($response['type'] === 'image' && $response['subtype'] === 'svg+xml' && class_exists('SimpleXMLElement'))
+    {
+        try {
+            $path = get_attached_file($attachment->ID);
+            if(@file_exists($path))
+            {
+                $svg = new SimpleXMLElement(@file_get_contents($path));
+                $src = $response['url'];
+                $width = (int) $svg['width'];
+                $height = (int) $svg['height'];
+
+                //media gallery
+                $response['image'] = compact( 'src', 'width', 'height' );
+                $response['thumb'] = compact( 'src', 'width', 'height' );
+
+                //media single
+                $response['sizes']['full'] = array(
+                    'height'        => $height,
+                    'width'         => $width,
+                    'url'           => $src,
+                    'orientation'   => $height > $width ? 'portrait' : 'landscape'
+                );
+            }
+        }
+        catch(Exception $e){}
+    }
+
+    return $response;
+}
+add_filter('wp_prepare_attachment_for_js', 'nextland_common_svg_media_thumbnails', 10, 3);
+// END ALLOW SVG
+
+
+//meta title and meta descripation setup
+
+  // 1. Add Meta Box for Meta Title and Description to all public post types
+function add_meta_tags() {
+    $post_types = get_post_types(['public' => true], 'names');
+
+    foreach ($post_types as $post_type) {
+        add_meta_box('meta_tags', 'SEO Meta Tags', 'meta_tags_callback', $post_type, 'normal', 'high');
+    }
+}
+add_action('add_meta_boxes', 'add_meta_tags');
+
+  // 2. Callback function for the meta box HTML
+function meta_tags_callback($post) {
+    $meta_title = get_post_meta($post->ID, '_meta_title', true);
+    $meta_description = get_post_meta($post->ID, '_meta_description', true);
+    ?>
+    <p>
+        <label for="meta_title"><strong>Meta Title:</strong></label><br>
+        <input type="text" id="meta_title" name="meta_title" value="<?php echo esc_attr($meta_title); ?>" size="80" />
+    </p>
+    <p>
+        <label for="meta_description"><strong>Meta Description:</strong></label><br>
+        <textarea id="meta_description" name="meta_description" rows="4" cols="80"><?php echo esc_textarea($meta_description); ?></textarea>
+    </p>
+    <?php
+}
+
+  // 3. Save Meta Title and Description when post is saved
+function save_meta_tags($post_id) {
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+
+    if (isset($_POST['meta_title'])) {
+        update_post_meta($post_id, '_meta_title', sanitize_text_field($_POST['meta_title']));
+    }
+
+    if (isset($_POST['meta_description'])) {
+        update_post_meta($post_id, '_meta_description', sanitize_textarea_field($_POST['meta_description']));
+    }
+}
+add_action('save_post', 'save_meta_tags');
+
+  // 4. Output Meta Tags in the <head> section
+function add_dynamic_meta_tags() {
+    if (did_action('wp_head') > 1) return;
+
+    if (is_singular()) {
+        global $post;
+
+        $meta_title = get_post_meta($post->ID, '_meta_title', true);
+        $meta_description = get_post_meta($post->ID, '_meta_description', true);
+
+        if ($meta_title) {
+            echo '<title>' . esc_html($meta_title) . '</title>' . "\n";
+        }
+
+        if ($meta_description) {
+            echo '<meta name="description" content="' . esc_attr($meta_description) . '">' . "\n";
+        }
+    }
+}
+add_action('wp_head', 'add_dynamic_meta_tags', 1);
+
+//End meta title and meta descripation setup
+
 
 
 

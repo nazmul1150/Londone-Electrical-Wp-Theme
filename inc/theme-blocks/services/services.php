@@ -4,7 +4,7 @@
 ?>
 
 <!-- Page Services Start -->
-<div class="page-services">
+    <div class="page-services">
         <div class="container">
             <div class="row">
                
@@ -79,4 +79,4 @@
             </div>
         </div>
     </div>
-    <!-- Page Services End -->
+<!-- Page Services End -->

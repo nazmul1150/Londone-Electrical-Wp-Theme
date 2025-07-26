@@ -34,7 +34,8 @@
     },
     "elements": {
       "link": {
-        "color": { "text": "#ff6600" }
+        "color": { "text": "#ff6600" },
+        "textDecoration": "none"
       }
     }
   }
